@@ -2,8 +2,10 @@
 ;; org-attach-expand function.
 (autoload 'org-attach-expand "org-attach.el")
 
-;; Only defined after org-attach is loaded
-(setq org-attach-store-link-p 'attached)
+(with-eval-after-load 'org-attach
+  ;; Only defined after org-attach is loaded
+  (setq org-attach-store-link-p 'attached)
 
-(setq org-confirm-elisp-link-not-regexp
-      (regexp-opt '("org-open-file" "browse-dir-sftp" "browse-dir")))
+  (setq org-confirm-elisp-link-not-regexp
+        (regexp-opt '("org-open-file" "browse-dir-sftp" "browse-dir")))
+  )

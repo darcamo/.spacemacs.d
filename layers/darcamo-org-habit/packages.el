@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst darcamo-org-habit-packages
-  '()
+  '(
+    org-habit
+    )
   "The list of Lisp packages required by the darcamo-org-habit layer.
 
 Each entry is either:
@@ -58,5 +60,15 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+
+(defun darcamo-org-habit/init-org-habit()
+  (with-eval-after-load 'org
+    (use-package org-habit
+      :config
+      (setq org-habit-graph-column 50)
+      (setq org-habit-preceding-days 7)
+      )
+    )
+  )
 
 ;;; packages.el ends here

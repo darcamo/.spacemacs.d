@@ -82,6 +82,12 @@
 
 
 
+;; Logging
+;; insert state change notes and time stamps into a drawer called LOGBOOK
+(setq org-log-into-drawer t)
+
+
+
 ;; Properties
 ;; Set global properties such that you do not need a line such as
 ;; #+PROPERTY: Effort_ALL 0 0:10 0:20 0:30 1:00 2:00 3:00 4:00 8:00

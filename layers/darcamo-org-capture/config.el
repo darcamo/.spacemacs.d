@@ -1,3 +1,4 @@
+
 ;; Templates
 
 ;; Veja o E-mail [[wl:%25Newsletter/Org-Mode!#80wrgxs3yg.fsf@somewhere.org][Email from Sebastien Vauban: Re: {O} Feature request: two-l]]

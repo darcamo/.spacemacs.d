@@ -70,7 +70,6 @@ values."
      darcamo-c++
      darcamo-functions
      darcamo-general-programming
-     darcamo-locale
      darcamo-org
      ;; ;; darcamo-org-agenda
      ;; ;; darcamo-org-attach
@@ -347,9 +346,16 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; Make Emacs use UTF-8 in files, filenames, terminal, etc..
+  (set-language-environment 'UTF-8)
+
   ;; Safe file/dir variables
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
+  (put 'org-attach-directory 'safe-local-variable 'stringp)
+  (put 'user-mail-address 'safe-local-variable 'stringp)
 
+  ;; Maximum size (in MB) that if above spacemacs will prompt to open literally
+  (setq dotspacemacs-large-file-size 2)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst darcamo-org-clock-packages
-  '()
+  '(
+    org-clock
+    )
   "The list of Lisp packages required by the darcamo-org-clock layer.
 
 Each entry is either:
@@ -57,6 +59,21 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun darcamo-org-clock/init-org-clock ()
+  (use-package org-clock
+    :defer t
+    :config
+    ;; Change task state to STARTED when clocking in
+    (setq org-clock-in-switch-to-state 'my-clock-change-state)
+
+    ;; Sometimes I change tasks I'm clocking quickly - this removes clocked tasks with 0:00 duration
+    (setq org-clock-out-remove-zero-time-clocks t)
+
+    ;; When equal to "t", the current clocked task is included in clock reports
+    (setq org-clock-report-include-clocking-task t)
+    )
+  )
 
 
 ;;; packages.el ends here

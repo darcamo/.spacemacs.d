@@ -15,11 +15,11 @@
                                       darcamo-org-attach
                                       darcamo-org-babel
                                       darcamo-org-capture
-                                      darcamo-org-clock
+                                      ;; darcamo-org-clock
                                       darcamo-org-crypt
                                       darcamo-org-export
                                       darcamo-org-general
-                                      darcamo-org-habit
+                                      ;; darcamo-org-habit
                                       darcamo-org-preview-latex
                                       darcamo-org-useful-functions
                                       ))
