@@ -372,6 +372,13 @@ you should place your code here."
 
   ;; Maximum size (in MB) that if above spacemacs will prompt to open literally
   (setq dotspacemacs-large-file-size 2)
+
+  ;; Set extension .puml to plantuml mode -> Requires the plantuml layer
+  (add-to-list 'auto-mode-alist '("\\.puml" . plantuml-mode))
+  ;; Integrate plantuml with org-mode
+  (with-eval-after-load 'org
+    (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
+    )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
