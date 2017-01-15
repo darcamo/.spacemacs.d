@@ -379,6 +379,9 @@ you should place your code here."
   (with-eval-after-load 'org
     (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
     )
+
+  ;; Set a file with name Doxyfile to conf-mode
+  (add-to-list 'auto-mode-alist '("Doxyfile" . conf-mode))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
