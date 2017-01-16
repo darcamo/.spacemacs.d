@@ -382,6 +382,14 @@ you should place your code here."
 
   ;; Set a file with name Doxyfile to conf-mode
   (add-to-list 'auto-mode-alist '("Doxyfile" . conf-mode))
+
+  ;; Add the doxymacs package (in my .spacemacs.d/local folder) and activate
+  ;; doxymacs-mode in C++ buffers
+  (use-package doxymacs
+    :load-path "~/.spacemacs.d/local"
+    :diminish doxymacs-mode
+    :config (add-hook 'c++-mode-hook 'doxymacs-mode)
+    )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
