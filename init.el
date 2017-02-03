@@ -366,6 +366,8 @@ you should place your code here."
   ;; Make Emacs use UTF-8 in files, filenames, terminal, etc..
   (set-language-environment 'UTF-8)
 
+  (setq user-mail-address "darcamo@gmail.com")
+
   ;; Safe file/dir variables
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
   (put 'projectile-project-compilation-cmd 'safe-local-variable 'stringp)
