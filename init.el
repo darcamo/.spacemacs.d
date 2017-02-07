@@ -84,6 +84,7 @@ values."
      plantuml
      ;; My Private Layers
      darcamo-c++
+     darcamo-rtags
      darcamo-functions
      darcamo-general-programming
      darcamo-org
