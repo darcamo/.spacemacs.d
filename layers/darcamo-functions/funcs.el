@@ -1,4 +1,7 @@
 
+;; Got from http://stackoverflow.com/questions/17325713/looking-for-a-replace-in-string-function-in-elisp
+(defun darlan-replace-in-string (what with in)
+  (replace-regexp-in-string (regexp-quote what) with in nil 'literal))
 
 
 (defun darlan/string-to-ascii (string)
@@ -413,4 +416,3 @@
                         (substitute ?- 32 name)))
   (message m)
   )
-
