@@ -83,6 +83,7 @@ values."
      csv
      yaml
      plantuml
+     octave
      ;; My Private Layers
      darcamo-c++
      darcamo-rtags
