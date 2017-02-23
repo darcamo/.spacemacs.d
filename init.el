@@ -377,6 +377,7 @@ you should place your code here."
   (put 'projectile-project-run-cmd 'safe-local-variable 'stringp)
   (put 'org-attach-directory 'safe-local-variable 'stringp)
   (put 'user-mail-address 'safe-local-variable 'stringp)
+  (put 'reftex-default-bibliography 'safe-local-variable 'darlan/list-of-strings-p)
 
   ;; Maximum size (in MB) that if above spacemacs will prompt to open literally
   (setq dotspacemacs-large-file-size 2)

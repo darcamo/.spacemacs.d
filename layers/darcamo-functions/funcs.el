@@ -3,6 +3,13 @@
 (defun darlan-replace-in-string (what with in)
   (replace-regexp-in-string (regexp-quote what) with in nil 'literal))
 
+
+
+(defun darlan/list-of-strings-p (arg)
+  "Return t if arg is a list of strings"
+  (every 'stringp arg)
+  )
+
 
 (defun darlan/string-to-ascii (string)
       "Change a string containing unicode characters to the
