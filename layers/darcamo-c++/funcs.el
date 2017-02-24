@@ -40,6 +40,22 @@
   (darlan-save-and-compile-internal darlan-current-cmake-target)
   )
 
+(defun darlan-run-last-target ()
+  (interactive)
+  (let ((run-command (concat "cd " (projectile-project-root) "cmake-build-debug && ./" darlan-current-cmake-target)))
+    (compile run-command)
+    )
+  )
+
+;; (defun darlan-compile-and-run-last-target ()
+;;   (interactive)
+;;   (darlan-save-and-compile-last-target)
+;;   (while compilation-in-progress
+;;     (sleep-for 0 100)
+;;     )
+;;   (darlan-run-last-target)
+;;   )
+
 (defun darlan-get-cmake-this-file-target ()
   ;; "Get the name of the compile target for the currently visited file"
   (let ((target-name (darlan-replace-in-string (projectile-project-root) "" (buffer-file-name))))
