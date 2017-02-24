@@ -406,6 +406,11 @@ you should place your code here."
   ;; Some layers change the company-idle-delay, but I prefer to keep it at the
   ;; original value of 0.5, since a lower value can make completion slower
   (setq company-idle-delay 0.5)
+
+  ;; Projectile find test file
+  (defun darlan/my-test-prefix (project-type) "test_")
+  (setq projectile-test-prefix-function 'darlan/my-test-prefix)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
