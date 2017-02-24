@@ -73,7 +73,8 @@ values."
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-default-mode-for-headers 'c++-mode
-            compilation-window-height 16)
+            compilation-window-height 16
+            c-doc-comment-style 'javadoc)
      cscope
      ibuffer
      ;; pdf-tools
