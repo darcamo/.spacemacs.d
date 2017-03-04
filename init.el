@@ -87,7 +87,8 @@ values."
      octave
      ;; My Private Layers
      darcamo-c++
-     darcamo-rtags
+     ;; darcamo-rtags
+     darcamo-ycmd
      darcamo-functions
      darcamo-general-programming
      darcamo-org
