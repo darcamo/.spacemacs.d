@@ -175,6 +175,8 @@
 
 
 
+(defvar darlan/default-terminal-program "/usr/bin/gnome-terminal")
+
 ;; Browse Directory
 (defun browse-dir (dir-as-string)
   (start-process-shell-command
@@ -203,16 +205,16 @@
 
 
 
-;; Open Gnome Terminal
 (defun gnome-terminal-dir (dir-as-string)
+  "Open terminal in the provided directory"
   (start-process-shell-command
    "browse"
    "*scratch*"
-   (concat "/usr/bin/gnome-terminal " (concat "--working-directory \"" (expand-file-name dir-as-string) "\""))))
+   (concat darlan/default-terminal-program " " (concat "--working-directory \"" (expand-file-name dir-as-string) "\""))))
 
 (defun gnome-terminal-default-dir ()
-  "Open gnome-terminal in the default directory, which is the
-              directory of the file associated with the current buffer."
+  "Open terminal in the default directory, which is the directory
+of the file associated with the current buffer."
   (interactive)
   (gnome-terminal-dir default-directory))
 

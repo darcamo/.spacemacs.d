@@ -16,12 +16,26 @@
 
 (defvar darlan-current-cmake-target nil)
 
+(defvar darlan-current-cmake-target-run-arguments nil)
+
+(defvar darlan-cmake-use-ninja nil)
+
+(defvar darlan-cmake-build-dir "cmake-build-debug")
+
+
+(defun darlan-get-make-or-ninja-compile-command ()
+  "Get the CMake generated makefile or ninja compile command"
+  (if darlan-cmake-use-ninja
+      "ninja "
+    "make -k -j 4 "
+    )
+  )
 
 (defun darlan-save-and-compile-internal (target-name)
   "Compile the target 'target-name' using the cmake generated Makefile"
   (save-buffer 0)
   ;; (compile (concat "make -k -j 4 " darlan-current-cmake-target))
-  (let ((make-command (concat "cd " (projectile-project-root) "cmake-build-debug && make -k -j 4 ")))
+  (let ((make-command (concat "cd " (projectile-project-root) darlan-cmake-build-dir " && " (darlan-get-make-or-ninja-compile-command))))
     (compile (concat make-command target-name)))
   )
 
@@ -42,9 +56,16 @@
 
 (defun darlan-run-last-target ()
   (interactive)
-  (let ((run-command (concat "cd " (projectile-project-root) "cmake-build-debug && ./" darlan-current-cmake-target)))
+  (let ((run-command (concat "cd " (projectile-project-root) darlan-cmake-build-dir " && ./" darlan-current-cmake-target " " darlan-current-cmake-target-run-arguments)))
     (compile run-command)
     )
+  )
+
+(defun darlan-run-last-target-with-arguments (args)
+  "Ask for arguments to run the last target and then run it"
+  (interactive "sArguments")
+  (setq darlan-current-cmake-target-run-arguments args)
+  (darlan-run-last-target)
   )
 
 ;; (defun darlan-compile-and-run-last-target ()
