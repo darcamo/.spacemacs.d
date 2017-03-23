@@ -20,7 +20,7 @@
 
 (defvar darlan-cmake-use-ninja nil)
 
-(defvar darlan-cmake-build-dir "cmake-build-debug")
+(defvar darlan-build-dir "cmake-build-debug")
 
 
 (defun darlan-get-make-or-ninja-compile-command ()
@@ -35,7 +35,7 @@
   "Compile the target 'target-name' using the cmake generated Makefile"
   (save-buffer 0)
   ;; (compile (concat "make -k -j 4 " darlan-current-cmake-target))
-  (let ((make-command (concat "cd " (projectile-project-root) darlan-cmake-build-dir " && " (darlan-get-make-or-ninja-compile-command))))
+  (let ((make-command (concat "cd " (projectile-project-root) darlan-build-dir " && " (darlan-get-make-or-ninja-compile-command))))
     (compile (concat make-command target-name)))
   )
 
@@ -56,7 +56,7 @@
 
 (defun darlan-run-last-target ()
   (interactive)
-  (let ((run-command (concat "cd " (projectile-project-root) darlan-cmake-build-dir " && ./" darlan-current-cmake-target " " darlan-current-cmake-target-run-arguments)))
+  (let ((run-command (concat "cd " (projectile-project-root) darlan-build-dir " && ./" darlan-current-cmake-target " " darlan-current-cmake-target-run-arguments)))
     (compile run-command)
     )
   )

@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst darcamo-rtags-packages
-  '(cmake-ide
+  '(;;cmake-ide
     rtags)
   "The list of Lisp packages required by the darcamo-rtags layer.
 
@@ -60,10 +60,10 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 
-(defun darcamo-rtags/init-cmake-ide ()
-  (use-package cmake-ide
-    :config
-    (cmake-ide-setup)))
+;; (defun darcamo-rtags/init-cmake-ide ()
+;;   (use-package cmake-ide
+;;     :config
+;;     (cmake-ide-setup)))
 
 (defun darcamo-rtags/init-rtags ()
   (use-package rtags
@@ -71,14 +71,27 @@ Each entry is either:
     (setq rtags-autostart-diagnostics t
           rtags-completions-enabled t
           rtags-use-helm t)
+
+    (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
+    (add-hook 'c++-mode-common-hook 'rtags-start-process-unless-running)
                                         ; See https://github.com/Andersbakken/rtags/issues/832
     (require 'rtags-helm)
-    (push '(company-rtags)
-          company-backends-c-mode-common)
+    ;; (push '(company-rtags)
+    ;;       company-backends-c-mode-common)
+    ;; (push 'company-rtags company-backends)
     (rtags-enable-standard-keybindings)
     (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running))
   (use-package flycheck-rtags
-    :ensure rtags))
+    :ensure rtags)
+
+  (require 'company-rtags)
+  (add-hook 'c++-mode-hook
+            (lambda ()
+              (set (make-local-variable 'company-backends) '(company-rtags))))
+  (add-hook 'c-mode-common-hook
+            (lambda ()
+              (set (make-local-variable 'company-backends) '(company-rtags))))
+  )
 
 
 ;;; packages.el ends here
