@@ -430,6 +430,10 @@ you should place your code here."
   (defun darlan/my-test-prefix (project-type) "test_")
   (setq projectile-test-prefix-function 'darlan/my-test-prefix)
 
+  ;; Require locally installed meson-mode file. This is a major mode for
+  ;; meson.build files.
+  (require 'meson-mode)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
