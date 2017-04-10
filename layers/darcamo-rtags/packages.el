@@ -31,7 +31,10 @@
 
 (defconst darcamo-rtags-packages
   '(;;cmake-ide
-    rtags)
+    rtags
+    helm-rtags
+    company-rtags
+    flycheck-rtags)
   "The list of Lisp packages required by the darcamo-rtags layer.
 
 Each entry is either:
@@ -66,32 +69,85 @@ Each entry is either:
 ;;     (cmake-ide-setup)))
 
 (defun darcamo-rtags/init-rtags ()
+  (add-to-list 'load-path "/home/darlan/Programas_Locais/rtags/src")
+  ;; (require 'rtags)
   (use-package rtags
+    :pin manual
     :config
     (setq rtags-autostart-diagnostics t
           rtags-completions-enabled t
-          rtags-use-helm t)
-
+          ;; rtags-use-helm t
+          )
+    (rtags-enable-standard-keybindings)
     (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
     (add-hook 'c++-mode-common-hook 'rtags-start-process-unless-running)
-                                        ; See https://github.com/Andersbakken/rtags/issues/832
-    (require 'rtags-helm)
-    ;; (push '(company-rtags)
-    ;;       company-backends-c-mode-common)
-    ;; (push 'company-rtags company-backends)
-    (rtags-enable-standard-keybindings)
-    (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running))
-  (use-package flycheck-rtags
-    :ensure rtags)
-
-  (require 'company-rtags)
-  (add-hook 'c++-mode-hook
-            (lambda ()
-              (set (make-local-variable 'company-backends) '(company-rtags))))
-  (add-hook 'c-mode-common-hook
-            (lambda ()
-              (set (make-local-variable 'company-backends) '(company-rtags))))
+    (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
+    )
   )
+
+(defun darcamo-rtags/init-helm-rtags ()
+  ;; (require 'helm-rtags)
+  (use-package helm-rtags
+    :pin manual)
+  )
+
+(defun darcamo-rtags/init-flycheck-rtags ()
+  ;; (require 'flycheck-rtags)
+  (use-package flycheck-rtags
+    :pin manual)
+  )
+
+(defun darcamo-rtags/init-company-rtags ()
+  (with-eval-after-load 'company
+    ;; (require 'company-rtags)
+
+    ;; (add-hook 'c++-mode-hook
+    ;;           (lambda ()
+    ;;             (set (make-local-variable 'company-backends) '(company-rtags))))
+    ;; (add-hook 'c-mode-common-hook
+    ;;           (lambda ()
+    ;;             (set (make-local-variable 'company-backends) '(company-rtags))))
+    (use-package company-rtags
+      :pin manual
+      :config
+      (add-hook 'c++-mode-hook
+                (lambda ()
+                  (set (make-local-variable 'company-backends) '(company-rtags))))
+      (add-hook 'c-mode-common-hook
+                (lambda ()
+                  (set (make-local-variable 'company-backends) '(company-rtags)))))
+    )
+  )
+
+  ;; (use-package rtags
+  ;;   :config
+  ;;   (setq rtags-autostart-diagnostics t
+  ;;         rtags-completions-enabled t
+  ;;         rtags-use-helm t)
+
+  ;;   (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
+  ;;   (add-hook 'c++-mode-common-hook 'rtags-start-process-unless-running)
+                                        ; See https://github.com/Andersbakken/rtags/issues/832
+    ;; (use-package helm-rtags :ensure t)
+    ;; ;; (push '(company-rtags)
+    ;; ;;       company-backends-c-mode-common)
+    ;; ;; (push 'company-rtags company-backends)
+    ;; (rtags-enable-standard-keybindings)
+    ;; (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running))
+  ;; (use-package flycheck-rtags
+  ;;   :ensure rtags)
+
+  ;; (with-eval-after-load 'company
+  ;;   (require 'company-rtags)
+
+  ;;   (add-hook 'c++-mode-hook
+  ;;             (lambda ()
+  ;;               (set (make-local-variable 'company-backends) '(company-rtags))))
+  ;;   (add-hook 'c-mode-common-hook
+  ;;             (lambda ()
+  ;;               (set (make-local-variable 'company-backends) '(company-rtags))))
+  ;;   )
+  ;;)
 
 
 ;;; packages.el ends here
