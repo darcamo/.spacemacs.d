@@ -54,13 +54,22 @@
 
 ;; Function to run latex on the master file
 (defun tex-all (arg)
-    "Run TeX-command-master (from auctex) with arg. Use t as arg
-to confirm overwrite."
+  "Compile the latex file (or its master).
+
+This will either run latex/build from spacemacs layer, or
+TeX-command-master (from auctex) with a 'Latex' argument."
   (interactive "P")
-  (let ((TeX-command-force "Latex"))
-    ;;(TeX-save-document (TeX-master-file))
-    (basic-save-buffer)
-    (TeX-command-master arg)
+  (if (fboundp 'latex/build)
+      ;; If the function latex/build exist (it is defined in spacemacs LaTeX
+      ;; layer) then we use it to compile our latex file
+      (latex/build)
+    ;; If the function latex/build does not exist then we use standard Auctex
+    ;; functions and variables
+    (let ((TeX-command-force "Latex"))
+      ;;(TeX-save-document (TeX-master-file))
+      (basic-save-buffer)
+      (TeX-command-master arg)
+      )
     )
   )
 
