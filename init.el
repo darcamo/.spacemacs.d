@@ -398,6 +398,8 @@ you should place your code here."
   (put 'reftex-default-bibliography 'safe-local-variable 'darlan/list-of-strings-p)
   (put 'darlan-cmake-use-ninja 'safe-local-variable 'booleanp)
   (put 'darlan-build-dir 'safe-local-variable 'stringp)
+  (put 'abbrev-file-name 'safe-local-variable 'stringp)
+  (put 'TeX-master 'safe-local-variable 'stringp)
 
   ;; Maximum size (in MB) that if above spacemacs will prompt to open literally
   (setq dotspacemacs-large-file-size 2)
