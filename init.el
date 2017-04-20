@@ -79,7 +79,7 @@ values."
             compilation-window-height 16
             c-doc-comment-style 'javadoc)
      ibuffer
-     ;; pdf-tools
+     pdf-tools
      ;; themes-megapack
      javascript
      gtags
