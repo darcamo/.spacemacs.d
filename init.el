@@ -116,6 +116,7 @@ values."
      darcamo-latex-beamer
      darcamo-bibtex
      darcamo-tikz
+     darcamo-mu4e
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -438,42 +439,6 @@ you should place your code here."
   ;; meson.build files.
   (require 'meson-mode)
 
-
-  ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  ;; xxxxxxxxxxxxxxx mu4e Configuration xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  (setq mu4e-account-alist
-        '(("gmail"
-           ;; Under each account, set the account-specific variables you want.
-           (mu4e-sent-messages-behavior delete)
-           (mu4e-sent-folder "/gmail/[Gmail].E-mails enviados")
-           (mu4e-drafts-folder "/gmail/[Gmail].Rascunhos")
-           (user-mail-address "darcamo@gmail.com")
-           (user-full-name "Darlan Cavalcante Moreira")
-           (mu4e-trash-folder "/gmail/[Gmail].Lixeira")
-           (mu4e-sent-folder "/gmail/[Gmail].E-mails enviados"))
-          ("gtel"
-           ;; Under each account, set the account-specific variables you want.
-           (mu4e-sent-messages-behavior delete)
-           (mu4e-sent-folder "/gtel/[Gmail].E-mails enviados")
-           (mu4e-drafts-folder "/gtel/[Gmail].Rascunhos")
-           (user-mail-address "darlan@gtel.ufc.br")
-           (user-full-name "Darlan Cavalcante Moreira")
-           (mu4e-trash-folder "/gtel/[Gmail].Lixeira")
-           (mu4e-sent-folder "/gtel/[Gmail].E-mails enviados"))
-          ))
-  ;; Reset mail account to the first one in mu4e-account-alist
-  (mu4e/mail-account-reset)
-
-  ;;rename files when moving
-  ;;NEEDED FOR MBSYNC
-  (setq mu4e-change-filenames-when-moving t)
-
-  ;;set up queue for offline email
-  ;;use mu mkdir  ~/Maildir/queue to set up first
-  (setq smtpmail-queue-mail nil  ;; start in normal mode
-        smtpmail-queue-dir   "~/Maildir/queue/cur")
-  ;; xxxxxxxxxx End of mu4e Configuration xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
   )
 
