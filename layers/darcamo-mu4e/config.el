@@ -26,7 +26,7 @@
                     :match-func (lambda (msg)
                                   (when msg
                                     (mu4e-message-contact-field-matches msg
-                                                                        :to "darcamo@gmail.com")))
+                                                                         '(:to :cc :bcc) "darcamo@gmail.com")))
                     :vars '((user-mail-address  . "darcamo@gmail.com"  )
                             (user-full-name     . "Darlan Cavalcante Moreira")
                             (mu4e-sent-folder   . "/gmail/[Gmail].E-mails enviados")
@@ -44,7 +44,7 @@
                     :match-func (lambda (msg)
                                   (when msg
                                     (mu4e-message-contact-field-matches msg
-                                                                        :to "darlan@gtel.ufc.br")))
+                                                                        '(:to :cc :bcc) "darlan@gtel.ufc.br")))
                     :vars '((user-mail-address  . "darlan@gtel.ufc.br")
                             (user-full-name     . "Darlan Cavalcante Moreira")
                             (mu4e-sent-folder   . "/gtel/[Gmail].E-mails enviados")
@@ -105,14 +105,21 @@
   ;;NEEDED FOR MBSYNC
   (setq mu4e-change-filenames-when-moving t)
 
+  ;; Don't change to next message when scrolling at the end of a message
+  (setq mu4e-view-scroll-to-next nil)
+
   ;;set up queue for offline email
   ;;use mu mkdir  ~/Maildir/queue to set up first
   (setq smtpmail-queue-mail nil  ;; start in normal mode
         smtpmail-queue-dir   "~/Maildir/queue/cur")
 
   ;; Actions
-  ;; (add-to-list 'mu4e-headers-actions
-  ;;              '("View in Browser" . mu4e-action-view-in-browser) t)
+  (add-to-list 'mu4e-view-actions
+               '("View in Browser" . mu4e-action-view-in-browser) t)
+
+  (add-to-list 'mu4e-view-actions
+               '("wxidget" . mu4e-action-view-with-xwidget) t)
+
 
   ;; Bookmarks -> access with 'j' + letter
   (setq mu4e-maildir-shortcuts
@@ -143,23 +150,31 @@
                '("maildir:/gmail/Newsletter.IPython flag:unread" "IPython (unread)" ?p))
 
   (add-to-list 'mu4e-bookmarks
-               '("maildir:\"/gmail/Newsletter.Numpy and Scipy\" flag:unread" "Numpy and Scipy (unread)" ?n))
+               '("list:numpy-discussion.* flag:unread" "Numpy and Scipy (unread)" ?n))
 
   (add-to-list 'mu4e-bookmarks
-               '("maildir:/gmail/Newsletter.Org-Mode flag:unread" "Org-Mode (unread)" ?o))
+               '("list:dea-ufv.listas.ufv.br flag:unread" "Graça Freitas (unread)" ?g))
 
   (add-to-list 'mu4e-bookmarks
-               '("maildir:\"/gmail/Stanford\" flag:unread" "Stanford (unread)" ?s))
+               '("list:emacs-orgmode.gnu.org flag:unread" "Org-Mode (unread)" ?o))
 
   (add-to-list 'mu4e-bookmarks
                '("flag:unread AND NOT flag:trashed AND NOT maildir:/gtel/[Gmail].Lixeira AND NOT maildir:/Gmail/[Gmail].Lixeira" "Unread messages" ?u))
 
-  (setq mu4e-user-mailing-lists '(("numpy-discussion.scipy.org" . "Numpy")
+  (setq mu4e-user-mailing-lists '(
+                                  ("todos.gtel.ufc.br" . "GTEL-Todos")
+                                  ("numpy-discussion.python.org" . "Numpy")
+                                  ("numpy-discussion.scipy.org" . "Numpy")
                                   ("ipython-dev.python.org" . "IPython")
                                   ("ipython-dev.scipy.org" . "IPython")
                                   ("dea-ufv.listas.ufv.br" . "Graça Freitas")
                                   ("moradoresparccezanne.googlegroups.com" . "Parc Cezanne")
                                   ("grupogestorparccezanne.googlegroups.com" . "Grupo Gestor"))
         )
+
+  ;; Alert for new e-mails
+  ;; (with-eval-after-load 'mu4e-alert
+  ;;   ;; Enable Desktop notifications
+  ;;   (mu4e-alert-set-default-style 'notifications))
   ;; xxxxxxxxxx End of mu4e Configuration xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   )
