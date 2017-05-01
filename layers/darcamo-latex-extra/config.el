@@ -1,5 +1,5 @@
 
-(with-eval-after-load "auctex"
+(with-eval-after-load "tex"
   ;; Set auctex-mode for tex files.
   (add-to-list 'auto-mode-alist '("\\.tex\\'" . LaTeX-mode))
 
@@ -11,6 +11,15 @@
 
   ;; (setq reftex-plug-into-AUCTeX t)
 
+  ;; Here we have the default value of TeX-view-program-selection, but we only
+  ;; changed output-pdf from "Evince" to "PDF Tools"
+  (setq TeX-view-program-selection
+        '(
+        ((output-dvi has-no-display-manager) "dvi2tty")
+        ((output-dvi style-pstricks) "dvips and gv")
+        (output-dvi "xdvi")
+        (output-pdf "PDF Tools")
+        (output-html "xdg-open")))
 
   ;; Make reftex also recognize \addbibresource{bib-file} as a
   ;; bibliography. This syntax is used by Biblatex instead of the usual
