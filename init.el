@@ -393,7 +393,7 @@ you should place your code here."
   ;; Make Emacs use UTF-8 in files, filenames, terminal, etc..
   (set-language-environment 'UTF-8)
 
-  (setq user-mail-address "darcamo@gmail.com")
+  ;; (setq user-mail-address "darcamo@gmail.com")
 
   ;; Safe file/dir variables
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
@@ -442,7 +442,24 @@ you should place your code here."
   ;; meson.build files.
   (require 'meson-mode)
 
-
+  (add-hook 'dired-mode-hook
+            (function (lambda ()
+                        ;; Set dired-x buffer-local variables here.  For example:
+                        ;; (setq dired-omit-files-p t)
+                        ;; Extensões de arquivos que serão omitidos quando estiver usando o dired-omit-mode
+                        (add-to-list 'dired-omit-extensions ".fdb_latexmk")
+                        (add-to-list 'dired-omit-extensions "synctex.gz")
+                        (add-to-list 'dired-omit-extensions "log")
+                        (add-to-list 'dired-omit-extensions "fls")
+                        (add-to-list 'dired-omit-extensions "converted-to.pdf")
+                        (add-to-list 'dired-omit-extensions "bcf")
+                        (add-to-list 'dired-omit-extensions "tikz.pdf")
+                        (add-to-list 'dired-omit-extensions ".figlist")
+                        (add-to-list 'dired-omit-extensions ".ilg")
+                        (add-to-list 'dired-omit-extensions ".ind")
+                        (add-to-list 'dired-omit-extensions ".out")
+                        (add-to-list 'dired-omit-extensions ".run.xml")
+                        )))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
