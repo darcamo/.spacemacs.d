@@ -108,11 +108,6 @@
   ;; Don't change to next message when scrolling at the end of a message
   (setq mu4e-view-scroll-to-next nil)
 
-  ;;set up queue for offline email
-  ;;use mu mkdir  ~/Maildir/queue to set up first
-  (setq smtpmail-queue-mail nil  ;; start in normal mode
-        smtpmail-queue-dir   "~/Maildir/queue/cur")
-
   ;; Actions
   (add-to-list 'mu4e-view-actions
                '("View in Browser" . mu4e-action-view-in-browser) t)
@@ -176,5 +171,32 @@
   ;; (with-eval-after-load 'mu4e-alert
   ;;   ;; Enable Desktop notifications
   ;;   (mu4e-alert-set-default-style 'notifications))
+
+
+  ;; xxxxxxxxxx SMTP COnfiguration xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  (with-eval-after-load "smtpmail"
+    (setq message-send-mail-function 'smtpmail-send-it
+          starttls-use-gnutls t
+          ;; smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+          ;;smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
+          ;; ;; smtpmail-default-smtp-server only has effect if you specify it
+          ;; ;; before loading the smtpmail library.
+          ;; smtpmail-default-smtp-server "smtp.gmail.com"
+          smtpmail-smtp-server "smtp.gmail.com"
+          smtpmail-smtp-service 465
+          smtpmail-stream-type 'ssl
+          ;; smtpmail-debug-info t
+          )
+
+    ;; Determines what mu4e does with sent messages. Since we use gmail, which
+    ;; already stores the sent messages, we set this to 'delete so that we do
+    ;; not get a duplicated message
+    (setq mu4e-sent-messages-behavior 'delete)
+
+    ;; SMTP Queue
+    (setq smtpmail-queue-mail  nil  ;; start in non-queuing mode
+          smtpmail-queue-dir   "~/Maildir/queue/cur")
+    )
+  ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   ;; xxxxxxxxxx End of mu4e Configuration xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   )
