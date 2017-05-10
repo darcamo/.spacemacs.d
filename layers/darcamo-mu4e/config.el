@@ -32,6 +32,7 @@
                             (mu4e-sent-folder   . "/gmail/[Gmail].E-mails enviados")
                             (mu4e-drafts-folder . "/gmail/[Gmail].Rascunhos")
                             (mu4e-trash-folder  . "/gmail/[Gmail].Lixeira")
+                            (message-signature-file . "~/.signature")
                             ;; ( mu4e-compose-signature .
                             ;;   (concat
                             ;;     "Alice Derleth\n"
@@ -50,6 +51,7 @@
                             (mu4e-sent-folder   . "/gtel/[Gmail].E-mails enviados")
                             (mu4e-drafts-folder . "/gtel/[Gmail].Rascunhos")
                             (mu4e-trash-folder  . "/gtel/[Gmail].Lixeira")
+                            (message-signature-file . "~/.signature_gtel")
                             ))
                   ))
 
