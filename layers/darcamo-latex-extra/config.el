@@ -29,6 +29,10 @@
     ;; Use "\eqref{...}" to reference equations, instead of "(\ref{...})"
     ;; (setq reftex-label-alist '(AMSTeX))
     )
+
+  ;; Revert the PDF-buffer (when using pdf-tools to visualize generated pdf)
+  ;; after the TeX compilation has finished.
+  (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
   )
 
 
