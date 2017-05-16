@@ -406,6 +406,7 @@ you should place your code here."
   (put 'darlan-build-dir 'safe-local-variable 'stringp)
   (put 'abbrev-file-name 'safe-local-variable 'stringp)
   (put 'TeX-master 'safe-local-variable 'stringp)
+  (put 'ispell-skip-html 'safe-local-variable 'booleanp)
 
   ;; Maximum size (in MB) that if above spacemacs will prompt to open literally
   (setq dotspacemacs-large-file-size 2)
