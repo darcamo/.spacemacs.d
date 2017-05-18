@@ -144,16 +144,16 @@
                '("maildir:/gtel/Inbox flag:unread" "GTEL Inbox (unread)" ?I))
 
   (add-to-list 'mu4e-bookmarks
-               '("maildir:/gmail/Newsletter.IPython flag:unread" "IPython (unread)" ?p))
+               '("maildir:/gmail/Newsletter.IPython flag:unread NOT flag:trashed" "IPython (unread)" ?p))
 
   (add-to-list 'mu4e-bookmarks
-               '("list:numpy-discussion.* flag:unread" "Numpy and Scipy (unread)" ?n))
+               '("list:numpy-discussion.* flag:unread NOT flag:trashed" "Numpy and Scipy (unread)" ?n))
 
   (add-to-list 'mu4e-bookmarks
-               '("list:dea-ufv.listas.ufv.br flag:unread" "Graça Freitas (unread)" ?g))
+               '("list:dea-ufv.listas.ufv.br flag:unread NOT flag:trashed" "Graça Freitas (unread)" ?g))
 
   (add-to-list 'mu4e-bookmarks
-               '("list:emacs-orgmode.gnu.org flag:unread" "Org-Mode (unread)" ?o))
+               '("list:emacs-orgmode.gnu.org flag:unread NOT flag:trashed" "Org-Mode (unread)" ?o))
 
   (add-to-list 'mu4e-bookmarks
                '("flag:unread AND NOT flag:trashed AND NOT maildir:/gtel/[Gmail].Lixeira AND NOT maildir:/Gmail/[Gmail].Lixeira" "Unread messages" ?u))
