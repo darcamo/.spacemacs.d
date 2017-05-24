@@ -68,7 +68,8 @@ values."
      syntax-checking
      ;; version-control
      html
-     python
+     (python :variables
+             python-fill-docstring-style 'symmetric)
      latex
      bibtex
      ;; c-c++ layer can use semantic and cscope layers, if they are included before c-c++ layer
@@ -94,6 +95,7 @@ values."
      ;; My Private Layers
      darcamo-c++
      darcamo-rtags
+     darcamo-python
      ;; darcamo-ycmd
      darcamo-functions
      darcamo-general-programming
