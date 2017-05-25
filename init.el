@@ -468,7 +468,10 @@ you should place your code here."
 
   ;; Disable indentation for some tags in web-mode
   (with-eval-after-load 'web-mode
-    (add-to-list 'web-mode-indentless-elements "code-terminal"))
+    (add-to-list 'web-mode-indentless-elements "code-terminal")
+    (add-to-list 'web-mode-indentless-elements "output")
+    (add-to-list 'web-mode-indentless-elements "in")
+    )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
