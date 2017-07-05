@@ -17,6 +17,10 @@
         mu4e-headers-attach-mark    '("a" . "⚓") ;; attach
         )
 
+
+  ;; Hide the "Indexing..." messages (they interfere with the minibuffer)
+  (setq mu4e-hide-index-messages t)
+
   (set-default 'mu4e-contexts
                `( ,(make-mu4e-context
                     :name "Pessoal"
