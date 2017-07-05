@@ -30,7 +30,7 @@
      ;; (C . t)
      ;; (ruby . nil)
      ;; (screen . nil)
-     (sh . t)
+     (shell . t)
      ;; (sql . nil)
      ;; (sqlite . nil)
      (octave . t)
