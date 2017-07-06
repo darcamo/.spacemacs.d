@@ -2,20 +2,6 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
-;; xxxxx Add Some directories to the load-path xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;; Local Version of Org-mode. We add it to the beginning of the load path
-;; so that it takes precedence over the org-mode installed with emacs.
-(add-to-list 'load-path "~/Org-mode-dev/org-mode/lisp")
-(add-to-list 'load-path "~/Org-mode-dev/org-mode/contrib/lisp")
-(let ((default-directory  "~/Org-mode-dev/org-mode"))
-  (setq load-path
-        (append
-         (let ((load-path (copy-sequence load-path))) ;; Shadow
-           (normal-top-level-add-subdirs-to-load-path))
-         load-path)))
-
-(add-to-list 'load-path "~/.spacemacs.d/local")
-;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
