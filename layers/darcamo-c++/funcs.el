@@ -88,7 +88,9 @@
 ;; Compile only the current file (prom a cmake based project)
 (defun darlan-save-and-compile-single-file ()
   (interactive)
-  (darlan-save-and-compile-internal (darlan-get-cmake-this-file-target))
+  ;;(darlan-save-and-compile-internal (darlan-get-cmake-this-file-target))
+  (save-buffer 0)
+  (rtags-compile-file)
   )
 
 

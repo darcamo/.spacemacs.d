@@ -32,9 +32,10 @@
 (defconst darcamo-rtags-packages
   '(;;cmake-ide
     rtags
-    helm-rtags
+    ;; helm-rtags
     company-rtags
-    flycheck-rtags)
+    flycheck-rtags
+    )
   "The list of Lisp packages required by the darcamo-rtags layer.
 
 Each entry is either:
@@ -69,8 +70,6 @@ Each entry is either:
 ;;     (cmake-ide-setup)))
 
 (defun darcamo-rtags/init-rtags ()
-  (add-to-list 'load-path "/home/darlan/Programas_Locais/rtags/src")
-  ;; (require 'rtags)
   (use-package rtags
     :pin manual
     :config
@@ -85,11 +84,11 @@ Each entry is either:
     )
   )
 
-(defun darcamo-rtags/init-helm-rtags ()
-  ;; (require 'helm-rtags)
-  (use-package helm-rtags
-    :pin manual)
-  )
+;; (defun darcamo-rtags/init-helm-rtags ()
+;;   ;; (require 'helm-rtags)
+;;   (use-package helm-rtags
+;;     :pin manual)
+;;   )
 
 (defun darcamo-rtags/init-flycheck-rtags ()
   ;; (require 'flycheck-rtags)
