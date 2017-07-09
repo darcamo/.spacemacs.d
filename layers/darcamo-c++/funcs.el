@@ -42,7 +42,7 @@
 
 (defun darlan-save-and-compile (target-name)
   "Ask the target name then save and compile the target"
-  (interactive "sCompile TargetName")
+  (interactive "sCompile TargetName: ")
   (setq darlan-current-cmake-target target-name)
   (darlan-save-and-compile-last-target)
   )
@@ -63,7 +63,7 @@
 
 (defun darlan-run-last-target-with-arguments (args)
   "Ask for arguments to run the last target and then run it"
-  (interactive "sArguments")
+  (interactive "sArguments: ")
   (setq darlan-current-cmake-target-run-arguments args)
   (darlan-run-last-target)
   )
