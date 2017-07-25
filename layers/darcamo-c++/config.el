@@ -16,6 +16,11 @@
   (push '(c++-mode . "stroustrup") c-default-style)
   )
 
+;; Disable indentation inside namespaces
+(add-hook 'c++-mode-hook
+          (progn (c-set-offset 'innamespace [0])))
+
+
 ;; Note: You can define your own style using "c-add-style" function
 ;; See this video (https://www.youtube.com/watch?v=OjbkCEkboA8&app=desktop) around 20minutes
 
