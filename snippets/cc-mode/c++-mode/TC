@@ -4,6 +4,6 @@
 #group: Catch
 #Description: A Test case in Catch
 # --
-TEST_CASE("Test the ${1:Name} class", "[$2]") {
+TEST_CASE("Test the ${1:Name} class", "[$1]") {
     $0
 }
