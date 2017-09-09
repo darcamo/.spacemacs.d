@@ -177,19 +177,28 @@
 
 (defvar darlan/default-terminal-program "/usr/bin/gnome-terminal")
 
+(defun get-filemanager-fullpath ()
+  "Return path to nautilus, if installed, or to pcmanfm. If
+ neither is installed, return nil."
+  (setq filemanager (executable-find "nautilus"))
+  (if (equal filemanager nil)
+      (setq filemanager (executable-find "pcmanfm")))
+  )
+
 ;; Browse Directory
 (defun browse-dir (dir-as-string)
   (start-process-shell-command
    "browse"
    "*scratch*"
-   (concat "/usr/bin/nautilus --no-desktop " (concat "\"" (expand-file-name dir-as-string) "\""))))
+   ;; Trocar nautilus por pcmanfm para o lxde
+   (concat (get-filemanager-fullpath) " --no-desktop " (concat "\"" (expand-file-name dir-as-string) "\""))))
 
 ;; Use essa para abrir links sftp com o nautilus, como sftp://darlan@ssh.gtel.ufc.br/home/gtels0/projetos/ufc32
 (defun browse-dir-sftp (dir-as-string)
   (start-process-shell-command
    "browse"
    "*scratch*"
-   (concat "/usr/bin/nautilus --no-desktop " dir-as-string)))
+   (concat (get-filemanager-fullpath) " --no-desktop " dir-as-string)))
 
 (defun browse-default-dir ()
   "Open Nautilus in the default directory, which is the directory
