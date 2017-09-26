@@ -12,6 +12,7 @@
    (local-set-key [f6] 'darlan/org-surround-inline-math)
    (local-set-key [C-f6] 'org-insert-example-block)
    (local-set-key [f5] 'org-toggle-latex-fragment)
+   (local-set-key [C-M-return] 'org-meta-return)
 
    ;; (local-set-key "\C-xye" 'yas/expand)
    ;; (local-set-key "\C-xyn" 'yas/next-field)
