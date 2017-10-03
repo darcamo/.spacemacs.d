@@ -183,6 +183,7 @@
   (setq filemanager (executable-find "nautilus"))
   (if (equal filemanager nil)
       (setq filemanager (executable-find "pcmanfm")))
+  filemanager
   )
 
 ;; Browse Directory
