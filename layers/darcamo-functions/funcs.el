@@ -175,10 +175,8 @@
 
 
 
-(defvar darlan/default-terminal-program "/usr/bin/gnome-terminal")
-
 (defun get-filemanager-fullpath ()
-  "Return path to nautilus, if installed, or to pcmanfm. If
+  "Return the path to nautilus, if installed, or to pcmanfm. If
  neither is installed, return nil."
   (setq filemanager (executable-find "nautilus"))
   (if (equal filemanager nil)
@@ -215,12 +213,24 @@
 
 
 
+
+(defun get-terminal-fullpath ()
+  "Return the path to the installed terminal emulator, which will
+either be gnome-terminal or lxterminal."
+  (setq terminal (executable-find "gnome-terminal"))
+  (if (equal terminal nil)
+      (setq terminal (executable-find "lxterminal")))
+  terminal
+  )
+
 (defun gnome-terminal-dir (dir-as-string)
   "Open terminal in the provided directory"
   (start-process-shell-command
    "browse"
    "*scratch*"
-   (concat darlan/default-terminal-program " " (concat "--working-directory \"" (expand-file-name dir-as-string) "\""))))
+   ;; (concat (get-terminal-fullpath) " " (concat "--working-directory \"" (expand-file-name dir-as-string) "\""))
+   (concat (get-terminal-fullpath))
+   ))
 
 (defun gnome-terminal-default-dir ()
   "Open terminal in the default directory, which is the directory
