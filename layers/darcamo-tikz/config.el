@@ -64,6 +64,7 @@ This only makes sense for empty buffers."
 \\usetikzlibrary{matrix}
 \\usetikzlibrary{intersections}
 \\usetikzlibrary{fit}
+\\usetikzlibrary{calc}
 %\\usetikzlibrary{decorations.pathmorphing}
 \\usetikzlibrary{decorations.pathreplacing}
 
@@ -82,7 +83,6 @@ This only makes sense for empty buffers."
 %%% mode: tikz
 %%% TeX-PDF-mode: t
 %%% TeX-master: t
-%%% firestarter: tex-all
 %%% End: "> \n \n
 
 (TeX-PDF-mode t))
