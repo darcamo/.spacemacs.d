@@ -7,6 +7,7 @@
   ;; Including all org files from a directory into the agenda
   ;; (setq org-agenda-files (file-expand-wildcards "~/Muse/org/*.org"))
                                         ;(setq org-agenda-files (quote ("~/Muse/org")))
+  (setq org-directory "~/Muse/org/")
   (setq org-agenda-files "~/Muse/org/org-agenda-files.org")
 
   ;; The notas.org file is not included in the agenda files, but I still want
