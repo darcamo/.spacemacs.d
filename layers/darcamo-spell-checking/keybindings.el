@@ -7,3 +7,10 @@
 (global-set-key [C-f12]   'lookup-word-definition)
 (global-set-key [C-S-f12] 'lookup-synonym)
 (global-set-key [M-f12] 'thesaurus-choose-synonym-and-replace)
+
+
+;; In any programming mode, change the F7 keybinding to be a programming
+;; specific function that only spellchecks comments and strings
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (local-set-key [f7] 'ispell-comments-and-strings)))
