@@ -9,6 +9,7 @@
 (global-set-key "\M-z"            'ansi-term)
 (global-set-key "\C-co"    'other-frame) ; When there are multiple frames, change to another frame
 (global-set-key "\C-cr"    'revert-buffer)
+(global-set-key (kbd "M-Q") 'unfill-paragraph)
 
 ;; Use "pause" to set a window as dedicated
 (global-set-key [pause] 'toggle-current-window-dedication)
