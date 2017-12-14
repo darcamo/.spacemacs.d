@@ -111,7 +111,7 @@ Each entry is either:
       :config
       (add-hook 'c++-mode-hook
                 (lambda ()
-                  (set (make-local-variable 'company-backends) '(company-rtags))))
+                  (set (make-local-variable 'company-backends) '(company-c-headers company-rtags))))
       (add-hook 'c-mode-common-hook
                 (lambda ()
                   (set (make-local-variable 'company-backends) '(company-rtags)))))
