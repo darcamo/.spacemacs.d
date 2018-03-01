@@ -71,7 +71,8 @@ values."
      ibuffer
      pdf-tools
      ;; themes-megapack
-     javascript
+     graphviz
+     ;; javascript
      ;; gtags  ;; I'm using the gxref package now
      csv
      yaml
@@ -83,7 +84,7 @@ values."
      ;; My Private Layers
      darcamo-c++
      ;; darcamo-rtags
-     darcamo-irony
+     ;; darcamo-irony
      darcamo-python
      darcamo-jupyter-notebook  ;; Defines a (VERY) simple minor-mode for jupyter notebooks
      ;; darcamo-ycmd
@@ -372,6 +373,8 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (set-default 'bookmark-file "~/Dropbox/Dotfiles/.emacs.d/bookmarks")
+
+  (require 'dired-x)
   )
 
 (defun dotspacemacs/user-config ()
@@ -399,6 +402,7 @@ you should place your code here."
   (put 'abbrev-file-name 'safe-local-variable 'stringp)
   (put 'TeX-master 'safe-local-variable 'stringp)
   (put 'ispell-skip-html 'safe-local-variable 'booleanp)
+  (put 'ispell-local-dictionary 'safe-local-variable 'stringp)
 
   ;; Maximum size (in MB) that if above spacemacs will prompt to open literally
   (setq dotspacemacs-large-file-size 2)
@@ -433,26 +437,28 @@ you should place your code here."
 
   ;; Require locally installed meson-mode file. This is a major mode for
   ;; meson.build files.
-  (require 'meson-mode)
+  ;; (require 'meson-mode)
 
-  (add-hook 'dired-mode-hook
-            (function (lambda ()
-                        ;; Set dired-x buffer-local variables here.  For example:
-                        ;; (setq dired-omit-files-p t)
-                        ;; Extensões de arquivos que serão omitidos quando estiver usando o dired-omit-mode
-                        (add-to-list 'dired-omit-extensions ".fdb_latexmk")
-                        (add-to-list 'dired-omit-extensions "synctex.gz")
-                        (add-to-list 'dired-omit-extensions "log")
-                        (add-to-list 'dired-omit-extensions "fls")
-                        (add-to-list 'dired-omit-extensions "converted-to.pdf")
-                        (add-to-list 'dired-omit-extensions "bcf")
-                        (add-to-list 'dired-omit-extensions "tikz.pdf")
-                        (add-to-list 'dired-omit-extensions ".figlist")
-                        (add-to-list 'dired-omit-extensions ".ilg")
-                        (add-to-list 'dired-omit-extensions ".ind")
-                        (add-to-list 'dired-omit-extensions ".out")
-                        (add-to-list 'dired-omit-extensions ".run.xml")
-                        )))
+  (with-eval-after-load 'dired-x
+    (add-hook 'dired-mode-hook
+              (function (lambda ()
+                          ;; Set dired-x buffer-local variables here.  For example:
+                          ;; (setq dired-omit-files-p t)
+                          ;; Extensões de arquivos que serão omitidos quando estiver usando o dired-omit-mode
+                          (add-to-list 'dired-omit-extensions ".fdb_latexmk")
+                          (add-to-list 'dired-omit-extensions "synctex.gz")
+                          (add-to-list 'dired-omit-extensions "log")
+                          (add-to-list 'dired-omit-extensions "fls")
+                          (add-to-list 'dired-omit-extensions "converted-to.pdf")
+                          (add-to-list 'dired-omit-extensions "bcf")
+                          (add-to-list 'dired-omit-extensions "tikz.pdf")
+                          (add-to-list 'dired-omit-extensions ".figlist")
+                          (add-to-list 'dired-omit-extensions ".ilg")
+                          (add-to-list 'dired-omit-extensions ".ind")
+                          (add-to-list 'dired-omit-extensions ".out")
+                          (add-to-list 'dired-omit-extensions ".run.xml")
+                          )))
+    )
 
   ;; Disable indentation for some tags in web-mode
   (with-eval-after-load 'web-mode
@@ -485,8 +491,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (company-irony-c-headers company-irony gxref helm-purpose wgrep smex ivy-hydra flyspell-correct-ivy ein deferred websocket counsel-projectile counsel swiper conda symon string-inflection realgud test-simple loc-changes load-relative password-generator org-brain ivy-purpose window-purpose imenu-list impatient-mode evil-org evil-lion editorconfig darkmine-theme web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data mu4e-maildirs-extension mu4e-alert ht winum unfill string-utils list-utils stickyfunc-enhance srefactor plantuml-mode ninja-mode helm-unicode helm-rtags fuzzy flycheck-rtags company-rtags rtags company-quickhelp auctex-latexmk helm-gtags ggtags csv-mode orgit org-ref org-projectile org-present org org-pomodoro org-plus-contrib org-download org-bullets zonokai-theme zenburn-theme zen-and-art-theme yapfify yaml-mode web-beautify underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme thesaurus tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smeargle seti-theme reverse-theme rainbow-mode railscasts-theme pyvenv pytest pyenv-mode py-isort purple-haze-theme professional-theme planet-theme pip-requirements phoenix-dark-pink-theme phoenix-dark-mono-theme pdf-tools tablist pastels-on-dark-theme organic-green-theme key-chord ivy alert log4e gntp omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme niflheim-theme naquadah-theme mwim mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme mmm-mode minimal-theme material-theme markdown-toc markdown-mode majapahit-theme magit-gitflow lush-theme livid-mode skewer-mode simple-httpd live-py-mode light-soap-theme json-mode json-snatcher json-reformat js2-refactor js2-mode js-doc jbeans-theme jazz-theme ir-black-theme inkpot-theme ibuffer-projectile hy-mode htmlize highlight-symbol heroku-theme hemisu-theme helm-pydoc helm-gitignore helm-cscope xcscope helm-company helm-c-yasnippet helm-bibtex parsebib hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme goto-last-change gotham-theme gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter gh-md gandalf-theme flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck flatui-theme flatland-theme firebelly-theme farmhouse-theme evil-magit magit magit-popup git-commit with-editor espresso-theme dracula-theme django-theme discover-my-major makey disaster darktooth-theme autothemer darkokai-theme darkburn-theme dakrone-theme cython-mode cyberpunk-theme company-tern dash-functional tern company-statistics company-c-headers company-auctex company-anaconda company comment-dwim-2 color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized coffee-mode cmake-mode clues-theme clang-format cherry-blossom-theme busybee-theme buffer-move bubbleberry-theme bookmark+ birds-of-paradise-plus-theme biblio biblio-core badwolf-theme auto-yasnippet yasnippet auto-dictionary auctex apropospriate-theme anti-zenburn-theme anaconda-mode pythonic ample-zen-theme ample-theme alect-themes afternoon-theme ace-mc multiple-cursors ace-jump-mode ac-ispell auto-complete ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme)))
- '(paradox-github-token t))
+    (mwim helm-projectile ein company-auctex projectile helm s which-key hydra yasnippet-snippets yapfify yaml-mode ws-butler winum websocket web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org thesaurus tagedit symon string-utils string-inflection stickyfunc-enhance srefactor spaceline-all-the-icons smeargle slim-mode scss-mode sass-mode restart-emacs request-deferred realgud rainbow-mode rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin plantuml-mode pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer orgit org-ref org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-ipython ninja-mode neotree nameless mu4e-maildirs-extension mu4e-alert move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc indent-guide importmagic impatient-mode ibuffer-projectile hy-mode hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-unicode helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-mu helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-cscope helm-company helm-c-yasnippet helm-ag gxref graphviz-dot-mode goto-last-change google-translate google-c-style golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-rtags flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu emmet-mode elisp-slime-nav editorconfig dumb-jump discover-my-major disaster diminish define-word darkmine-theme cython-mode csv-mode counsel-projectile conda company-web company-tern company-statistics company-rtags company-quickhelp company-c-headers company-anaconda comment-dwim-2 column-enforce-mode coffee-mode clean-aindent-mode clang-format centered-cursor-mode buffer-move bookmark+ auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent adaptive-wrap ace-window ace-mc ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

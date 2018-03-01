@@ -32,7 +32,7 @@
 (defconst darcamo-usability-packages
   '(
     windmove
-    bookmark+
+    ;; bookmark+
     goto-last-change
     buffer-move
     rainbow-mode
@@ -75,14 +75,14 @@ Each entry is either:
   (windmove-default-keybindings 'shift)
   )
 
-(defun darcamo-usability/init-bookmark+ ()
-  ;; (use-package bookmark+
-  ;;   :ensure t
-  ;;   :defer nil)
-  (require 'bookmark+)
-  ;; (autoload 'bookmark-bmenu-list "bookmark+.el" nil t)
-  ;; (autoload 'bookmark-set "bookmark+.el" nil t)
-  )
+;; (defun darcamo-usability/init-bookmark+ ()
+;;   ;; (use-package bookmark+
+;;   ;;   :ensure t
+;;   ;;   :defer nil)
+;;   (require 'bookmark+)
+;;   ;; (autoload 'bookmark-bmenu-list "bookmark+.el" nil t)
+;;   ;; (autoload 'bookmark-set "bookmark+.el" nil t)
+;;   )
 
 (defun darcamo-usability/init-goto-last-change ()
   (global-set-key (kbd "C-x C-n") 'goto-last-change)

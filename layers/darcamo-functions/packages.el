@@ -32,7 +32,8 @@
 (defconst darcamo-functions-packages
   '(
     s                                   ; String related functions
-    thesaurus
+    ;; thesaurus
+    synosaurus
     )
   "The list of Lisp packages required by the darcamo-functions layer.
 
@@ -71,14 +72,20 @@ Each entry is either:
   ;;   )
   )
 
-(defun darcamo-functions/init-thesaurus ()
-  ;; Synonyms (replace word at point)
-  ;; Uses the Big Huge Thesaurus with the library thesaurus.el.
-  (use-package thesaurus
+(defun darcamo-functions/init-synosaurus()
+  (use-package synosaurus
     :ensure t
-    :config
-    (setq thesaurus-bhl-api-key "bee6a6896699156461b1dc5e18f5d39d"))
+    )
   )
+
+;; (defun darcamo-functions/init-thesaurus ()
+;;   ;; Synonyms (replace word at point)
+;;   ;; Uses the Big Huge Thesaurus with the library thesaurus.el.
+;;   (use-package thesaurus
+;;     :ensure t
+;;     :config
+;;     (setq thesaurus-bhl-api-key "bee6a6896699156461b1dc5e18f5d39d"))
+;;   )
 
 
 
