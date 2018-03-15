@@ -18,7 +18,7 @@
 
 
 ;; General
-(setq org-directory "~/Muse/org")
+(setq org-directory "~/org")
 
 ;; Change C-a and C-e behaviour in org-mode
 (setq org-special-ctrl-a/e t)

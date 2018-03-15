@@ -5,16 +5,15 @@
 
   ;; Vc pode incluir cada arquivo individualmente ou usar o comando abaixo para incluir todos
   ;; Including all org files from a directory into the agenda
-  ;; (setq org-agenda-files (file-expand-wildcards "~/Muse/org/*.org"))
-                                        ;(setq org-agenda-files (quote ("~/Muse/org")))
-  (setq org-directory "~/Muse/org/")
-  (setq org-agenda-files "~/Muse/org/org-agenda-files.org")
+  ;; (setq org-agenda-files (file-expand-wildcards "~/org/*.org"))
+  ;; (setq org-agenda-files (quote ("~/org")))
+  (setq org-agenda-files "~/org/org-agenda-files.org")
 
   ;; The notas.org file is not included in the agenda files, but I still want
   ;; to search it
   (setq org-agenda-text-search-extra-files
         (append
-         '("~/Muse/org/notas.org" "~/Muse/org/supelec.org")
+         '("~/org/notas.org" "~/org/supelec.org")
          (directory-files "~/Muse/OrgWiki/" t "^[^.#].*\\.\\(org$\\|org_archive$\\)")
          )
         )
@@ -52,21 +51,21 @@
                 ("E" "NextActions" tags-todo "NextActions")
                 ("N" . "Procura em notas.org")
                 ("Nw" search ""
-                 ((org-agenda-files '("~/Muse/org/notas.org"))
+                 ((org-agenda-files '("~/org/notas.org"))
                   (org-agenda-text-search-extra-files nil)))
                 ("Nt" tags ""
-                 ((org-agenda-files '("~/Muse/org/notas.org"))
+                 ((org-agenda-files '("~/org/notas.org"))
                   (org-agenda-text-search-extra-files nil)))
                 ("w" . "Procura na Wiki no org")
                 ("ww" search ""
                  ((org-agenda-files '("~/Muse/OrgWiki/"))
-                  (org-agenda-text-search-extra-files '("~/Muse/org/notas.org"))))
+                  (org-agenda-text-search-extra-files '("~/org/notas.org"))))
                 ("wt" tags ""
                  ((org-agenda-files '("~/Muse/OrgWiki/"))
-                  (org-agenda-text-search-extra-files '("~/Muse/org/notas.org"))))
+                  (org-agenda-text-search-extra-files '("~/org/notas.org"))))
                 ;; ("w" "Wiki search" search ""
                 ;;  ((org-agenda-files '("~/Muse/OrgWiki/"))
-                ;;   (org-agenda-text-search-extra-files '("~/Muse/org/notas.org"))))
+                ;;   (org-agenda-text-search-extra-files '("~/org/notas.org"))))
                 ("d" "Upcoming deadlines" agenda ""
                  ((org-agenda-time-grid nil)
                   (org-deadline-warning-days 365)

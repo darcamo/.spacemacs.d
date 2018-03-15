@@ -7,7 +7,7 @@
         (switch-to-buffer projectName)
       ;; Else
       (progn
-        (find-file "~/Muse/org/gtd.org")
+        (find-file "~/org/gtd.org")
         (goto-char (point-min))
         (search-forward heading)
         (org-tree-to-indirect-buffer)
@@ -19,22 +19,27 @@
     )
   )
 
+(defun my-find-gtd-org-heading nil
+  (interactive)
+  (find-file "~/org/gtd.org")
+  )
+
 (defun my-find-relatorio-atividades-org-heading nil
   (interactive)
   ;; (org-id-goto "RelatorioUFC35Wiki")
-  (find-file "~/Muse/org/RelatoriosDeAtividade.org")
+  (find-file "~/org/RelatoriosDeAtividade.org")
   )
 
 (defun my-find-doutorado-org-heading nil
   (interactive)
                                         ;(my-find-org-heading "Doutorado")
-  (find-file "~/Muse/org/doutorado.org")
+  (find-file "~/org/doutorado.org")
   )
 
 (defun my-find-stanford-org-heading nil
   (interactive)
                                         ;(my-find-org-heading "Doutorado")
-  (find-file "~/Muse/org/Stanford.org")
+  (find-file "~/org/Stanford.org")
   )
 
 (defun my-find-ufc32-org-heading nil
@@ -64,20 +69,20 @@
 (defun my-find-financas-org-heading nil
   (interactive)
                                         ;(my-find-org-heading "Finanças")
-  (find-file "~/Muse/org/Financas.org")
+  (find-file "~/org/Financas.org")
   )
 
 (defun my-find-senhas-org-heading nil
   (interactive)
                                         ;(my-find-org-heading "Senhas")
   (require 'org-crypt)
-  (find-file "~/Muse/org/Senhas.org")
+  (find-file "~/org/Senhas.org")
   )
 
 (defun my-find-carro-org-heading nil
   (interactive)
                                         ;(my-find-org-heading "Carro")
-  (find-file "~/Muse/org/Carro.org")
+  (find-file "~/org/Carro.org")
   )
 
 (defun my-find-calendario-org-heading nil
