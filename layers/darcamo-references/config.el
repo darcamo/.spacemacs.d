@@ -14,7 +14,7 @@
 ;; If you use helm-bibtex as the citation key completion method you should set these variables too.
 (setq bibtex-completion-bibliography "~/Dropbox/org/references/articles.bib"
       bibtex-completion-library-path "~/Dropbox/org/references/pdfs"
-      bibtex-completion-notes-path "~/Dropbox/org/references/helm-bibtex-notes")
+      bibtex-completion-notes-path "~/Dropbox/org/references/articles.org")
 
 ;; open pdf with system pdf viewer (works on mac)
 (setq bibtex-completion-pdf-open-function
