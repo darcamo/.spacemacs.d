@@ -30,7 +30,8 @@
 ;;; Code:
 
 (defconst darcamo-yasnippets-packages
-  '()
+  '(
+    yasnippet-snippets)
   "The list of Lisp packages required by the darcamo-yasnippets layer.
 
 Each entry is either:
@@ -58,5 +59,10 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+
+(defun darcamo-yasnippets/init-yasnippet-snippets()
+  (use-package yasnippet-snippets
+    :ensure t)
+  )
 
 ;;; packages.el ends here
