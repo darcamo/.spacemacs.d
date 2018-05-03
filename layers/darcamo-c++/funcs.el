@@ -27,14 +27,14 @@
   "Get the CMake generated makefile or ninja compile command"
   (if darlan-cmake-use-ninja
       "ninja "
-    "make -k -j 4 "
+    "make -k -j 8 "
     )
   )
 
 (defun darlan-save-and-compile-internal (target-name)
   "Compile the target 'target-name' using the cmake generated Makefile"
   (save-buffer 0)
-  ;; (compile (concat "make -k -j 4 " darlan-current-cmake-target))
+  ;; (compile (concat "make -k -j 8 " darlan-current-cmake-target))
   (let ((make-command (concat "cd " (projectile-project-root) darlan-build-dir " && " (darlan-get-make-or-ninja-compile-command))))
     (compile (concat make-command target-name)))
   )
