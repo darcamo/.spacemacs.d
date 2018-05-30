@@ -18,6 +18,8 @@
 
 (defvar darlan-current-cmake-target-run-arguments nil)
 
+(defvar darlan-current-cmake-target-folder nil)
+
 (defvar darlan-cmake-use-ninja nil)
 
 (defvar darlan-build-dir "cmake-build-debug")
@@ -31,19 +33,33 @@
     )
   )
 
-(defun darlan-save-and-compile-internal (target-name)
+(defun darlan-save-and-compile-internal (target-name folder-name)
   "Compile the target 'target-name' using the cmake generated Makefile"
   (save-buffer 0)
   ;; (compile (concat "make -k -j 8 " darlan-current-cmake-target))
-  (let ((make-command (concat "cd " (projectile-project-root) darlan-build-dir " && " (darlan-get-make-or-ninja-compile-command))))
+  (let ((make-command (concat "cd " (projectile-project-root) darlan-build-dir "/" folder-name" && " (darlan-get-make-or-ninja-compile-command))))
     (compile (concat make-command target-name)))
   )
 
 
-(defun darlan-save-and-compile (target-name)
+(defun darlan-save-and-compile (target-name-and-folder)
   "Ask the target name then save and compile the target"
   (interactive "sCompile TargetName: ")
+
+  (if (string-match " " target-name-and-folder)
+      (progn
+        (setq target-name-and-folder (split-string target-name-and-folder))
+
+        (setq target-name (car target-name-and-folder))
+        (setq folder-name (car (cdr target-name-and-folder)))
+        )
+    (progn
+      (setq target-name target-name-and-folder)
+      (setq folder-name ""))
+    )
+
   (setq darlan-current-cmake-target target-name)
+  (setq darlan-current-cmake-target-folder folder-name)
   (darlan-save-and-compile-last-target)
   )
 
@@ -51,12 +67,12 @@
 (defun darlan-save-and-compile-last-target ( )
   "Save and compile the last target"
   (interactive)
-  (darlan-save-and-compile-internal darlan-current-cmake-target)
+  (darlan-save-and-compile-internal darlan-current-cmake-target darlan-current-cmake-target-folder)
   )
 
 (defun darlan-run-last-target ()
   (interactive)
-  (let ((run-command (concat "cd " (projectile-project-root) darlan-build-dir " && ./" darlan-current-cmake-target " " darlan-current-cmake-target-run-arguments)))
+  (let ((run-command (concat "cd " (projectile-project-root) darlan-build-dir "/" folder-name " && ./" darlan-current-cmake-target " " darlan-current-cmake-target-run-arguments)))
     (compile run-command)
     )
   )
