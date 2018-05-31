@@ -1,4 +1,4 @@
-;;; packages.el --- darcamo-cquery layer packages file for Spacemacs.
+;;; packages.el --- darcamo-lsp layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
@@ -18,22 +18,24 @@
 ;;
 ;;
 ;; Briefly, each package to be installed or configured by this layer should be
-;; added to `darcamo-cquery-packages'. Then, for each package PACKAGE:
+;; added to `darcamo-lsp-packages'. Then, for each package PACKAGE:
 ;;
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `darcamo-cquery/init-PACKAGE' to load and initialize the package.
+;;   function `darcamo-lsp/init-PACKAGE' to load and initialize the package.
 
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
-;;   define the functions `darcamo-cquery/pre-init-PACKAGE' and/or
-;;   `darcamo-cquery/post-init-PACKAGE' to customize the package as it is loaded.
+;;   define the functions `darcamo-lsp/pre-init-PACKAGE' and/or
+;;   `darcamo-lsp/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
 
-(defconst darcamo-cquery-packages
+(defconst darcamo-lsp-packages
   '(
-    cquery
+    lsp-mode
+    company-lsp
+    lsp-ui
     )
-  "The list of Lisp packages required by the darcamo-cquery layer.
+  "The list of Lisp packages required by the darcamo-lsp layer.
 
 Each entry is either:
 
@@ -60,30 +62,38 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun cquery//enable ()
-  (condition-case nil
-      (lsp-cquery-enable)
-    (user-error nil)))
+(defun darcamo-lsp/init-lsp-mode ()
+  (use-package lsp-mode
+    :ensure t)
+  )
 
-(defun darcamo-cquery/init-cquery ()
-  (use-package cquery
+(defun darcamo-lsp/init-company-lsp ()
+  (with-eval-after-load 'company
+    (use-package company-lsp
+      :ensure t
+      :config
+      (add-hook 'c++-mode-hook
+                (lambda ()
+                  (set (make-local-variable 'company-backends) '(company-lsp))))
+      (add-hook 'c-mode-common-hook
+                (lambda ()
+                  (set (make-local-variable 'company-backends) '(company-lsp))))
+      (setq company-lsp-cache-candidates nil)
+      (setq company-transformers nil)
+
+      ;; (setq company-transformers nil company-lsp-async t company-lsp-cache-candidates nil)
+      )
+    )
+  )
+
+(defun darcamo-lsp/init-lsp-ui ()
+  (use-package lsp-ui
     :ensure t
-    :commands lsp-cquery-enable
-    :init (add-hook 'c-mode-common-hook #'cquery//enable)
     :config
-    (setq cquery-executable "/usr/bin/cquery")
-    (setq cquery-extra-init-params '(:index (:comments 2) :cacheFormat "msgpack"))
-
-    ;; Semantic highlight
-    (setq cquery-sem-highlight-method 'font-lock)
-    ;; (cquery-use-default-rainbow-sem-highlight)
-
-    (with-eval-after-load 'projectile
-      (setq projectile-project-root-files-top-down-recurring
-            (append '("compile_commands.json"
-                      ".cquery")
-                    projectile-project-root-files-top-down-recurring))
-      (add-to-list 'projectile-globally-ignored-directories ".cquery_cached_index"))
+    (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+    (setq lsp-ui-doc-include-signature t)
+    (setq lsp-ui-sideline-show-symbol t)
+    (setq lsp-ui-sideline-show-hover nil)  ;; Too much pollution if enabled
     )
   )
 
