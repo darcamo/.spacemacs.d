@@ -1,1 +1,1 @@
-(configuration-layer/declare-layers '(c-c++ auto-completion darcamo-lsp))
+(configuration-layer/declare-layers '(c-c++ auto-completion lsp))

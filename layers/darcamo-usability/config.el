@@ -15,6 +15,7 @@
 
 ;; xxxxxxxxxx Abbrevs xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 (add-to-list 'auto-mode-alist '("\\.abbrev_defs\\'" . emacs-lisp-mode))
+(add-to-list 'auto-mode-alist '("\\PKGBUILD$" . conf-mode))
 ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 

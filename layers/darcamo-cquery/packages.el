@@ -69,7 +69,11 @@ Each entry is either:
   (use-package cquery
     :ensure t
     :commands lsp-cquery-enable
-    :init (add-hook 'c-mode-common-hook #'cquery//enable)
+    :init
+    (add-hook 'c-mode-common-hook #'cquery//enable)
+    (spacemacs|add-company-backends
+      :backends company-lsp
+      :modes c++-mode)
     :config
     (setq cquery-executable "/usr/bin/cquery")
     (setq cquery-extra-init-params '(:index (:comments 2) :cacheFormat "msgpack"))

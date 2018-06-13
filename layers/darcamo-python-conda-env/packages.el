@@ -1,4 +1,4 @@
-;;; packages.el --- darcamo-python layer packages file for Spacemacs.
+;;; packages.el --- darcamo-python-conda layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
@@ -18,20 +18,20 @@
 ;;
 ;;
 ;; Briefly, each package to be installed or configured by this layer should be
-;; added to `darcamo-python-packages'. Then, for each package PACKAGE:
+;; added to `darcamo-python-conda-env-packages'. Then, for each package PACKAGE:
 ;;
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `darcamo-python/init-PACKAGE' to load and initialize the package.
+;;   function `darcamo-python-conda-env/init-PACKAGE' to load and initialize the package.
 
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
-;;   define the functions `darcamo-python/pre-init-PACKAGE' and/or
-;;   `darcamo-python/post-init-PACKAGE' to customize the package as it is loaded.
+;;   define the functions `darcamo-python-conda-env/pre-init-PACKAGE' and/or
+;;   `darcamo-python-conda-env/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
 
-(defconst darcamo-python-packages
-  '()
-  "The list of Lisp packages required by the darcamo-python layer.
+(defconst darcamo-python-conda-env-packages
+  '(conda)
+  "The list of Lisp packages required by the darcamo-python-conda-env layer.
 
 Each entry is either:
 
@@ -58,5 +58,20 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+
+(defun darcamo-python-conda-env/init-conda ()
+  (use-package conda
+    :ensure t
+    :config
+    (setq conda-anaconda-home "/home/darlan/miniconda3")
+    (setq conda-env-location "/home/darlan/miniconda3/envs")
+    ;; if you want interactive shell support, include:
+    (conda-env-initialize-interactive-shells)
+    ;; if you want eshell support, include:
+    (conda-env-initialize-eshell)
+    ;; if you want auto-activation (see below for details), include:
+    (conda-env-autoactivate-mode t)
+    )
+  )
 
 ;;; packages.el ends here
