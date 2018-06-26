@@ -550,6 +550,8 @@ before packages are loaded."
   (with-eval-after-load 'org
     (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
     )
+  ;; Set conf-mode for the conanfile.txt -> Used by conan C++ package manager
+  (add-to-list 'auto-mode-alist '("conanfile\\.txt" . conf-mode))
 
   ;; Set a file with name Doxyfile to conf-mode
   (add-to-list 'auto-mode-alist '("Doxyfile" . conf-mode))
@@ -625,6 +627,8 @@ before packages are loaded."
   (spacemacs|diminish company-mode)
   (spacemacs|diminish yas-minor-mode)
   (spacemacs|diminish spacemacs-whitespace-cleanup-mode)
+
+  (require 'helm)
   )
 
 
