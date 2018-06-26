@@ -215,9 +215,14 @@
 
 
 (defun get-terminal-fullpath ()
-  "Return the path to the installed terminal emulator, which will
-either be gnome-terminal or lxterminal."
-  (setq terminal (executable-find "gnome-terminal"))
+  "Return the path to the installed terminal emulator.
+
+First it will try the tilix terminal emulator. If not installed
+it will try gnome-terminal and if that is not installed it will
+then try lxterminal."
+  (setq terminal (executable-find "tilix"))
+  (if (equal terminal nil)
+      (setq terminal (executable-find "gnome-terminal")))
   (if (equal terminal nil)
       (setq terminal (executable-find "lxterminal")))
   terminal
