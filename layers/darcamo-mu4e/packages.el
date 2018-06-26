@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst darcamo-mu4e-packages
-  '()
+  '(mu4e-jump-to-list)
   "The list of Lisp packages required by the darcamo-mu4e layer.
 
 Each entry is either:
@@ -58,5 +58,9 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun darcamo-mu4e/init-mu4e-jump-to-list ()
+  (use-package mu4e-jump-to-list
+    :ensure t)
+  )
 
 ;;; packages.el ends here
