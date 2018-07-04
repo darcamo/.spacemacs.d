@@ -95,6 +95,7 @@ This function should only modify configuration layer settings."
      (mu4e :variables
            mu4e-enable-mode-line nil
            mu4e-enable-notifications nil)
+     docker
      ;; My Private Layers
      darcamo-c++
      ;; darcamo-lsp
