@@ -1,4 +1,4 @@
-;;; packages.el --- darcamo-yasnippets layer packages file for Spacemacs.
+;;; packages.el --- darcamo-completions layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
 ;;
@@ -18,21 +18,20 @@
 ;;
 ;;
 ;; Briefly, each package to be installed or configured by this layer should be
-;; added to `darcamo-yasnippets-packages'. Then, for each package PACKAGE:
+;; added to `darcamo-completions-packages'. Then, for each package PACKAGE:
 ;;
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `darcamo-yasnippets/init-PACKAGE' to load and initialize the package.
+;;   function `darcamo-completions/init-PACKAGE' to load and initialize the package.
 
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
-;;   define the functions `darcamo-yasnippets/pre-init-PACKAGE' and/or
-;;   `darcamo-yasnippets/post-init-PACKAGE' to customize the package as it is loaded.
+;;   define the functions `darcamo-completions/pre-init-PACKAGE' and/or
+;;   `darcamo-completions/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
 
-(defconst darcamo-yasnippets-packages
-  '(
-    yasnippet-snippets)
-  "The list of Lisp packages required by the darcamo-yasnippets layer.
+(defconst darcamo-completions-packages
+  '()
+  "The list of Lisp packages required by the darcamo-completions layer.
 
 Each entry is either:
 
@@ -59,10 +58,5 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-
-(defun darcamo-yasnippets/init-yasnippet-snippets()
-  (use-package yasnippet-snippets
-    :ensure t)
-  )
 
 ;;; packages.el ends here
