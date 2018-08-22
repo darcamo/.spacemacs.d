@@ -4,7 +4,7 @@
  ;; if hunspell does NOT exist, use aspell
  ((executable-find "hunspell")
   (setq ispell-program-name "hunspell")
-  (setq ispell-local-dictionary "en_US")
+  (setq ispell-local-dictionary "en_US-large")  ;; en_US
   (setq ispell-local-dictionary-alist
         ;; Please note the list `("-d" "en_US")` contains ACTUAL parameters passed to hunspell
         ;; You could use `("-d" "en_US,en_US-med")` to check with multiple dictionaries
