@@ -72,7 +72,7 @@
 
 (defun darlan-run-last-target ()
   (interactive)
-  (let ((run-command (concat "cd " (projectile-project-root) darlan-build-dir "/" folder-name " && ./" darlan-current-cmake-target " " darlan-current-cmake-target-run-arguments)))
+  (let ((run-command (concat "cd " (projectile-project-root) darlan-build-dir "/bin && ./" darlan-current-cmake-target " " darlan-current-cmake-target-run-arguments)))
     (compile run-command)
     )
   )
