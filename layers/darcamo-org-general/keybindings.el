@@ -9,14 +9,13 @@
 (add-hook
  'org-mode-hook
  (lambda ()
-   (local-set-key [f6] 'darlan/org-surround-inline-math)
-   (local-set-key [C-f6] 'org-insert-example-block)
-   (local-set-key [f5] 'org-toggle-latex-fragment)
-   (local-set-key [C-M-return] 'org-meta-return)
-
-   ;; (local-set-key "\C-xye" 'yas/expand)
-   ;; (local-set-key "\C-xyn" 'yas/next-field)
-   ;; (local-set-key [tab] 'yas/expand)
+   (define-key org-mode-map [f6] 'darlan/org-surround-inline-math)
+   (define-key org-mode-map [C-f6] 'org-insert-example-block)
+   (define-key org-mode-map [f5] 'org-toggle-latex-fragment)
+   (define-key org-mode-map [C-M-return] 'org-meta-return)
+   ;; (define-key org-mode-map "\C-xye" 'yas/expand)
+   ;; (define-key org-mode-map "\C-xyn" 'yas/next-field)
+   ;; (define-key org-mode-map [tab] 'yas/expand)
    ;; In org  "|" is used for tables. Let's change boxquote-side
    ;; then to "!"
    ;;(setq boxquote-side "! ")

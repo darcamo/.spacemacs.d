@@ -6,12 +6,3 @@
   (set (make-local-variable 'outline-regexp) local-outline-regexp)
   (outline-minor-mode t)
   )
-
-(defun darlan/set-outline-key-bindings ()
-  "Set keybindings to the useful outline functions."
-  (local-set-key "\C-\M-n" 'outline-next-visible-heading)
-  (local-set-key "\C-\M-p" 'outline-previous-visible-heading)
-  (local-set-key "\C-\M-u" 'outline-up-heading)
-                                        ;(local-set-key "\C-c\t" 'fold-dwim-org/toggle)
-                                        ;(local-set-key "\C-c\t" 'fold-dwim-toggle)
-  )

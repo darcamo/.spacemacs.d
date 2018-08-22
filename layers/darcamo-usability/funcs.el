@@ -1,13 +1,4 @@
 
-(defun darlan/set-highlight-symbol-key-bindings ()
-  "Set the key-bindings for the highlight-symbol minor mode."
-  (interactive)
-  (local-set-key "\M-n" 'highlight-symbol-next)
-  (local-set-key "\M-p" 'highlight-symbol-prev)
-  (local-set-key "\M-N" 'highlight-symbol-next-in-defun)
-  (local-set-key "\M-P" 'highlight-symbol-prev-in-defun)
-  )
-
 
 
 ;; xxxxxxxxxx Muda o comportamento de C-w e M-w xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

@@ -1,12 +1,18 @@
-;; (local-set-key [f5] 'latex-skeleton-acronym)
-;; (local-set-key [C-f5] 'latex-skeleton-math-left-right-symbol)
-;; (local-set-key (kbd "<C-S-f5>") 'my-latex-textcolor-red)
-;; (local-set-key [f6] 'my-save-and-compile)
-;; (local-set-key [f9] 'tex-all)
-;; ;; Define C-f9 to the compile command. This is useful when you
-;; ;; work with latex and Makefiles
-;; (local-set-key [C-f9] 'compile)
-;; (local-set-key [f10] 'TeX-view)
-;; ;; (local-set-key "\C-\M-n" 'outline-next-visible-heading)
-;; ;; (local-set-key "\C-\M-p" 'outline-previous-visible-heading)
-;; (local-set-key (kbd "<S-M-return>") 'dar/LaTeX-insert-item-inverse-behavior)
+
+(with-eval-after-load 'latex
+  (define-key LaTeX-mode-map [f5] 'latex-skeleton-acronym)
+  (define-key LaTeX-mode-map [C-f5] 'latex-skeleton-math-left-right-symbol)
+  (define-key LaTeX-mode-map (kbd "<C-S-f5>") 'my-latex-textcolor-red)
+  (define-key LaTeX-mode-map [f6] 'my-save-and-compile)
+  (define-key LaTeX-mode-map [f9] 'tex-all)
+  ;; Define C-f9 to the compile command. This is useful when you
+  ;; work with latex and Makefiles
+  (define-key LaTeX-mode-map [C-f9] 'compile)
+  (define-key LaTeX-mode-map [f10] 'TeX-view)
+  ;; (define-key LaTeX-mode-map "\C-\M-n" 'outline-next-visible-heading)
+  ;; (define-key LaTeX-mode-map "\C-\M-p" 'outline-previous-visible-heading)
+  (define-key LaTeX-mode-map (kbd "<S-M-return>") 'dar/LaTeX-insert-item-inverse-behavior)
+
+  ;; Enable key bindings (M-p and M-p) for navigation
+  ;; (highlight-symbol-nav-mode)
+  )

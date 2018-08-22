@@ -6,6 +6,7 @@
   (define-key c++-mode-map [C-f9] 'darlan-save-and-compile-single-file)  ;; Compile only the current source file
   (define-key c++-mode-map [S-f9] 'darlan-generate-documentation)  ;; Generate the doxygen documentation
   (define-key c++-mode-map [C-S-f9] 'darlan-open-doxygen-generated-index)
-  (define-key c++-mode-map (kbd "M-n") 'highlight-symbol-next)
-  (define-key c++-mode-map (kbd "M-p") 'highlight-symbol-prev)
+
+  ;; Enable key bindings (M-p and M-p) for navigation
+  (highlight-symbol-nav-mode)
   )

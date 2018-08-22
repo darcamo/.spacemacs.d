@@ -12,6 +12,4 @@
 
 ;; In any programming mode, change the F7 keybinding to be a programming
 ;; specific function that only spellchecks comments and strings
-(add-hook 'prog-mode-hook
-          (lambda ()
-            (local-set-key [f7] 'ispell-comments-and-strings)))
+(define-key prog-mode-map [f7] 'ispell-comments-and-strings)

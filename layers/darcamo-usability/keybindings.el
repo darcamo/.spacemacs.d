@@ -25,3 +25,12 @@
 ;; Expand region keybinding
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-M-=") 'er/contract-region)
+
+
+;;  ;; Highlight symbol
+;; (with-eval-after-load 'highlight-symbol
+;;   (define-key highlight-symbol-nav-mode-map "\M-n" 'highlight-symbol-next)
+;;   (define-key auto-highlight-symbol-mode-map "\M-p" 'highlight-symbol-prev)
+;;   (define-key auto-highlight-symbol-mode-map "\M-N" 'highlight-symbol-next-in-defun)
+;;   (define-key auto-highlight-symbol-mode-map "\M-P" 'highlight-symbol-prev-in-defun)
+;;   )
