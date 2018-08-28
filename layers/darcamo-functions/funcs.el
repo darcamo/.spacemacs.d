@@ -190,7 +190,7 @@
    "browse"
    "*scratch*"
    ;; Trocar nautilus por pcmanfm para o lxde
-   (concat (get-filemanager-fullpath) " --no-desktop " (concat "\"" (expand-file-name dir-as-string) "\""))))
+   (concat (get-filemanager-fullpath) " " (concat "\"" (expand-file-name dir-as-string) "\""))))
 
 ;; Use essa para abrir links sftp com o nautilus, como sftp://darlan@ssh.gtel.ufc.br/home/gtels0/projetos/ufc32
 (defun browse-dir-sftp (dir-as-string)
