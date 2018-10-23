@@ -639,14 +639,16 @@ before packages are loaded."
   ;; This might help with the slow handling of very long lines
   (setq-default bidi-display-reordering nil)
 
+  (require 'helm)
+
   ;; Diminish minor-mode indicators I don't care
   (spacemacs|diminish holy-mode)
   (spacemacs|diminish which-key-mode)
   (spacemacs|diminish company-mode)
   (spacemacs|diminish yas-minor-mode)
   (spacemacs|diminish spacemacs-whitespace-cleanup-mode)
+  (spacemacs|diminish helm-mode)
 
-  (require 'helm)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
