@@ -27,7 +27,7 @@
 (defun my-find-relatorio-atividades-org-heading nil
   (interactive)
   ;; (org-id-goto "RelatorioUFC35Wiki")
-  (find-file "~/org/RelatoriosDeAtividade.org")
+  (find-file "~/org/RelatoriosDeAtividade/RelatoriosDeAtividade.org")
   )
 
 (defun my-find-doutorado-org-heading nil
@@ -56,14 +56,19 @@
 
 (defun my-find-ufc42-org-heading nil
   (interactive)
-  ;; (my-find-org-heading "UFC.35")
+  ;; (my-find-org-heading "UFC.42")
   (find-file (concat org-directory "/ufc42.org"))
   )
 
 (defun my-find-ufc45-org-heading nil
   (interactive)
-  ;; (my-find-org-heading "UFC.35")
+  ;; (my-find-org-heading "UFC.45")
   (find-file (concat org-directory "/ufc45.org"))
+  )
+
+(defun my-find-naive-org-heading nil
+  (interactive)
+  (find-file "~/org/naive.org")
   )
 
 (defun my-find-financas-org-heading nil

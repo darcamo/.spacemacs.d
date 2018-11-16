@@ -8,16 +8,16 @@
         ("t" "Adiciona nova tarefa")
         ("tt" "Nova Tarefa rápida (refile depois)" entry
          (file+headline "refile.org" "Inbox")
-         (file "~/.emacs.d/lisp/org-capture-templates/new_task.org"))
-        ("tp" "Tarefa do Projeto UFC.45" entry
-         (id "UFC45Tarefas")
-         (file "~/.emacs.d/lisp/org-capture-templates/new_task.org"))
+         (file "~/.spacemacs.d/org-mode-setup/new_task.org"))
+        ("tp" "Tarefa do Projeto NAIVE" entry
+         (id "NAIVETarefas")
+         (file "~/.spacemacs.d/org-mode-setup/new_task.org"))
         ("td" "Tarefa do Doutorado" entry
          (file+headline "doutorado.org" "Lista de Tarefas")
-         (file "~/.emacs.d/lisp/org-capture-templates/new_task.org"))
+         (file "~/.spacemacs.d/org-mode-setup/new_task.org"))
         ("tc" "Tarefa dentro do clock atual" entry
          (clock)
-         (file "~/.emacs.d/lisp/org-capture-templates/new_task.org"))
+         (file "~/.spacemacs.d/org-mode-setup/new_task.org"))
         ;; xxxxx End Capture a new tasks xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
         ;;
         ;; xxxxx Start Capture new notes xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -64,13 +64,6 @@
          :table-line-pos "II-1"
          :immediate-finish t)
         ;; xxxxx End Capture expenses data created with tasker xxxxxxxxxxxx
-        ;;
-        ;; xxxxx Start Org-contacts xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        ("c" "Add a new contact" entry
-         (file+headline "contacts.org" "New Contacts")
-         (file "~/.emacs.d/lisp/org-capture-templates/new_contact.org")
-         :kill-buffer t)
-        ;; xxxxx End Org-contacts xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
         ))
 
 

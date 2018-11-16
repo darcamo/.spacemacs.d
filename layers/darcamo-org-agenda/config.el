@@ -19,7 +19,8 @@
         )
 
   ;; Set refile targets to the agenda files
-  (setq org-refile-targets (quote ((org-agenda-files :maxlevel . 3))))
+  (setq org-refile-targets (quote ((org-agenda-files :maxlevel . 3)
+                                   ("~/org/notas.org" :tag . "REFILE"))))
 
   ;; Use outline-path when refiling
   (setq org-refile-use-outline-path (quote file))

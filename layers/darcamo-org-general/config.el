@@ -29,6 +29,9 @@
 ;; Usa o org-mode para arquivos README
 (add-to-list 'auto-mode-alist '("README$" . org-mode))
 
+;; Usa o org-mode para arquivos com extensão
+(add-to-list 'auto-mode-alist '("\.org_archive$" . org-mode))
+
 ;; ;; Empty lines finish the list
 ;; (setq org-list-empty-line-terminates-plain-lists nil)
 
