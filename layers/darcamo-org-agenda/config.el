@@ -14,7 +14,7 @@
   (setq org-agenda-text-search-extra-files
         (append
          '("~/org/notas.org" "~/org/supelec/supelec.org")
-         (directory-files "~/Muse/OrgWiki/" t "^[^.#].*\\.\\(org$\\|org_archive$\\)")
+         (directory-files "~/org/OrgWiki/" t "^[^.#].*\\.\\(org$\\|org_archive$\\)")
          )
         )
 
@@ -59,13 +59,13 @@
                   (org-agenda-text-search-extra-files nil)))
                 ("w" . "Procura na Wiki no org")
                 ("ww" search ""
-                 ((org-agenda-files '("~/Muse/OrgWiki/"))
+                 ((org-agenda-files '("~/org/OrgWiki/"))
                   (org-agenda-text-search-extra-files '("~/org/notas.org"))))
                 ("wt" tags ""
-                 ((org-agenda-files '("~/Muse/OrgWiki/"))
+                 ((org-agenda-files '("~/org/OrgWiki/"))
                   (org-agenda-text-search-extra-files '("~/org/notas.org"))))
                 ;; ("w" "Wiki search" search ""
-                ;;  ((org-agenda-files '("~/Muse/OrgWiki/"))
+                ;;  ((org-agenda-files '("~/org/OrgWiki/"))
                 ;;   (org-agenda-text-search-extra-files '("~/org/notas.org"))))
                 ("d" "Upcoming deadlines" agenda ""
                  ((org-agenda-time-grid nil)

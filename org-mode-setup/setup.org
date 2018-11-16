@@ -9,7 +9,6 @@
 #+LINK: sftp elisp:(browse-dir-sftp "%s")
 #+LINK: calibre file:~/Dropbox/Calibre Library/%s
 #+LINK: mendeley file:~/Mendeley_Desktop/%s
-#+LINK: attach elisp:(org-open-file (org-attach-expand "%s"))
 #+LINK: OO elisp:(abrir-no-openoffice "%s")
 #+LINK: doi elisp:(browse-doi-url "%s")
 #+STARTUP: logdone
