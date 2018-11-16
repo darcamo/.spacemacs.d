@@ -8,5 +8,5 @@
 #+DATE:${2:Date}
 #+AUTHOR:Darlan Cavalcante Moreira
 #+EMAIL:darcamo@gmail.com
-#+SETUPFILE: ~/.emacs.d/lisp/org-setup-file-template/setup.org
+#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/setup.org
 

@@ -5,7 +5,7 @@
 #+TITLE:${1:`(darlan/change-to-space (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))`}
 #+AUTHOR:`(user-full-name)`
 #+EMAIL:darcamo@gmail.com
-#+SETUPFILE: ~/.emacs.d/lisp/org-setup-file-template/setup.org
+#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/setup.org
 
 #+TEXT: Some description of the paper
 

@@ -6,7 +6,7 @@
   (darlan/change-to-space (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))) \n
   "#+AUTHOR:Darlan Cavalcante Moreira
       ,#+EMAIL:darcamo@gmail.com
-      ,#+SETUPFILE: ~/.emacs.d/lisp/org-setup-file-template/setup.org
+      ,#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/setup.org
 
       ,* Some Header
 

@@ -13,7 +13,7 @@
   ;; to search it
   (setq org-agenda-text-search-extra-files
         (append
-         '("~/org/notas.org" "~/org/supelec.org")
+         '("~/org/notas.org" "~/org/supelec/supelec.org")
          (directory-files "~/Muse/OrgWiki/" t "^[^.#].*\\.\\(org$\\|org_archive$\\)")
          )
         )

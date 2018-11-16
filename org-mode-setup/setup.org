@@ -22,8 +22,8 @@
 #+DRAWERS: PROPERTIES CLOCK LOGBOOK HIDDEN
 #+COLUMNS: %41ITEM(Task)  %TODO %5Effort %5CLOCKSUM
 
-Aqui (~/.emacs.d/lisp/org-setup-file-template/setup.org) ficam as
+Aqui (~/.spacemacs.d/org-mode-setup/setup.org) ficam as
 configurações comuns a vários arquivos .org.
 
 Para usar basta colocar no arquivo .org desejado a linha
-: #+SETUPFILE: ~/.emacs.d/lisp/org-setup-file-template/setup.org
+: #+SETUPFILE: ~/.spacemacs.d/org-mode-setup/setup.org
