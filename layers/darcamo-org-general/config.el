@@ -137,7 +137,9 @@
 
 ;; Only the headline with the tag is a project. Any children are part of the
 ;; project and not project themselves.
-(add-to-list 'org-tags-exclude-from-inheritance "Projeto")
+(with-eval-after-load "org"
+  (add-to-list 'org-tags-exclude-from-inheritance "Projeto")
+  )
 
 ;; Stuck Projects
 ;; Let's assume that you, in your own way of using Org mode, identify
@@ -183,18 +185,15 @@
         ("Book" "~/.spacemacs.d/Icons_For_Org-Mode_Category/registry-book.svg" nil nil :ascent  center)
         ("Carro" "~/.spacemacs.d/Icons_For_Org-Mode_Category/car.svg" nil nil :ascent  center)
         ("Escrever" "~/.spacemacs.d/Icons_For_Org-Mode_Category/write.svg" nil nil :ascent  center)
-        ("gtd" "/usr/share/icons/Humanity/status/24/task-past-due.svg" nil nil :ascent  center)
+        ("Estudos" "~/.spacemacs.d/Icons_For_Org-Mode_Category/estudos.svg" nil nil :ascent  center)
+        ("gtd" "~/.spacemacs.d/Icons_For_Org-Mode_Category/gtd.svg" nil nil :ascent  center)
         ("Supelec\\|Francês" "~/.spacemacs.d/Icons_For_Org-Mode_Category/Flag_of_France.svg" nil nil :ascent  center)
-        ("Refile" "/usr/share/icons/Humanity/actions/24/edit-undo.svg" nil nil :ascent  center)
-        ("UFC.32" "~/.spacemacs.d/Icons_For_Org-Mode_Category/gtel25x25.png" nil nil :ascent  center)
-        ("UFC.35" "~/.spacemacs.d/Icons_For_Org-Mode_Category/gtel25x25.png" nil nil :ascent  center)
-        ("UFC.42" "~/.spacemacs.d/Icons_For_Org-Mode_Category/gtel25x25.png" nil nil :ascent  center)
-        ("UFC.45" "~/.spacemacs.d/Icons_For_Org-Mode_Category/gtel25x25.png" nil nil :ascent  center)
+        ("Refile" "~/.spacemacs.d/Icons_For_Org-Mode_Category/refile.svg" nil nil :ascent  center)
+        ("NAIVE\\|UFC.32\\|UFC.35\\|UFC.42" "~/.spacemacs.d/Icons_For_Org-Mode_Category/gtel.svg" nil nil :ascent  center)
         ("Patent" "~/.spacemacs.d/Icons_For_Org-Mode_Category/gtel25x25.png" nil nil :ascent  center)
-        ("Projeto" "/usr/share/icons/Humanity/places/24/folder.svg" nil nil :ascent  center)
+        ("Projeto" "~/.spacemacs.d/Icons_For_Org-Mode_Category/project.svg" nil nil :ascent  center)
         ("Cíclicas" "~/.spacemacs.d/Icons_For_Org-Mode_Category/recycle.svg" nil nil :ascent center)
         ("Compras\\|Finanças" "~/.spacemacs.d/Icons_For_Org-Mode_Category/gold_coins.svg" nil nil :ascent center)
-        ("Simulador" "/usr/share/icons/Humanity/devices/24/computer.svg" nil nil :ascent center)
         ("Someday" "~/.spacemacs.d/Icons_For_Org-Mode_Category/Global_thinking.svg" nil nil :ascent center)
         ("Stanford" "~/.spacemacs.d/Icons_For_Org-Mode_Category/graduate.svg" nil nil :ascent center)
         ("Notas" "~/.spacemacs.d/Icons_For_Org-Mode_Category/notes.svg" nil nil :ascent center)
