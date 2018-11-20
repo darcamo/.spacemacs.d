@@ -4,12 +4,15 @@
  ;; if hunspell does NOT exist, use aspell
  ((executable-find "hunspell")
   (setq ispell-program-name "hunspell")
-  (setq ispell-local-dictionary "en_US")  ;; en_US
+  (setq ispell-local-dictionary "english")  ;; en_US
   (setq ispell-local-dictionary-alist
         ;; Please note the list `("-d" "en_US")` contains ACTUAL parameters passed to hunspell
         ;; You could use `("-d" "en_US,en_US-med")` to check with multiple dictionaries
-        '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8)
+        '(
+          ("english" "[[:alpha:]]" "[^[:alpha:]]" "[']" t ("-d" "en_US") nil utf-8)
+          ("brasileiro" "[[:alpha:]]" "[^[:alpha:]]" "[']" t ("-d" "pt_BR") nil utf-8)
           )))
+
 
  ((executable-find "aspell")
   (setq ispell-program-name "aspell")
