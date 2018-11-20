@@ -615,6 +615,7 @@ before packages are loaded."
                           (add-to-list 'dired-omit-extensions ".ind")
                           (add-to-list 'dired-omit-extensions ".out")
                           (add-to-list 'dired-omit-extensions ".run.xml")
+                          (add-to-list 'dired-omit-extensions ".org_archive")
                           )))
     )
 
