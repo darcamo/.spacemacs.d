@@ -135,6 +135,10 @@
 
 
 
+;; Only the headline with the tag is a project. Any children are part of the
+;; project and not project themselves.
+(add-to-list 'org-tags-exclude-from-inheritance "Projeto")
+
 ;; Stuck Projects
 ;; Let's assume that you, in your own way of using Org mode, identify
 ;; projects with a tag "ProjTasks", and that you use a TODO keyword MAYBE
@@ -148,7 +152,7 @@
 ;; then check for TODO, NEXT, ProjInfo, and IGNORE in the subtree to identify
 ;; projects that are not stuck. The correct customization for this is
 (setq org-stuck-projects
-      '("+Projeto-Someday/-MAYBE-DONE-FINALIZADO" ("NEXT" "TODO" "STARTED") ("ProjInfo")
+      '("+Projeto-Someday/-MAYBE-DONE-FINALIZADO-CANC" ("NEXT" "TODO" "STARTED") ("ProjInfo")
         "\\<IGNORE\\>"))
 
 

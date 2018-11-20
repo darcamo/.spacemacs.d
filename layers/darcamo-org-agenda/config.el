@@ -73,7 +73,7 @@
                   (org-agenda-entry-types '(:deadline))
                   ))
                 ;; ("P" "Papers para Ler" tags-todo "+CATEGORY=\"LeituraDePapers\"")
-                ("p" "Lista de Projetos" tags "Projeto" ((org-use-tag-inheritance nil)))
+                ("p" "Lista de Projetos" tags-todo "Projeto" ((org-use-tag-inheritance nil)))
                 ("S" "Started Tasks" todo "STARTED" ((org-agenda-todo-ignore-with-date nil) (org-agenda-todo-ignore-scheduled nil)))
                 ("W" "Tasks waiting on something" todo "WAIT" ((org-agenda-todo-ignore-with-date nil) (org-agenda-todo-ignore-scheduled nil)))
                 ("R" "Refile New Notes and Tasks" tags "REFILE" ((org-agenda-todo-ignore-with-date nil) (org-agenda-todo-ignore-scheduled nil)))
