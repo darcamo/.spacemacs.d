@@ -653,6 +653,12 @@ before packages are loaded."
   (spacemacs|diminish yas-minor-mode)
   (spacemacs|diminish helm-mode)
 
+  ;; Don't automatically add the closing parenthesis/quote/etc
+  ;; 
+  ;; I still want to use smartparens-mode for things such as selecting a word
+  ;; and typing '"' to quote the word, but the automatic closing gets in the way
+  ;; of company-mode sometimes
+  (setq sp-autoinsert-pair nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
