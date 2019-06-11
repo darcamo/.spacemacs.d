@@ -150,14 +150,26 @@
   (add-to-list 'mu4e-bookmarks
                '("maildir:/gmail/Newsletter.IPython flag:unread NOT flag:trashed" "IPython (unread)" ?p))
 
+  ;; (add-to-list 'mu4e-bookmarks
+  ;;              '("list:numpy-discussion.* flag:unread NOT flag:trashed" "Numpy and Scipy (unread)" ?n))
+
   (add-to-list 'mu4e-bookmarks
-               '("list:numpy-discussion.* flag:unread NOT flag:trashed" "Numpy and Scipy (unread)" ?n))
+               '("from:\"medium.com\" flag:unread NOT flag:trashed" "From Medium (unread)" ?m))
+
+  (add-to-list 'mu4e-bookmarks
+               '("from:\"facebook\" flag:unread NOT flag:trashed" "From Facebook (unread)" ?f))
+
+  (add-to-list 'mu4e-bookmarks
+               '("from:\"quora\" flag:unread NOT flag:trashed" "From Quora (unread)" ?q))
+
+  (add-to-list 'mu4e-bookmarks
+               '("empiricus flag:unread NOT flag:trashed" "From Empiricus (unread)" ?e))
 
   (add-to-list 'mu4e-bookmarks
                '("list:dea-ufv.listas.ufv.br flag:unread NOT flag:trashed" "Graça Freitas (unread)" ?g))
 
-  (add-to-list 'mu4e-bookmarks
-               '("list:emacs-orgmode.gnu.org flag:unread NOT flag:trashed" "Org-Mode (unread)" ?o))
+  ;; (add-to-list 'mu4e-bookmarks
+  ;;              '("list:emacs-orgmode.gnu.org flag:unread NOT flag:trashed" "Org-Mode (unread)" ?o))
 
   (add-to-list 'mu4e-bookmarks
                '("flag:unread AND NOT flag:trashed AND NOT maildir:/gtel/[Gmail].Lixeira AND NOT maildir:/Gmail/[Gmail].Lixeira" "Unread messages" ?u))
