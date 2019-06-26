@@ -68,7 +68,7 @@
 
 (defun my-find-naive-org-heading nil
   (interactive)
-  (find-file "~/org/naive.org")
+  (find-file "~/org/ufc46-NAIVE.org")
   )
 
 (defun my-find-financas-org-heading nil
