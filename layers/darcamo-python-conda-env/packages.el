@@ -63,8 +63,9 @@ Each entry is either:
   (use-package conda
     :ensure t
     :config
-    (setq conda-anaconda-home "/home/darlan/miniconda3")
-    (setq conda-env-location "/home/darlan/miniconda3/envs")
+    (setq conda-anaconda-home (expand-file-name "~/miniconda3"))
+    (setq conda-env-home-directory (expand-file-name "~/miniconda3"))
+    ;; (setq conda-env-location "/home/darlan/miniconda3/envs")
     ;; if you want interactive shell support, include:
     (conda-env-initialize-interactive-shells)
     ;; if you want eshell support, include:
