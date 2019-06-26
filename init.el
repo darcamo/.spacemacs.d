@@ -64,7 +64,10 @@ This function should only modify configuration layer settings."
      html
      (python :variables
              python-fill-docstring-style 'symmetric
-             python-backend 'lsp)
+             python-backend 'lsp
+             python-formatter 'black ;; Seems better than yapf -> need to install python-black package
+             python-format-on-save t
+             python-sort-imports-on-save t)
      ;; ipython-notebook
      (latex :variables
             latex-enable-folding t
@@ -533,6 +536,8 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (require 'dired-x)
+
+  (setenv "WORKON_HOME" "/home/darlan/miniconda3/envs")
   )
 
 (defun dotspacemacs/user-load ()
