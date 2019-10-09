@@ -610,9 +610,8 @@ before packages are loaded."
   (with-eval-after-load 'dired-x
     (add-hook 'dired-mode-hook
               (function (lambda ()
-                          ;; Set dired-x buffer-local variables here.  For example:
-                          ;; (setq dired-omit-files-p t)
                           ;; Extensões de arquivos que serão omitidos quando estiver usando o dired-omit-mode
+                          ;; Note que vc também pode usar "C-u s" para mudar os switches do dired
                           (add-to-list 'dired-omit-extensions ".fdb_latexmk")
                           (add-to-list 'dired-omit-extensions "synctex.gz")
                           (add-to-list 'dired-omit-extensions "log")
@@ -626,6 +625,9 @@ before packages are loaded."
                           (add-to-list 'dired-omit-extensions ".out")
                           (add-to-list 'dired-omit-extensions ".run.xml")
                           (add-to-list 'dired-omit-extensions ".org_archive")
+                          (add-to-list 'dired-omit-extensions ".bak")
+                          (add-to-list 'dired-omit-extensions ".tramp_history")
+                          (add-to-list 'dired-omit-extensions ".python_history")
                           (setq dired-listing-switches "-alhv")  ;; Add "h" to switches to get human-readable sizes
                           )))
     )
