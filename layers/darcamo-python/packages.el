@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst darcamo-python-packages
-  '()
+  '(python-x)
   "The list of Lisp packages required by the darcamo-python layer.
 
 Each entry is either:
@@ -58,5 +58,12 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun darcamo-python/init-python-x ()
+  (use-package python-x
+    :ensure t
+    :config
+    (python-x-setup)
+    (setq python-section-delimiter "# %%")
+  )
 
 ;;; packages.el ends here
