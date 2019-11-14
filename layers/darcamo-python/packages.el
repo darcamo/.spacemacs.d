@@ -64,6 +64,6 @@ Each entry is either:
     :config
     (python-x-setup)
     (setq python-section-delimiter "# %%")
-  )
+  ))
 
 ;;; packages.el ends here
