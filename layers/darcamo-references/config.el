@@ -5,9 +5,9 @@
       org-ref-pdf-directory "~/Dropbox/org/references/pdfs/")
 
 ;; Set-up Helm Bibtex
-(setq helm-bibtex-bibliography "~/Dropbox/org/references/articles.bib"
-      helm-bibtex-library-path "~/Dropbox/org/references/pdfs"
-      helm-bibtex-notes-path "~/Dropbox/org/references/articles.org")
+;; (setq helm-bibtex-bibliography "~/Dropbox/org/references/articles.bib"
+;;       helm-bibtex-library-path "~/Dropbox/org/references/pdfs"
+;;       helm-bibtex-notes-path "~/Dropbox/org/references/articles.org")
 
 
 ;; xxxxxxxxxx Is this config really necessary??? xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

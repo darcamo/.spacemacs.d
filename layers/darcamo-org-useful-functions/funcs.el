@@ -36,6 +36,12 @@
   (find-file "~/org/doutorado.org")
   )
 
+(defun my-find-references-org-heading nil
+  (interactive)
+                                        ;(my-find-org-heading "Doutorado")
+  (find-file "~/org/references/articles.org")
+  )
+
 (defun my-find-stanford-org-heading nil
   (interactive)
                                         ;(my-find-org-heading "Doutorado")
