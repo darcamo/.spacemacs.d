@@ -131,6 +131,7 @@
                '("d" org-decrypt-entry))
   (add-to-list 'org-speed-commands-user
                '("S" ded/org-show-previous-heading-tidily))
+  (add-to-list 'org-modules 'org-tempo t)  ;; org-tempo add completions for "<KEY" to create blocks. See
   )
 
 
