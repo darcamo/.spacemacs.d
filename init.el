@@ -86,6 +86,7 @@ This function should only modify configuration layer settings."
             lsp-file-watch-threshold 1500
             lsp-file-watch-ignored '("[/\\\\]\\.git$" "[/\\\\]\\.hg$" "[/\\\\]\\.bzr$" "[/\\\\]_darcs$" "[/\\\\]\\.svn$" "[/\\\\]_FOSSIL_$" "[/\\\\]\\.idea$" "[/\\\\]\\.ensime_cache$" "[/\\\\]\\.eunit$" "[/\\\\]node_modules$" "[/\\\\]\\.fslckout$" "[/\\\\]\\.tox$" "[/\\\\]\\.stack-work$" "[/\\\\]\\.bloop$" "[/\\\\]\\.metals$" "[/\\\\]target$" "[/\\\\]\\.deps$" "[/\\\\]build-aux$" "[/\\\\]autom4te.cache$" "[/\\\\]\\.reference$" "[/\\\\]\\.ccls-cache$" "[/\\\\]\\.clangd$" "[/\\\\]\\.vscode$" "[/\\\\]cmake-build-debug$" "[/\\\\]cmake-build-release$" "[/\\\\]build$" "[/\\\\]docs$")
             ;; c-c++-lsp-executable "/home/darlan/Programas_Locais/ccls/Release/ccls"
+            lsp-ui-doc-enable nil
             )
      ;; debug ; TODO: Investigate this layer -> It uses realgud
      ibuffer
