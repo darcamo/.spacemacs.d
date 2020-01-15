@@ -65,9 +65,10 @@ This function should only modify configuration layer settings."
      (python :variables
              python-fill-docstring-style 'symmetric
              python-backend 'lsp
-             python-formatter 'black ;; Seems better than yapf -> need to install python-black package
+             python-formatter 'yapf ;; Seems better than yapf -> need to install python-black package
              python-format-on-save t
-             python-sort-imports-on-save t)
+             python-sort-imports-on-save nil
+             )
      ;; ipython-notebook
      (latex :variables
             latex-enable-folding t
