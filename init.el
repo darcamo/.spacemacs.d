@@ -632,6 +632,10 @@ before packages are loaded."
                           (add-to-list 'dired-omit-extensions ".bak")
                           (add-to-list 'dired-omit-extensions ".tramp_history")
                           (add-to-list 'dired-omit-extensions ".python_history")
+                          (setq dired-omit-files (concat dired-omit-files "\\|^.idea"))
+                          (setq dired-omit-files (concat dired-omit-files "\\|^.ipynb_checkpoints"))
+                          (setq dired-omit-files (concat dired-omit-files "\\|^.vscode"))
+                          (setq dired-omit-files (concat dired-omit-files "\\|^__pycache__"))
                           (setq dired-listing-switches "-alhv")  ;; Add "h" to switches to get human-readable sizes
                           )))
     )
