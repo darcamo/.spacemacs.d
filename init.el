@@ -581,6 +581,7 @@ before packages are loaded."
   (add-to-list 'auto-mode-alist '("\\.puml" . plantuml-mode))
   ;; Set .clang-format file to yaml mode
   (add-to-list 'auto-mode-alist '("\\.clang-format" . yaml-mode))
+  (add-to-list 'auto-mode-alist '("\\.style.yapf" . conf-mode))
   ;; Integrate plantuml with org-mode
   (with-eval-after-load 'org
     (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
