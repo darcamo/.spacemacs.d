@@ -112,8 +112,8 @@ This function should only modify configuration layer settings."
      systemd
      dap
      treemacs
-     (ipython-notebook :variables
-                       ein:jupyter-default-server-command "/home/darlan/miniconda3/envs/pyphysim/bin/jupyter")
+     ;; (ipython-notebook :variables
+     ;;                   ein:jupyter-default-server-command "/home/darlan/miniconda3/envs/pyphysim/bin/jupyter")
      ;; My Private Layers
      darcamo-c++
      ;; darcamo-lsp
