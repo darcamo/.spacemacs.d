@@ -66,7 +66,7 @@ directory of the file associated with the current buffer."
 
 (add-hook 'python-mode-hook 'python--add-debug-highlight)
 
-(defvar python--pdb-breakpoint-string "import pudb; pudb.set_trace()  ## DEBUG ##"
+(defvar python--pdb-breakpoint-string "breakpoint()  ## DEBUG ##"
   "Python breakpoint string used by `python-insert-breakpoint'")
 
 (defun python-insert-breakpoint ()
