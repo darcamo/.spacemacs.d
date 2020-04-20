@@ -96,7 +96,8 @@ This function should only modify configuration layer settings."
      graphviz
      javascript
      ;; gtags  ;; I'm using the gxref package now
-     csv
+     (csv :variables
+          csv-separators '("," "	" ";"))
      yaml
      plantuml
      octave
