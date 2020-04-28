@@ -688,6 +688,9 @@ before packages are loaded."
   ;; Spacemacs change the value of abbrev-file-name, but I preffer to keep the
   ;; original name in my home directory
   (setq abbrev-file-name (expand-file-name "~/.abbrev_defs"))
+
+  ;; Read the abbrev file in my home directory
+  (read-abbrev-file "~/.abbrev_defs")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
