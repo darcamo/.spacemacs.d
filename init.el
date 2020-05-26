@@ -691,6 +691,9 @@ before packages are loaded."
 
   ;; Read the abbrev file in my home directory
   (read-abbrev-file "~/.abbrev_defs")
+
+  ;; Set "g" as keybinding to "pdf-view-goto-page" when viewing pdfs
+  (define-key pdf-view-mode-map "g" 'pdf-view-goto-page)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
