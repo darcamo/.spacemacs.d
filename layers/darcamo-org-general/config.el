@@ -198,6 +198,7 @@
         ("Someday" "~/.spacemacs.d/Icons_For_Org-Mode_Category/Global_thinking.svg" nil nil :ascent center)
         ("Stanford" "~/.spacemacs.d/Icons_For_Org-Mode_Category/graduate.svg" nil nil :ascent center)
         ("Notas" "~/.spacemacs.d/Icons_For_Org-Mode_Category/notes.svg" nil nil :ascent center)
+        ("References" "~/.spacemacs.d/Icons_For_Org-Mode_Category/estudos.svg" nil nil :ascent  center)
        ))
 
 

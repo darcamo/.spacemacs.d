@@ -39,6 +39,11 @@
   ;; and this option is set, the old state is restored.
   (setq org-agenda-restore-windows-after-quit t)
 
+  (setq org-tag-alist '((:startgrouptag)
+                        ("Year")
+                        (:grouptags)
+                        ("{20[0-9][0-9]}")
+                        (:endgrouptag)))
 
 
   ;; Custom agenda views
