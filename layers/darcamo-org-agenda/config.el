@@ -2,6 +2,7 @@
 (with-eval-after-load 'org
 
   ;; General
+  (setq org-agenda-inhibit-startup t)
 
   ;; Vc pode incluir cada arquivo individualmente ou usar o comando abaixo para incluir todos
   ;; Including all org files from a directory into the agenda

@@ -30,10 +30,10 @@
         ;; ("o" "TOC do IEEE" entry
         ;;  (file+headline "gtd.org" "Lista de Tarefas")
         ;;  "* TODO Ver o TOC recebido em %u :TOC:\n  Links no E-Mail:\n  %?\n  \n  Assunto do E-mail: %:subject\n  %a")
-        ("b" "Blog" entry
-         (file+datetree "blog.org")
-         "* %^{Título do Post} %^G\n  %t\n  %a\n\n  %i%?\n"
-         :empty-lines 1)
+        ;; ("b" "Blog" entry
+        ;;  (file+datetree "blog.org")
+        ;;  "* %^{Título do Post} %^G\n  %t\n  %a\n\n  %i%?\n"
+        ;;  :empty-lines 1)
         ;; xxxxx End Capture new notes xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
         ;;
         ;; xxxxx Start Capture expenses data created with tasker xxxxxxxxxx
