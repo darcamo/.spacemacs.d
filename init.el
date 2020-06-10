@@ -75,7 +75,11 @@ This function should only modify configuration layer settings."
      (latex :variables
             latex-enable-folding t
             )
-     bibtex
+     (bibtex :variables
+             bibtex-entry-format '(opts-or-alts required-fields numerical-fields whitespace realign last-comma unify-case braces sort-fields)
+             bibtex-comma-after-last-field t
+             )
+
      ;; c-c++ layer can use semantic and cscope layers, if they are included before c-c++ layer
      ;; semantic
      ;; cscope

@@ -4,6 +4,8 @@
       org-ref-default-bibliography '("~/Dropbox/org/references/articles.bib")
       org-ref-pdf-directory "~/Dropbox/org/references/pdfs/")
 
+(setq bibtex-comma-after-last-field t)
+
 ;; Set-up Helm Bibtex
 ;; (setq helm-bibtex-bibliography "~/Dropbox/org/references/articles.bib"
 ;;       helm-bibtex-library-path "~/Dropbox/org/references/pdfs"
