@@ -106,11 +106,6 @@
   (org-id-goto "LivroGTEL2013")
   )
 
-(defun my-find-artigo-revista-org-heading nil
-  (interactive)
-  (org-id-goto "ArtMagazineExtInt")
-  )
-
 
 
 ;; Transpose a Table

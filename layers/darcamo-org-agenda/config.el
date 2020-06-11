@@ -14,7 +14,7 @@
   ;; to search it
   (setq org-agenda-text-search-extra-files
         (append
-         '("~/org/notas.org" "~/org/supelec/supelec.org")
+         '("~/org/escrever.org" "~/org/notas.org" "~/org/supelec/supelec.org")
          (directory-files "~/org/OrgWiki/" t "^[^.#].*\\.\\(org$\\|org_archive$\\)")
          )
         )

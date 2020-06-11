@@ -54,6 +54,7 @@ This function should only modify configuration layer settings."
      (org :variables
           org-enable-bootstrap-support t  ;; Note that you need to call the org-twbs-export-* command
           ;; org-enable-reveal-js-support t  ;; download reveal.js and set org-reveal-root to the download path
+          org-attach-use-inheritance t
           )
      spacemacs-org
      ;; (shell :variables
