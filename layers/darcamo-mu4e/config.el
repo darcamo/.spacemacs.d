@@ -121,7 +121,10 @@
   (add-to-list 'mu4e-view-actions
                '("wxidget" . mu4e-action-view-with-xwidget) t)
 
+  ;; ;; Set to 't' to use Gnus’ article view, instead of mu4e internal viewer
+  ;; (setq mu4e-view-use-gnus t)
 
+
   ;; Bookmarks -> access with 'j' + letter
   (setq mu4e-maildir-shortcuts
         '( ("/gmail/Inbox"               . ?i)
@@ -132,47 +135,51 @@
            ("/gtel/[Gmail].E-mails enviados"   . ?E)
            ("/gtel/[Gmail].Lixeira"       . ?L)
            ;; ("/gtel/[Gmail].Todos os e-mails"    . ?T)
-           ("/gtel/ResearchGate"       . ?r)
+           ;; ("/gtel/ResearchGate"       . ?r)
            ("/gtel/Call of Papers"       . ?c)
            ;; ("/gmail/Stanford"       . ?s)
            ))
 
-  ;; Bookmarks
+
+  ;; Bookmarks -> access with 'b' + letter
   (add-to-list 'mu4e-bookmarks
-               '("size:5M..500M" "Big messages" ?b))
+               '(:name "Big messages" :query "size:5M..500M" :key ?b))
 
   (add-to-list 'mu4e-bookmarks
-               '("maildir:/gmail/Inbox flag:unread" "Gmail Inbox (unread)" ?i))
+               '(:name "Gmail Inbox (unread)" :query "maildir:/gmail/Inbox flag:unread" :key ?i))
 
   (add-to-list 'mu4e-bookmarks
-               '("maildir:/gtel/Inbox flag:unread" "GTEL Inbox (unread)" ?I))
-
-  (add-to-list 'mu4e-bookmarks
-               '("maildir:/gmail/Newsletter.IPython flag:unread NOT flag:trashed" "IPython (unread)" ?p))
+               '(:name "GTEL Inbox (unread)" :query "maildir:/gtel/Inbox flag:unread" :key ?I))
 
   ;; (add-to-list 'mu4e-bookmarks
-  ;;              '("list:numpy-discussion.* flag:unread NOT flag:trashed" "Numpy and Scipy (unread)" ?n))
-
-  (add-to-list 'mu4e-bookmarks
-               '("from:\"medium.com\" flag:unread NOT flag:trashed" "From Medium (unread)" ?m))
-
-  (add-to-list 'mu4e-bookmarks
-               '("from:\"facebook\" flag:unread NOT flag:trashed" "From Facebook (unread)" ?f))
-
-  (add-to-list 'mu4e-bookmarks
-               '("from:\"quora\" flag:unread NOT flag:trashed" "From Quora (unread)" ?q))
-
-  (add-to-list 'mu4e-bookmarks
-               '("empiricus flag:unread NOT flag:trashed" "From Empiricus (unread)" ?e))
-
-  (add-to-list 'mu4e-bookmarks
-               '("list:dea-ufv.listas.ufv.br flag:unread NOT flag:trashed" "Graça Freitas (unread)" ?g))
+  ;;              '(:name "IPython (unread)" :query "maildir:/gmail/Newsletter.IPython flag:unread NOT flag:trashed" :key ?p))
 
   ;; (add-to-list 'mu4e-bookmarks
-  ;;              '("list:emacs-orgmode.gnu.org flag:unread NOT flag:trashed" "Org-Mode (unread)" ?o))
+  ;;              '(:name "Numpy and Scipy (unread)" :query "list:numpy-discussion.* flag:unread NOT flag:trashed" :key ?n))
 
   (add-to-list 'mu4e-bookmarks
-               '("flag:unread AND NOT flag:trashed AND NOT maildir:/gtel/[Gmail].Lixeira AND NOT maildir:/Gmail/[Gmail].Lixeira" "Unread messages" ?u))
+               '(:name "From Medium (unread)" :query "from:\"medium.com\" flag:unread NOT flag:trashed" :key ?m))
+
+  (add-to-list 'mu4e-bookmarks
+               '(:name "From Facebook (unread)" :query "from:\"facebook\" flag:unread NOT flag:trashed" :key ?f))
+
+  (add-to-list 'mu4e-bookmarks
+               '(:name "From Quora (unread)" :query "from:\"quora\" flag:unread NOT flag:trashed" :key ?q))
+
+  (add-to-list 'mu4e-bookmarks
+               '(:name "From Empiricus (unread)" :query "empiricus flag:unread NOT flag:trashed" :key ?e))
+
+  (add-to-list 'mu4e-bookmarks
+               '(:name "Graça Freitas (unread)" :query "list:dea-ufv.listas.ufv.br flag:unread NOT flag:trashed" :key ?g))
+
+  ;; (add-to-list 'mu4e-bookmarks
+  ;;              '(:name "Org-Mode (unread)" :query "list:emacs-orgmode.gnu.org flag:unread NOT flag:trashed" :key ?o))
+
+  ;; Note that mu4e already comes with a bookmark for unread messages. We
+  ;; replaced it just to add the condition of not being a GMAIL trash folder
+  (add-to-list 'mu4e-bookmarks
+               '(:name "Unread messages" :query "flag:unread AND NOT flag:trashed AND NOT maildir:/gtel/[Gmail].Lixeira AND NOT maildir:/Gmail/[Gmail].Lixeira" :key ?u))
+
 
   (setq mu4e-user-mailing-lists '(
                                   ("todos.gtel.ufc.br" . "GTEL-Todos")
@@ -217,4 +224,5 @@
     )
   ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   ;; xxxxxxxxxx End of mu4e Configuration xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   )
