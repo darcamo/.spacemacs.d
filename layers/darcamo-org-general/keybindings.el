@@ -1,4 +1,4 @@
-(global-set-key "\C-xB" 'org-ido-switchb)
+;; (global-set-key "\C-xB" 'org-ido-switchb)
 
 ;; Note that the default keybind can also be used, which is "C-x c i"
 (global-set-key (kbd "M-i") 'helm-semantic-or-imenu)

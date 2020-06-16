@@ -103,8 +103,8 @@
 ;; Persistent Tags
 (setq org-tag-persistent-alist
       '(
-        ("Charles" . ?c) ("Igor" . ?i) ("CarlosIgor" . ?I) ("Cibelly" . ?b) ("Lígia" . ?L) ("Tembine" . ?t) ("Debbah" . ?D) ("Yuri" . ?y)
-        (:startgroup . nil) ("Home" . ?h) ("GTEL" . ?g) (:endgroup . nil) ("Doutorado" . ?d) ("Francês" . ?f) ("noexport" . ?n)
+        ("Charles" . ?c) ("Igor" . ?i) ("Yuri" . ?y) ("Gabor" . ?G)
+        (:startgroup . nil) ("Home" . ?h) ("GTEL" . ?g) (:endgroup . nil) ("Doutorado" . ?d) ("noexport" . ?n)
         ("Errands" . ?e) (:startgroup . nil) ("Someday" . ?s) ("NextActions" . ?N) (:endgroup . nil) ("crypt" . ?C) ("Projeto" . ?p) ("Leituras" . ?l)
         ))
 

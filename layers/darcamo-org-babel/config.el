@@ -18,7 +18,7 @@
    'org-babel-load-languages
    '(
      ;; (R . nil)
-     (ditaa . t)
+     ;; (ditaa . t)
      ;; (dot . nil)
      (emacs-lisp . t)
      ;; (gnuplot . t)
@@ -40,7 +40,7 @@
      (java . t)
      ))
 
-  ;; Change this to the appropriated jar location
-  (setq org-ditaa-jar-path "/usr/share/java/ditaa/ditaa-0.11.jar")
+  ;; ;; Change this to the appropriated jar location
+  ;; (setq org-ditaa-jar-path "/usr/share/java/ditaa/ditaa-0.11.jar")
   )
 
