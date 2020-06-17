@@ -29,7 +29,7 @@
   "Get the CMake generated makefile or ninja compile command"
   (if darlan-cmake-use-ninja
       "ninja "
-    "make -k -j 8 "
+    (concat "make -k -j " (number-to-string (system-cores :logical)) " ")
     )
   )
 

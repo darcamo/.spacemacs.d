@@ -609,6 +609,18 @@ before packages are loaded."
     :config (add-hook 'c++-mode-hook 'doxymacs-mode)
     )
 
+  ;; The system-cores library provides a "system-core" function that we can use
+  ;; to query how many CPUs the machine has. We use this to get the number of
+  ;; cores to pass to "make" in the "darlan-get-make-or-ninja-compile-command"
+  ;; function.
+  ;;
+  ;; See this answer in stackoverflow: https://stackoverflow.com/questions/20666556/getting-number-of-processors-in-emacs
+  (use-package system-cores
+    :load-path "~/.spacemacs.d/local"
+    :diminish system-cores
+    ;; :config (add-hook 'c++-mode-hook 'doxymacs-mode)
+    )
+
   ;; Some layers change the company-idle-delay, but I prefer to keep it at the
   ;; original value of 0.5, since a lower value can make completion slower
   (setq company-idle-delay 0.5)
