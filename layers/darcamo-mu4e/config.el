@@ -1,5 +1,5 @@
 ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  ;; xxxxxxxxxxxxxxx mu4e Configuration xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;; xxxxxxxxxxxxxxx mu4e Configuration xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 (with-eval-after-load "mu4e"
   (setq mu4e-use-fancy-chars t
@@ -7,14 +7,14 @@
         mu4e-headers-seen-mark      '("S" . "☑")  ; seen
         mu4e-headers-unseen-mark    '("u" . "☐")  ; unseen
         mu4e-headers-unread-mark    '("u" . "☐")  ; unread
-        mu4e-headers-flagged-mark   '("F" .  "⚵") ; flagged
+        mu4e-headers-flagged-mark   '("F" .  "⋆") ; flagged ⚵
         mu4e-headers-new-mark       '("N" .  "✱") ; new
         mu4e-headers-replied-mark   '("R" . "↵")  ; replied
         mu4e-headers-passed-mark    '("P" . "⇉")  ; passed
-        mu4e-headers-encrypted-mark '("x" . "⚷")  ; encrypted
+        mu4e-headers-encrypted-mark '("x" . "🔑")  ; encrypted ⚷
         mu4e-headers-signed-mark    '("s" . "✍") ; signed
         mu4e-headers-trashed-mark   '("T" . "⏚") ; Trashed
-        mu4e-headers-attach-mark    '("a" . "⚓") ;; attach
+        mu4e-headers-attach-mark    '("a" . "📎") ;; attach ⚓
         )
 
 
@@ -123,6 +123,9 @@
 
   ;; ;; Set to 't' to use Gnus’ article view, instead of mu4e internal viewer
   ;; (setq mu4e-view-use-gnus t)
+
+  ;; Whether to base the body display on the html-version.
+  (setq mu4e-view-prefer-html t)
 
 
   ;; Bookmarks -> access with 'j' + letter
