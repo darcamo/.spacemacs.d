@@ -43,46 +43,46 @@
 
 
 
-;; Skeletons for Tikz
-(define-skeleton tikz-latex-skeleton
-  "Insert a Latex tikz skeleton into current buffer.
-This only makes sense for empty buffers."
-  nil
-  "\\documentclass{standalone}
+;; ;; Skeletons for Tikz
+;; (define-skeleton tikz-latex-skeleton
+;;   "Insert a Latex tikz skeleton into current buffer.
+;; This only makes sense for empty buffers."
+;;   nil
+;;   "\\documentclass{standalone}
 
-\\usepackage[utf8]{inputenc} % Use this if the file is encoded with utf-8
-\\usepackage{lmodern}  % Very good to use with the fontenc package to generate good PDFs
-\\usepackage[T1]{fontenc}  % Important. See http://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
-\\usepackage{amsmath,amssymb} % Part of AMS-LaTeX
-% One of the good things of the amsmath package is the math enviroments matrix, pmatrix, bmatrix, Bmatrix, vmatrix and Vmatrix
-\\usepackage{tikz}
-\\usetikzlibrary{positioning}
-\\usetikzlibrary{shadows}
-\\usetikzlibrary{backgrounds}
-\\usetikzlibrary{shapes}
-\\usetikzlibrary{shapes.multipart}
-\\usetikzlibrary{matrix}
-\\usetikzlibrary{intersections}
-\\usetikzlibrary{fit}
-\\usetikzlibrary{calc}
-%\\usetikzlibrary{decorations.pathmorphing}
-\\usetikzlibrary{decorations.pathreplacing}
+;; \\usepackage[utf8]{inputenc} % Use this if the file is encoded with utf-8
+;; \\usepackage{lmodern}  % Very good to use with the fontenc package to generate good PDFs
+;; \\usepackage[T1]{fontenc}  % Important. See http://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
+;; \\usepackage{amsmath,amssymb} % Part of AMS-LaTeX
+;; % One of the good things of the amsmath package is the math enviroments matrix, pmatrix, bmatrix, Bmatrix, vmatrix and Vmatrix
+;; \\usepackage{tikz}
+;; \\usetikzlibrary{positioning}
+;; \\usetikzlibrary{shadows}
+;; \\usetikzlibrary{backgrounds}
+;; \\usetikzlibrary{shapes}
+;; \\usetikzlibrary{shapes.multipart}
+;; \\usetikzlibrary{matrix}
+;; \\usetikzlibrary{intersections}
+;; \\usetikzlibrary{fit}
+;; \\usetikzlibrary{calc}
+;; %\\usetikzlibrary{decorations.pathmorphing}
+;; \\usetikzlibrary{decorations.pathreplacing}
 
-% My custom package with my math definitions
-% Located at /home/darlan/Dropbox/Arquivos de Instalação/Latex_Packages/MathDefinitions.sty
-\\usepackage{MathDefinitions}
+;; % My custom package with my math definitions
+;; % Located at /home/darlan/Dropbox/Arquivos de Instalação/Latex_Packages/MathDefinitions.sty
+;; \\usepackage{MathDefinitions}
 
-\\begin{document}
+;; \\begin{document}
 
-\\begin{tikzpicture}[framed]
-  \\draw (0,0) -- (1,1);
-\\end{tikzpicture}
+;; \\begin{tikzpicture}[framed]
+;;   \\draw (0,0) -- (1,1);
+;; \\end{tikzpicture}
 
-\\end{document} "> \n \n
-"%%% Local Variables:
-%%% mode: tikz
-%%% TeX-PDF-mode: t
-%%% TeX-master: t
-%%% End: "> \n \n
+;; \\end{document} "> \n \n
+;; "%%% Local Variables:
+;; %%% mode: tikz
+;; %%% TeX-PDF-mode: t
+;; %%% TeX-master: t
+;; %%% End: "> \n \n
 
-(TeX-PDF-mode t))
+;; (TeX-PDF-mode t))

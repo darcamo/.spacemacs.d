@@ -1,0 +1,6 @@
+#+TITLE:${1:Title}
+#+AUTHOR:Darlan Cavalcante Moreira
+#+EMAIL:darcamo@gmail.com
+#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/setup.org
+
+$0
