@@ -49,7 +49,15 @@
 (setq org-hide-leading-stars t)
 
 ;; tell org-mode to use the default system programn to open open office documents
-(setq org-file-apps (quote ((auto-mode . emacs) ("\\.mm\\'" . default) ("\\.x?html?\\'" . default) ("\\.pdf\\'" . "evince %s") ("\\.od[s|p|t]" . default))))
+(setq org-file-apps (quote (
+                            (auto-mode . emacs)
+                            ("\\.mm\\'" . default)
+                            ("\\.x?html?\\'" . default)
+                            ("pdf" . "evince %s")
+                            ("\\.pdf::\\([0-9]+\\)\\'" . "evince -p %1 %s")  ;; Link containing a specific page
+                            ("\\.od[s|p|t]" . default)
+                            ("xmind" . "xmind-zen %s")
+                            )))
 
 ;; When editing source code (with C-c ') Show edit buffer in the
 ;; current window, keeping all other windows.

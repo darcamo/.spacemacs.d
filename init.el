@@ -660,7 +660,14 @@ before packages are loaded."
                           (setq dired-omit-files (concat dired-omit-files "\\|^.vscode"))
                           (setq dired-omit-files (concat dired-omit-files "\\|^__pycache__"))
                           (setq dired-listing-switches "-alhv")  ;; Add "h" to switches to get human-readable sizes
-                          )))
+                          ))
+
+              ;; List with default command to run on a file in dired mode when either "!" or "&" is pressed in dired
+              (setq dired-guess-shell-alist-user '(
+                                                   ("\\.pdf\\'" "evince")
+                                                   ("\\.xmind" "xmind-zen")
+                                                   ))
+              )
     )
 
   ;; Disable indentation for some tags in web-mode
