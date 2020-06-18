@@ -54,7 +54,13 @@ This function should only modify configuration layer settings."
      emacs-lisp
      (git :variables magit-repository-directories '(("/home/darlan/git_files" . 1)))
      ;; github ;; See github layer documentation before enabling
-     ;; search-engine ;; See its layer documentation before enabling
+
+     ;; Use "M-m a /" to search
+     (search-engine :variables
+                    search-engine-config-list '((ieeexplore
+                                                 :name "IEEE Xplore"
+                                                 :url "https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=%s"
+                                                 :keywords (:docstring "Search in IEEE Xplore"))))
      markdown
      (neotree :variables neo-theme 'icons)
      (org :variables
