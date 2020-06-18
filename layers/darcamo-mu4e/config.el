@@ -182,6 +182,13 @@
   ;; replaced it just to add the condition of not being a GMAIL trash folder
   (add-to-list 'mu4e-bookmarks
                '(:name "Unread messages" :query "flag:unread AND NOT flag:trashed AND NOT maildir:/gtel/[Gmail].Lixeira AND NOT maildir:/Gmail/[Gmail].Lixeira" :key ?u))
+
+  (add-to-list 'mu4e-bookmarks
+               '(:name "Importantes (de um ano pra cá)" :query "flag:flagged NOT flag:trashed date:1y.." :key ?s))
+
+  (add-to-list 'mu4e-bookmarks
+               '(:name "Importantes (todas)" :query "flag:flagged NOT flag:trashed" :key ?S))
+
 
 
   (setq mu4e-user-mailing-lists '(
