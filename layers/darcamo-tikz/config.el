@@ -10,7 +10,7 @@
 
 ;; Define a tikz-mode derived from latex mode
 (define-derived-mode tikz-mode
-  LaTeX-mode "Tikz-Mode"
+  LaTeX-mode "Tikz-Mode" "A derived mode from LaTeX-mode that add some keywords related to tikz to font-lock. It is useful when the latex document is a single tikz picture using the standalone package."
   (setq case-fold-search nil))
 
 

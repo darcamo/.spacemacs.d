@@ -1,38 +1,28 @@
-(define-minor-mode beamer-mode
-  "Minor mode for latex buffers with beamer presentations."
-  :lighter ""
-  ;; :keymap (let ((map (make-sparse-keymap)))
-  ;;           (define-key map (kbd "C-c f") 'insert-foo)
-  ;;           map)
-  (make-local-variable 'outline-regexp)
-  (setq outline-regexp "[   ]*\\\\\\(appendix\\|documentstyle\\|documentclass\\|part\\|chapter\\|section\\|subsection\\|subsubsection\\|paragraph\\|subparagraph\\|begin{frame}\\|end{frame}\\)\\|^[^%\n]*\\\\begin *{document}\\|^[^%\n]*\\\\end *{document}"))
+(define-derived-mode beamer-mode
+  LaTeX-mode "Beamer-Mode" "A derived mode from LaTeX-mode for latex buffers with beamer presentations."
+  (setq outline-regexp "[   ]*\\\\\\(appendix\\|documentstyle\\|documentclass\\|part\\|chapter\\|section\\|subsection\\|subsubsection\\|paragraph\\|subparagraph\\|begin{frame}\\|end{frame}\\)\\|^[^%\n]*\\\\begin *{document}\\|^[^%\n]*\\\\end *{document}")
 
+  (setq reftex-section-levels
+        '(("section" . 1) ("subsection" . 2) ("frametitle" . 3)))
 
+  ;; (TeX-PDF-mode 1)  ;; Turn on PDF mode.
 
-
-
-(defun my-beamer-mode ()
-  "Adds on for when in beamer."
-  ;; when in a Beamer file I want to use pdflatex.
-  ;; Thanks to Ralf Angeli for this.
-  (TeX-PDF-mode 1)  ;; Turn on PDF mode.
-
-  ;; Tell reftex to treat \lecture and \frametitle as section commands
-  ;; so that C-c = gives you a list of frametitles and you can easily
-  ;; navigate around the list of frames.
-  ;; If you change reftex-section-level, reftex needs to be reset so that
-  ;; reftex-section-regexp is correctly remade.
-  (with-library 'reftex
-                (set (make-local-variable 'reftex-section-levels)
-                     '(("section" . 1) ("subsection" . 2) ("frametitle" . 3))))
-
-  (set (make-local-variable 'LaTeX-beamer-item-overlay-flag) nil)
-
-  ;; (setq outline-regexp "[   ]*\\\\\\(appendix\\|documentstyle\\|documentclass\\|part\\|chapter\\|section\\|subsection\\|subsubsection\\|paragraph\\|subparagraph\\|begin{frame}\\|end{frame}\\)\\|^[^%\n]*\\\\begin *{document}\\|^[^%\n]*\\\\end *{document}")
-
-  (beamer-mode t)  ;; Activates my defined beamer minor mode. This will set the outline regex
+  (setq LaTeX-beamer-item-overlay-flag nil)
+  (reftex-mode 1)
   (reftex-reset-mode)
   )
+
+
+;; Add some beamer commands as font-lock keywords
+;; (font-lock-add-keywords 'tikz-mode
+;;                         '(("\\(\\\\\\(frametitle\\|framesubtitle\\)\\){" 1 font-lock-warning-face t)))
+
+
+;; A file called presentations.tex is automatically in beamer-mode
+(add-to-list 'auto-mode-alist '("presentation\\.tex" . beamer-mode))
+
+
+
 
 
 
@@ -417,8 +407,8 @@ This only makes sense for empty buffers."
 \\end{frame}
 
 \\end{document}" \n \n
-(LaTeX-mode)
-(my-beamer-mode) )
+(beamer-mode)
+)
 
 
 

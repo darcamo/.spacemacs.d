@@ -39,10 +39,6 @@
                   ;; Minor-mode that highlights the symbol under
                   ;; point throughout the buffer
                   (highlight-symbol-mode)
-
-                  ;; Activates my beamer minor mode if the file name is "presentation.tex"
-                  (if (string-equal (file-name-nondirectory buffer-file-name) "presentation.tex")
-                      (beamer-mode))
                   ))
       )
 
