@@ -45,7 +45,8 @@ This function should only modify configuration layer settings."
                       auto-completion-enable-help-tooltip t)
      (templates :variables
                 templates-private-directory "~/.spacemacs.d/templates"
-                templates-use-default-templates nil)
+                templates-use-default-templates nil
+                auto-insert-query nil)
      ;; trocar define-skeleton por templates
 
      rust  ;; Added in when a toml file was opened
@@ -588,7 +589,6 @@ before packages are loaded."
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
   (put 'projectile-project-compilation-cmd 'safe-local-variable 'stringp)
   (put 'projectile-project-run-cmd 'safe-local-variable 'stringp)
-  (put 'org-attach-directory 'safe-local-variable 'stringp)
   (put 'user-mail-address 'safe-local-variable 'stringp)
   (put 'reftex-default-bibliography 'safe-local-variable 'darlan/list-of-strings-p)
   (put 'darlan-cmake-use-ninja 'safe-local-variable 'booleanp)

@@ -1,6 +1,5 @@
-#+TITLE:${1:Title}
+#+TITLE:`(file-name-sans-extension (file-name-nondirectory (buffer-file-name)))`
 #+AUTHOR:Darlan Cavalcante Moreira
 #+EMAIL:darcamo@gmail.com
-#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/setup.org
 
 $0
