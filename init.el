@@ -138,6 +138,10 @@ This function should only modify configuration layer settings."
      ;;                   ein:jupyter-default-server-command "/home/darlan/miniconda3/envs/pyphysim/bin/jupyter")
      ;; My Private Layers
      emoji
+     (deft :variables
+       deft-directory "~/org/notes"
+       deft-use-filename-as-title nil
+       deft-zetteldeft t)
      darcamo-c++
      ;; darcamo-lsp
      ;; darcamo-cquery
