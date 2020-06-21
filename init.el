@@ -171,7 +171,7 @@ This function should only modify configuration layer settings."
      ;; ;; darcamo-org-habit
      ;; ;; darcamo-org-preview-latex
      ;; ;; darcamo-org-useful-functions
-     darcamo-references
+     darcamo-references  ;; configure org-ref and bibtex
      darcamo-outline-minor-mode
      darcamo-spell-checking
      darcamo-usability
@@ -179,7 +179,6 @@ This function should only modify configuration layer settings."
      darcamo-completions  ;; Atalho C-f1 está aqui
      darcamo-latex-extra
      darcamo-latex-beamer
-     darcamo-bibtex
      darcamo-tikz
      darcamo-mu4e
      )
