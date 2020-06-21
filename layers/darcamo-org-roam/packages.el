@@ -30,7 +30,10 @@
 ;;; Code:
 
 (defconst darcamo-org-roam-packages
-  '(org-roam)
+  '(org-roam
+    org-roam-protocol
+    company-org-roam
+    org-roam-server)
   "The list of Lisp packages required by the darcamo-org-roam layer.
 
 Each entry is either:
@@ -84,6 +87,37 @@ Each entry is either:
         "ri" 'org-roam-insert
         "rg" 'org-roam-graph
         "rj" 'org-roam-jump-to-index)))
+  )
+
+
+(defun darcamo-org-roam/init-org-roam-protocol ( )
+  ;; Note: You need to follow the instructions in
+  ;; https://org-roam.readthedocs.io/en/master/roam_protocol/
+  (use-package org-roam-protocol)
+  )
+
+
+(defun darcamo-org-roam/init-company-org-roam ()
+  (use-package company-org-roam
+    ;; :straight (:host github :repo "org-roam/company-org-roam")
+    :ensure t
+    :config
+    (push 'company-org-roam company-backends))
+  )
+
+
+(defun darcamo-org-roam/init-org-roam-server ()
+  (use-package org-roam-server
+    :ensure t
+    :config
+    (setq org-roam-server-host "127.0.0.1"
+          org-roam-server-port 8080
+          org-roam-server-export-inline-images t
+          org-roam-server-authenticate nil
+          org-roam-server-network-arrows nil
+          org-roam-server-network-label-truncate t
+          org-roam-server-network-label-truncate-length 60
+          org-roam-server-network-label-wrap-length 20))
   )
 
 
