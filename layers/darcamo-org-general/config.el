@@ -17,6 +17,18 @@
 
 
 
+;; Some pretty symbols
+(add-hook
+ 'org-mode-hook
+ (lambda ()
+   (add-to-list 'prettify-symbols-alist '("<->" . "⬌"))
+   (add-to-list 'prettify-symbols-alist '("->" . "➜"))
+   (add-to-list 'prettify-symbols-alist '("<-" . "⬅"))
+   (prettify-symbols-mode)
+   )
+ )
+
+
 ;; General
 (setq org-directory "~/org")
 
