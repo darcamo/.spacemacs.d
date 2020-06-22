@@ -1,0 +1,10 @@
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+Aqui (~/.spacemacs.d/org-mode-setup/org-roam-setup.org) ficam as configurações
+comuns a todas as notas no org-roam.
+
+Para usar basta colocar no arquivo .org desejado a linha
+: #+SETUPFILE: ~/.spacemacs.d/org-mode-setup/org-roam-setup.org
+Isso já foi feito via template de novas notas no org-roam.

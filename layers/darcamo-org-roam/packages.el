@@ -86,7 +86,10 @@ Each entry is either:
         "rf" 'org-roam-find-file
         "ri" 'org-roam-insert
         "rg" 'org-roam-graph
-        "rj" 'org-roam-jump-to-index)))
+        "rj" 'org-roam-jump-to-index)
+
+      (setq org-roam-capture-templates '(("d" "default" plain #'org-roam-capture--get-point "%?" :file-name "%<%Y%m%d%H%M%S>-${slug}" :head "#+title: ${title}\n#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/org-roam-setup.org\n\n" :unnarrowed t)))
+      ))
   )
 
 
