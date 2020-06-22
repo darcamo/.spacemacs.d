@@ -93,7 +93,7 @@ Each entry is either:
 (defun darcamo-org-roam/init-org-roam-protocol ( )
   ;; Note: You need to follow the instructions in
   ;; https://org-roam.readthedocs.io/en/master/roam_protocol/
-  (use-package org-roam-protocol)
+  (use-package org-roam-protocol :after org-roam)
   )
 
 
