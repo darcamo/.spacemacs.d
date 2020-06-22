@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst darcamo-org-preview-latex-packages
-  '()
+  '(org-fragtog)
   "The list of Lisp packages required by the darcamo-org-preview-latex layer.
 
 Each entry is either:
@@ -58,5 +58,12 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+
+(defun darcamo-org-preview-latex/init-org-fragtog ()
+  ;; (add-hook 'org-mode-hook 'org-fragtog-mode)
+  (use-package org-fragtog
+    :ensure t
+    :hook (org-mode . org-fragtog-mode))
+  )
 
 ;;; packages.el ends here
