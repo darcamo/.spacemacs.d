@@ -68,7 +68,13 @@ This function should only modify configuration layer settings."
           org-enable-bootstrap-support t  ;; Note that you need to call the org-twbs-export-* command
           ;; org-enable-reveal-js-support t  ;; download reveal.js and set org-reveal-root to the download path
           org-attach-use-inheritance t
+          org-link-frame-setup '((vm . vm-visit-folder-other-frame)
+                                (vm-imap . vm-visit-imap-folder-other-frame)
+                                (gnus . org-gnus-no-new-news)
+                                (file . find-file)
+                                (wl . wl-other-frame))
           )
+
      spacemacs-org
      ;; (shell :variables
      ;;        shell-default-height 30
