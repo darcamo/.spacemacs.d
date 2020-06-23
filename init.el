@@ -81,7 +81,7 @@ This function should only modify configuration layer settings."
              python-fill-docstring-style 'symmetric
              python-backend 'lsp
              python-formatter 'yapf
-             python-format-on-save t
+             ;; python-format-on-save t
              python-sort-imports-on-save nil
              python-fill-column 80)
 
