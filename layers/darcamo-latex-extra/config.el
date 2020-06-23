@@ -57,6 +57,12 @@
                   ;; Minor-mode that highlights the symbol under
                   ;; point throughout the buffer
                   (highlight-symbol-mode)
+
+                  ;; Prettify symbols mode
+                  ;; Some pretty symbols
+                  ;; (add-to-list 'prettify-symbols-alist '("\\vtW" . "w"))
+                  (setq prettify-symbols-unprettify-at-point t)
+                  (prettify-symbols-mode)
                   ))
       )
 
