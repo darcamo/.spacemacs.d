@@ -31,7 +31,6 @@
 
 (defconst darcamo-org-roam-packages
   '(org-roam
-    org-roam-protocol
     company-org-roam
     org-roam-server)
   "The list of Lisp packages required by the darcamo-org-roam layer.
@@ -89,16 +88,10 @@ Each entry is either:
         "rj" 'org-roam-jump-to-index)
 
       (setq org-roam-capture-templates '(("d" "default" plain #'org-roam-capture--get-point "%?" :file-name "%<%Y%m%d%H%M%S>-${slug}" :head "#+title: ${title}\n#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/org-roam-setup.org\n\n" :unnarrowed t)))
+
+      (use-package org-roam-protocol :after org-roam)
       ))
   )
-
-
-(defun darcamo-org-roam/init-org-roam-protocol ( )
-  ;; Note: You need to follow the instructions in
-  ;; https://org-roam.readthedocs.io/en/master/roam_protocol/
-  (use-package org-roam-protocol :after org-roam)
-  )
-
 
 (defun darcamo-org-roam/init-company-org-roam ()
   (use-package company-org-roam
