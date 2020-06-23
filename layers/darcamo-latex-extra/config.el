@@ -49,6 +49,47 @@
  'end)
 
 
+
+(defface darcamo/latex-math-vector-or-matrix-face
+  '((t (:weight bold :inherit font-latex-math-face)))
+  "Face used on vectors and matrices in latex math (\\vtX, \\mtX, etc)")
+
+
+;; This works, but it will not fontify it they \vt? and \mt? commands are
+;; replaced by pretiffied versions
+;; (font-lock-add-keywords 'latex-mode
+;;                         '(("\\vt[A-Z]\\|\\mt[A-Z]" . 'darcamo/latex-math-vector-or-matrix-face)
+;;                           ))
+
+;; ;; Pegue de https://emacs.stackexchange.com/questions/34043/how-to-highlight-prettified-symbols/34059#34059
+;;
+;; This will fontify not only all \vt? and \mt? but also the prettified symbols
+;; that replace them
+(font-lock-add-keywords
+ 'latex-mode
+ `(("\\(\\\\vt[A-Z]\\|\\\\mt[A-Z]\\)"
+    (0 (when (funcall prettify-symbols-compose-predicate
+                      (match-beginning 0)
+                      (match-end 0)
+                      (match-string 0))
+         'darcamo/latex-math-vector-or-matrix-face)
+       append)))
+ 'append)
+
+
+
+(defun darcamo/add-vector-and-matrix-prettify-symbol (s)
+  "This will call 'add-to-list' function to add a pretty symbol for '\\vtS and \\mtS'"
+  (interactive "P")
+  (add-to-list 'prettify-symbols-alist `(,(concat "\\vt" (upcase s)) . ,(downcase s) ) )
+  (add-to-list 'prettify-symbols-alist `(,(concat "\\mt" (upcase s)) . ,(upcase s) ) )
+  )
+
+
+;; A list
+(defvar darcamo/latin-letters-list '("A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" ))
+
+
 (setq LaTeX-mode-hook
       (function (lambda ()
                   (outline-minor-mode t)
@@ -58,9 +99,9 @@
                   ;; point throughout the buffer
                   (highlight-symbol-mode)
 
-                  ;; Prettify symbols mode
-                  ;; Some pretty symbols
-                  ;; (add-to-list 'prettify-symbols-alist '("\\vtW" . "w"))
+                  ;; Set pretiffy symbols for \\vt? and \\mt? for all latin letters
+                  (mapc 'darcamo/add-vector-and-matrix-prettify-symbol darcamo/latin-letters-list)
+
                   (setq prettify-symbols-unprettify-at-point t)
                   (prettify-symbols-mode)
                   ))
