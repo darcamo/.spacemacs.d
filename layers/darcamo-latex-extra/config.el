@@ -54,6 +54,18 @@
   '((t (:weight bold :inherit font-latex-math-face)))
   "Face used on vectors and matrices in latex math (\\vtX, \\mtX, etc)")
 
+;; (defface darcamo/latex-math-blackboard-face
+;;   '((t (:family "MathJax_AMS" :foreground "yellow" :background "red" :inherit font-latex-math-face)))
+;;   "Face used on blackboard symbols in latex math (\\bbA, \\bbV, etc)")
+
+
+
+;; Font para definir uma face para Sets: MathJax_AMS -> Note que ela só funciona
+;; para letras maiúsculas
+
+;; Font para caligraphic: Mathjax_Caligraphic -> Note que ela só funciona
+;; para letras maiúsculas
+
 
 ;; This works, but it will not fontify it they \vt? and \mt? commands are
 ;; replaced by pretiffied versions
@@ -67,24 +79,64 @@
 ;; that replace them
 (font-lock-add-keywords
  'latex-mode
- `(("\\(\\\\vt[A-Z]\\|\\\\mt[A-Z]\\)"
-    (0 (when (funcall prettify-symbols-compose-predicate
+ '(
+   ("\\(\\\\vt[A-Z]\\|\\\\mt[A-Z]\\)" ;; Matcher
+    ;; MATCH-HIGHLIGHT
+    (0 ;; number of the subexpression of MATCHER to be highlighted
+     (when (funcall prettify-symbols-compose-predicate
                       (match-beginning 0)
                       (match-end 0)
                       (match-string 0))
          'darcamo/latex-math-vector-or-matrix-face)
-       append)))
+     ;; OVERRIDE argument of MATCH-HIGHLIGHT -> 'append' means existing
+     ;; fontification is merged with the new
+       append))
+   )
  'append)
 
+(font-lock-add-keywords
+ 'latex-mode
+ '(
+   ("\\(\\\\vtAlpha\\|\\\\vtBeta\\|\\\\vtTheta\\|\\\\vtEpsilon\\|\\\\vtSigma\\|\\\\vtDelta\\|\\\\vtTau\\|\\\\vtGamma\\|\\\\vtOne\\|\\\\vtZero\\)" ;; Matcher
+    ;; MATCH-HIGHLIGHT
+    (0 ;; number of the subexpression of MATCHER to be highlighted
+     (when (funcall prettify-symbols-compose-predicate
+                    (match-beginning 0)
+                    (match-end 0)
+                    (match-string 0))
+       'darcamo/latex-math-vector-or-matrix-face)
+     ;; OVERRIDE argument of MATCH-HIGHLIGHT -> 'append' means existing
+     ;; fontification is merged with the new
+     append))
+   )
+ 'append)
 
 
-(defun darcamo/add-vector-and-matrix-prettify-symbol (s)
+(defun darcamo/add-vector-and-matrix-prettify-symbol-letter (s)
   "This will call 'add-to-list' function to add a pretty symbol for '\\vtS and \\mtS'"
   (interactive "P")
-  (add-to-list 'prettify-symbols-alist `(,(concat "\\vt" (upcase s)) . ,(downcase s) ) )
-  (add-to-list 'prettify-symbols-alist `(,(concat "\\mt" (upcase s)) . ,(upcase s) ) )
+  (add-to-list 'prettify-symbols-alist `(,(concat "\\vt" (capitalize s)) . ,(downcase s) ) )
+  (add-to-list 'prettify-symbols-alist `(,(concat "\\mt" (capitalize s)) . ,(capitalize s) ) )
   )
 
+(defun darcamo/add-blackboard-prettify-symbol-math-field (s)
+  "This will call 'add-to-list' function to add a pretty symbol for '\\bbS"
+  (interactive "P")
+  ;; The name of most characters double-struck version is "MATHEMATICAL
+  ;; DOUBLE-STRUCK CAPITAL X", where "X" is the character. However, for some
+  ;; reason the unicode name for a few of them is in the form "DOUBLE-STRUCK
+  ;; CAPITAL X". The characters with this shorter name version are: C H N P Q R Z
+  (if (member s '("C" "H" "N" "P" "Q" "R" "Z") )
+      (add-to-list 'prettify-symbols-alist `(,(concat "\\bb" s) . ,(char-to-string (char-from-name (concat "DOUBLE-STRUCK CAPITAL " s)))))
+    (add-to-list 'prettify-symbols-alist `(,(concat "\\bb" s) . ,(char-to-string (char-from-name (concat "MATHEMATICAL DOUBLE-STRUCK CAPITAL " s)))))
+    ))
+
+
+(defun darcamo/add-vector-and-matrix-prettify-symbol-greek (name unicode-value)
+  "This will call 'add-to-list' function to add a pretty symbol for '\\vtName' with 'unicode-value'"
+  (interactive "P")
+  (add-to-list 'prettify-symbols-alist `(,(concat "\\vt" (capitalize name)) . ,unicode-value) )
+  )
 
 ;; A list
 (defvar darcamo/latin-letters-list '("A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" ))
@@ -100,7 +152,19 @@
                   (highlight-symbol-mode)
 
                   ;; Set pretiffy symbols for \\vt? and \\mt? for all latin letters
-                  (mapc 'darcamo/add-vector-and-matrix-prettify-symbol darcamo/latin-letters-list)
+                  (mapc 'darcamo/add-vector-and-matrix-prettify-symbol-letter darcamo/latin-letters-list)
+                  (mapc 'darcamo/add-blackboard-prettify-symbol-math-field darcamo/latin-letters-list)
+
+                  (darcamo/add-vector-and-matrix-prettify-symbol-greek "alpha" "α")
+                  (darcamo/add-vector-and-matrix-prettify-symbol-greek "beta" "β")
+                  (darcamo/add-vector-and-matrix-prettify-symbol-greek "theta" "θ")
+                  (darcamo/add-vector-and-matrix-prettify-symbol-greek "epsilon" "ε")
+                  (darcamo/add-vector-and-matrix-prettify-symbol-greek "sigma" "σ")
+                  (darcamo/add-vector-and-matrix-prettify-symbol-greek "delta" "δ")
+                  (darcamo/add-vector-and-matrix-prettify-symbol-greek "tau" "τ")
+                  (darcamo/add-vector-and-matrix-prettify-symbol-greek "gamma" "γ")
+                  (darcamo/add-vector-and-matrix-prettify-symbol-greek "one" "1")
+                  (darcamo/add-vector-and-matrix-prettify-symbol-greek "zero" "0")
 
                   (setq prettify-symbols-unprettify-at-point t)
                   (prettify-symbols-mode)
