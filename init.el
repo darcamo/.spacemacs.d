@@ -187,6 +187,7 @@ This function should only modify configuration layer settings."
      darcamo-latex-beamer
      darcamo-tikz
      darcamo-mu4e
+     darcamo-authinfo
      )
 
    ;; List of additional packages that will be installed without being
