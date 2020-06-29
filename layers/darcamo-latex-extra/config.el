@@ -218,3 +218,12 @@
                               '("Latexmk" "latexmk -pdf %s" TeX-run-TeX nil t
                                 :help "Run Latexmk on file")
                               TeX-command-list)))
+
+
+
+;; Veja o que tem de interessante
+;; https://tecosaur.github.io/emacs-config/config.html#editor-visuals
+
+
+
+;; Veja o uso do CDLatex

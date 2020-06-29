@@ -190,6 +190,9 @@ This function should only modify configuration layer settings."
      darcamo-authinfo
      )
 
+   ;; Other things to check
+   ;; - Org-graph-view: https://github.com/alphapapa/org-graph-view
+
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -757,6 +760,9 @@ before packages are loaded."
 
   ;; Set "g" as keybinding to "pdf-view-goto-page" when viewing pdfs
   (define-key pdf-view-mode-map "g" 'pdf-view-goto-page)
+
+  ;; New buffers are in org-mode by default (instead of fundamental mode)
+  (setq-default major-mode 'org-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

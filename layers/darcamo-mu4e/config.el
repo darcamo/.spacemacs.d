@@ -208,6 +208,7 @@
   ;;   (mu4e-alert-set-default-style 'notifications))
 
 
+  ;; Olhe a configuração em https://tecosaur.github.io/emacs-config/config.html#sending-mail
   ;; xxxxxxxxxx SMTP COnfiguration xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   (with-eval-after-load "smtpmail"
     (setq message-send-mail-function 'smtpmail-send-it
