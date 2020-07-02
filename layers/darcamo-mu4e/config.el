@@ -21,6 +21,36 @@
   ;; Hide the "Indexing..." messages (they interfere with the minibuffer)
   (setq mu4e-hide-index-messages t)
 
+  ;; Olhe a configuração em https://tecosaur.github.io/emacs-config/config.html#sending-mail
+  ;; xxxxxxxxxx SMTP Configuration xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  ;; Note that some of the variable values will be replaced during a mu4e
+  ;; context switch and here we set the default values
+  (with-eval-after-load "smtpmail"
+    (setq message-send-mail-function 'smtpmail-send-it
+          message-sendmail-f-is-evil t
+          starttls-use-gnutls t
+          ;; smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+          ;;smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
+          ;; ;; smtpmail-default-smtp-server only has effect if you specify it
+          ;; ;; before loading the smtpmail library.
+          ;; smtpmail-default-smtp-server "smtp.gmail.com"
+          smtpmail-smtp-user "darcamo@gmail.com"
+          smtpmail-smtp-server "smtp.gmail.com"
+          smtpmail-smtp-service 465
+          smtpmail-stream-type 'ssl
+          ;; smtpmail-debug-info t
+          )
+
+    ;; Determines what mu4e does with sent messages. Since we use gmail, which
+    ;; already stores the sent messages, we set this to 'delete so that we do
+    ;; not get a duplicated message
+    (setq mu4e-sent-messages-behavior 'delete)
+
+    ;; SMTP Queue
+    (setq smtpmail-queue-mail  nil  ;; start in non-queuing mode
+          smtpmail-queue-dir   "~/Maildir/queue/cur")
+    )
+
   (set-default 'mu4e-contexts
                `( ,(make-mu4e-context
                     :name "Pessoal"
@@ -33,6 +63,7 @@
                                                                          '(:to :cc :bcc) "darcamo@gmail.com")))
                     :vars '((user-mail-address  . "darcamo@gmail.com"  )
                             (user-full-name     . "Darlan Cavalcante Moreira")
+                            (smtpmail-smtp-user . "darcamo@gmail.com")
                             (mu4e-sent-folder   . "/gmail/[Gmail].E-mails enviados")
                             (mu4e-drafts-folder . "/gmail/[Gmail].Rascunhos")
                             (mu4e-trash-folder  . "/gmail/[Gmail].Lixeira")
@@ -52,6 +83,7 @@
                                                                         '(:to :cc :bcc) "darlan@gtel.ufc.br")))
                     :vars '((user-mail-address  . "darlan@gtel.ufc.br")
                             (user-full-name     . "Darlan Cavalcante Moreira")
+                            (smtpmail-smtp-user . "darlan@gtel.ufc.br")
                             (mu4e-sent-folder   . "/gtel/[Gmail].E-mails enviados")
                             (mu4e-drafts-folder . "/gtel/[Gmail].Rascunhos")
                             (mu4e-trash-folder  . "/gtel/[Gmail].Lixeira")
@@ -118,8 +150,8 @@
   (add-to-list 'mu4e-view-actions
                '("View in Browser" . mu4e-action-view-in-browser) t)
 
-  (add-to-list 'mu4e-view-actions
-               '("wxidget" . mu4e-action-view-with-xwidget) t)
+  ;; (add-to-list 'mu4e-view-actions
+  ;;              '("wxidget" . mu4e-action-view-with-xwidget) t)
 
   ;; ;; Set to 't' to use Gnus’ article view, instead of mu4e internal viewer
   ;; (setq mu4e-view-use-gnus t)
@@ -207,32 +239,6 @@
   ;;   ;; Enable Desktop notifications
   ;;   (mu4e-alert-set-default-style 'notifications))
 
-
-  ;; Olhe a configuração em https://tecosaur.github.io/emacs-config/config.html#sending-mail
-  ;; xxxxxxxxxx SMTP COnfiguration xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  (with-eval-after-load "smtpmail"
-    (setq message-send-mail-function 'smtpmail-send-it
-          starttls-use-gnutls t
-          ;; smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-          ;;smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
-          ;; ;; smtpmail-default-smtp-server only has effect if you specify it
-          ;; ;; before loading the smtpmail library.
-          ;; smtpmail-default-smtp-server "smtp.gmail.com"
-          smtpmail-smtp-server "smtp.gmail.com"
-          smtpmail-smtp-service 465
-          smtpmail-stream-type 'ssl
-          ;; smtpmail-debug-info t
-          )
-
-    ;; Determines what mu4e does with sent messages. Since we use gmail, which
-    ;; already stores the sent messages, we set this to 'delete so that we do
-    ;; not get a duplicated message
-    (setq mu4e-sent-messages-behavior 'delete)
-
-    ;; SMTP Queue
-    (setq smtpmail-queue-mail  nil  ;; start in non-queuing mode
-          smtpmail-queue-dir   "~/Maildir/queue/cur")
-    )
   ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   ;; xxxxxxxxxx End of mu4e Configuration xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
