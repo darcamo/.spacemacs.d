@@ -86,6 +86,8 @@
 ;; means that the tags should be flushright to that column.  For example,
 ;; -80 works well for a normal 80 character screen.
 (setq org-tags-column -80)
+;; Enable visual-line-mode in all org-mode buffers 
+(add-hook 'org-mode-hook 'visual-line-mode)
 
 ;; Disallow editing invisible parts (folded headlines) to avoid accidental
 ;; modifications.
