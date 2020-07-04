@@ -175,8 +175,8 @@ This function should only modify configuration layer settings."
      ;; ;; darcamo-org-export
      ;; ;; darcamo-org-general
      ;; ;; darcamo-org-habit
-     ;; ;; darcamo-org-preview-latex
      ;; ;; darcamo-org-useful-functions
+     darcamo-preview-latex  ;; org-mode and programming buffers
      darcamo-references  ;; configure org-ref and bibtex
      darcamo-outline-minor-mode
      darcamo-spell-checking

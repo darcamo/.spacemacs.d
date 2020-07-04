@@ -1,4 +1,4 @@
-;;; packages.el --- darcamo-org-preview-latex layer packages file for Spacemacs.
+;;; packages.el --- darcamo-preview-latex layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
 ;;
@@ -18,20 +18,20 @@
 ;;
 ;;
 ;; Briefly, each package to be installed or configured by this layer should be
-;; added to `darcamo-org-preview-latex-packages'. Then, for each package PACKAGE:
+;; added to `darcamo-preview-latex-packages'. Then, for each package PACKAGE:
 ;;
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `darcamo-org-preview-latex/init-PACKAGE' to load and initialize the package.
+;;   function `darcamo-preview-latex/init-PACKAGE' to load and initialize the package.
 
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
-;;   define the functions `darcamo-org-preview-latex/pre-init-PACKAGE' and/or
-;;   `darcamo-org-preview-latex/post-init-PACKAGE' to customize the package as it is loaded.
+;;   define the functions `darcamo-preview-latex/pre-init-PACKAGE' and/or
+;;   `darcamo-preview-latex/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
 
-(defconst darcamo-org-preview-latex-packages
+(defconst darcamo-preview-latex-packages
   '(org-fragtog)
-  "The list of Lisp packages required by the darcamo-org-preview-latex layer.
+  "The list of Lisp packages required by the darcamo-preview-latex layer.
 
 Each entry is either:
 
@@ -59,11 +59,13 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 
-(defun darcamo-org-preview-latex/init-org-fragtog ()
+(defun darcamo-preview-latex/init-org-fragtog ()
   ;; (add-hook 'org-mode-hook 'org-fragtog-mode)
   (use-package org-fragtog
     :ensure t
-    :hook (org-mode . org-fragtog-mode))
+    :hook (org-mode . org-fragtog-mode)
+    :hook (prog-mode . org-fragtog-mode)
+    )
   )
 
 ;;; packages.el ends here

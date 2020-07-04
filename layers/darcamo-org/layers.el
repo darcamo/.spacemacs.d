@@ -20,6 +20,5 @@
                                       darcamo-org-export
                                       darcamo-org-general
                                       ;; darcamo-org-habit
-                                      darcamo-org-preview-latex
                                       darcamo-org-useful-functions
                                       ))
