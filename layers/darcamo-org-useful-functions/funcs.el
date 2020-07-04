@@ -41,6 +41,12 @@
   (find-file "~/org/references/articles.org")
   )
 
+(defun my-find-articles-org-heading nil
+  "Same as my-find-references-org-heading"
+  (interactive)
+  (find-file "~/org/references/articles.org")
+  )
+
 (defun my-find-notas-org-heading nil
   (interactive)
   (find-file "~/org/notas.org")
