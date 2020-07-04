@@ -103,11 +103,11 @@
   ;; allow for updating mail using 'U' in the main view:
   (setq mu4e-get-mail-command "mbsync all")
 
-  ;; ;; Set the mail-user-agent to the mu4e-user-agent.
-  ;; ;; With this if you type the usual keybinding "C-x m" emacs will use the
-  ;; ;; mu4e:compose mode
-  ;; (if (boundp 'mail-user-agent)
-  ;;     (setq mail-user-agent 'mu4e-user-agent))
+  ;; Set the mail-user-agent to the mu4e-user-agent.
+  ;; With this if you type the usual keybinding "C-x m" emacs will use the
+  ;; mu4e:compose mode
+  (if (boundp 'mail-user-agent)
+      (setq mail-user-agent 'mu4e-user-agent))
 
   ;; Keybindings
   ;; (bind-key [backspace] 'scroll-down-command mu4e-headers-mode-map)
@@ -150,8 +150,8 @@
   (add-to-list 'mu4e-view-actions
                '("View in Browser" . mu4e-action-view-in-browser) t)
 
-  ;; (add-to-list 'mu4e-view-actions
-  ;;              '("wxidget" . mu4e-action-view-with-xwidget) t)
+  (add-to-list 'mu4e-view-actions
+               '("wxidget" . mu4e-action-view-with-xwidget) t)
 
   ;; ;; Set to 't' to use Gnus’ article view, instead of mu4e internal viewer
   ;; (setq mu4e-view-use-gnus t)
