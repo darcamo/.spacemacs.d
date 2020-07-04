@@ -85,8 +85,17 @@
 ;; number is positive, it specifies the column.  If it is negative, it
 ;; means that the tags should be flushright to that column.  For example,
 ;; -80 works well for a normal 80 character screen.
-(setq org-tags-column -80)
-;; Enable visual-line-mode in all org-mode buffers 
+;;
+;; We use the value -85 here because in org-mode we set the value of fill-column
+;; to 90. Then we need 3 characters for the ellipsis and a bit more because the
+;; "ATTACH" tag uses a larger font size.
+(setq org-tags-column -85)
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (setq fill-column 90)))
+
+;; Enable visual-line-mode in all org-mode buffers
 (add-hook 'org-mode-hook 'visual-line-mode)
 
 ;; Disallow editing invisible parts (folded headlines) to avoid accidental
