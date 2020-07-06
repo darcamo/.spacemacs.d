@@ -5,8 +5,6 @@
   (define-key LaTeX-mode-map (kbd "<C-S-f5>") 'my-latex-textcolor-red)
   (define-key LaTeX-mode-map [f6] 'my-save-and-compile)
   (define-key LaTeX-mode-map [f9] 'tex-all)
-  (define-key pdf-view-mode-map [f9] 'tex-all)  ; We also want to compile when
-                                                ; we are view the pdf
   ;; Define C-f9 to the compile command. This is useful when you
   ;; work with latex and Makefiles
   (define-key LaTeX-mode-map [C-f9] 'compile)
@@ -17,4 +15,9 @@
 
   ;; Enable key bindings (M-p and M-p) for navigation
   ;; (highlight-symbol-nav-mode)
+  )
+
+(with-eval-after-load 'pdf-view
+    (define-key pdf-view-mode-map [f9] 'tex-all)  ; We also want to compile when
+                                        ; we are view the pdf
   )

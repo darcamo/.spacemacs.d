@@ -31,22 +31,22 @@
   )
 
 
-;; Define a face for unimportant latex commands in math
-;; Taken from https://endlessparentheses.com/improving-latex-equations-with-font-lock.html
-(defface endless/unimportant-latex-face
-  '((t :height 0.5
-       :inherit font-lock-comment-face))
-  "Face used on less relevant math commands.")
-
-(font-lock-add-keywords
- 'latex-mode
- `((,(rx (or (and "\\" (or (any ",.!;")
-                           (and (or "left" "right"
-                                    "big" "Big")
-                                symbol-end)))
-             (any "_^")))
-    0 'endless/unimportant-latex-face prepend))
- 'end)
+;; ;; Define a face for unimportant latex commands in math
+;; ;; Taken from https://endlessparentheses.com/improving-latex-equations-with-font-lock.html
+;; (defface endless/unimportant-latex-face
+;;   '((t :height 0.5
+;;        :inherit font-lock-comment-face))
+;;   "Face used on less relevant math commands.")
+;; 
+;; (font-lock-add-keywords
+;;  'latex-mode
+;;  `((,(rx (or (and "\\" (or (any ",.!;")
+;;                            (and (or "left" "right"
+;;                                     "big" "Big")
+;;                                 symbol-end)))
+;;              (any "_^")))
+;;     0 'endless/unimportant-latex-face prepend))
+;;  'end)
 
 
 
