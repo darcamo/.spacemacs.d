@@ -67,6 +67,7 @@
 ;; tell org-mode to use the default system programn to open open office documents
 (setq org-file-apps (quote (
                             (auto-mode . emacs)
+                            (directory . emacs)
                             ("\\.mm\\'" . default)
                             ("\\.x?html?\\'" . default)
                             ("pdf" . "evince %s")
