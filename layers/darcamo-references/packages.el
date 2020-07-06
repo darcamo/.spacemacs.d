@@ -31,7 +31,8 @@
 
 (defconst darcamo-references-packages
   '(
-    interleave
+    ;; interleave
+    org-noter
     )
   "The list of Lisp packages required by the darcamo-references layer.
 
@@ -61,11 +62,11 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 
-(defun darcamo-references/init-interleave ()
-  (use-package interleave
-    :ensure t
-    )
-  )
+;; (defun darcamo-references/init-interleave ()
+;;   (use-package interleave
+;;     :ensure t
+;;     )
+;;   )
 
 ;; Key-bindings for Interleave Package
 ;; |-------+---------------------------------------------+--------------------|
@@ -82,6 +83,16 @@ Each entry is either:
 ;; | M-p   | Go to the page of the previous set of notes | PDF and Org Buffer |
 ;; | M-n   | Go to the page of the next set of notes     | PDF and Org Buffer |
 ;; |-------+---------------------------------------------+--------------------|
+
+
+(defun darcamo-references/init-org-noter ()
+  (use-package org-noter
+    :ensure t
+    :config
+    (setq org-noter-default-notes-file-names '("articles.org"))
+    )
+  )
+
 
 
 ;;; packages.el ends here
