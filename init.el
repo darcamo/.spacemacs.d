@@ -156,26 +156,11 @@ This function should only modify configuration layer settings."
      (darcamo-org-roam :variables
                        org-roam-buffer-position 'right)
      darcamo-c++
-     ;; darcamo-lsp
-     ;; darcamo-cquery
-     ;; darcamo-rtags
-     ;; darcamo-irony
      darcamo-python-conda-env
      darcamo-jupyter-notebook  ;; Defines a (VERY) simple minor-mode for jupyter notebooks that makes file read-only
-     ;; darcamo-ycmd
      darcamo-functions
      darcamo-general-programming
      darcamo-org
-     ;; ;; darcamo-org-agenda
-     ;; ;; darcamo-org-attach
-     ;; ;; darcamo-org-babel
-     ;; ;; darcamo-org-capture
-     ;; ;; darcamo-org-clock
-     ;; ;; darcamo-org-crypt
-     ;; ;; darcamo-org-export
-     ;; ;; darcamo-org-general
-     ;; ;; darcamo-org-habit
-     ;; ;; darcamo-org-useful-functions
      darcamo-preview-latex  ;; org-mode and programming buffers
      darcamo-references  ;; configure org-ref and bibtex
      darcamo-outline-minor-mode
