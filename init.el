@@ -759,7 +759,9 @@ before packages are loaded."
   (read-abbrev-file "~/.abbrev_defs")
 
   ;; Set "g" as keybinding to "pdf-view-goto-page" when viewing pdfs
-  (define-key pdf-view-mode-map "g" 'pdf-view-goto-page)
+  (with-eval-after-load 'pdf-view
+    (define-key pdf-view-mode-map "g" 'pdf-view-goto-page)
+    )
 
   ;; New buffers are in org-mode by default (instead of fundamental mode)
   (setq-default major-mode 'org-mode)
