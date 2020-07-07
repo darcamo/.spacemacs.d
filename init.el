@@ -750,6 +750,12 @@ before packages are loaded."
 
   ;; New buffers are in org-mode by default (instead of fundamental mode)
   (setq-default major-mode 'org-mode)
+
+  ;; If set to t when adding a new history element, all previous identical
+  ;; elements are deleted from the history list.
+  (setq history-delete-duplicates t)
+  (setq history-length 50)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
