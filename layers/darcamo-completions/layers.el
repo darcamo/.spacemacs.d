@@ -1,1 +1,1 @@
-(configuration-layer/declare-layers '(auto-completion))
+(configuration-layer/declare-layer 'auto-completion)

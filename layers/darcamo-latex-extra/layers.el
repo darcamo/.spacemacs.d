@@ -1,1 +1,1 @@
-(configuration-layer/declare-layers '(pdf-tools))
+(configuration-layer/declare-layer 'pdf)

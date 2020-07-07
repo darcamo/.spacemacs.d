@@ -1,1 +1,1 @@
-(configuration-layer/declare-layers '(darcamo-org))
+(configuration-layer/declare-layer 'darcamo-org)

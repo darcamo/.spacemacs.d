@@ -1,1 +1,1 @@
-(configuration-layer/declare-layers '(org))
+(configuration-layer/declare-layer 'org)

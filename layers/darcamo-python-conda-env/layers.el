@@ -1,1 +1,1 @@
-(configuration-layer/declare-layers '(darcamo-python))
+(configuration-layer/declare-layer 'darcamo-python)

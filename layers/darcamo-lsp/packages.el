@@ -32,7 +32,7 @@
 (defconst darcamo-lsp-packages
   '(
     lsp-mode
-    company-lsp
+    company-lsp  ;; Note that company-lsp was dropped in "lsp-mode 7.0"
     lsp-ui
     )
   "The list of Lisp packages required by the darcamo-lsp layer.
