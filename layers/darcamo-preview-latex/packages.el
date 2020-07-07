@@ -60,11 +60,11 @@ Each entry is either:
 
 
 (defun darcamo-preview-latex/init-org-fragtog ()
-  ;; (add-hook 'org-mode-hook 'org-fragtog-mode)
   (use-package org-fragtog
     :ensure t
     :hook (org-mode . org-fragtog-mode)
-    :hook (prog-mode . org-fragtog-mode)
+    :hook (python-mode . org-fragtog-mode)
+    :hook (c++-mode . org-fragtog-mode)
     )
   )
 
