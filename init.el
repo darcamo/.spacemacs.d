@@ -107,7 +107,7 @@ This function should only modify configuration layer settings."
             ;; c-c++-enable-clang-support t  ;; Not used for the lsp-* backends
             c-c++-default-mode-for-headers 'c++-mode
             compilation-window-height 16
-            c-doc-comment-style 'javadoc
+            c-doc-comment-style 'doxygen
             c-c++-backend 'lsp-ccls
             lsp-file-watch-threshold 1500
             lsp-file-watch-ignored '("[/\\\\]\\.git$" "[/\\\\]\\.hg$" "[/\\\\]\\.bzr$" "[/\\\\]_darcs$" "[/\\\\]\\.svn$" "[/\\\\]_FOSSIL_$" "[/\\\\]\\.idea$" "[/\\\\]\\.ensime_cache$" "[/\\\\]\\.eunit$" "[/\\\\]node_modules$" "[/\\\\]\\.fslckout$" "[/\\\\]\\.tox$" "[/\\\\]\\.stack-work$" "[/\\\\]\\.bloop$" "[/\\\\]\\.metals$" "[/\\\\]target$" "[/\\\\]\\.deps$" "[/\\\\]build-aux$" "[/\\\\]autom4te.cache$" "[/\\\\]\\.reference$" "[/\\\\]\\.ccls-cache$" "[/\\\\]\\.clangd$" "[/\\\\]\\.vscode$" "[/\\\\]cmake-build-debug$" "[/\\\\]cmake-build-release$" "[/\\\\]build$" "[/\\\\]docs$")
