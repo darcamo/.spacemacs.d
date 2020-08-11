@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst darcamo-jupyter-notebook-packages
-  '()
+  '(jupyter)
   "The list of Lisp packages required by the darcamo-jupyter-notebook layer.
 
 Each entry is either:
@@ -58,5 +58,13 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+
+(defun darcamo-jupyter-notebook/init-jupyter ()
+  (use-package jupyter
+    :ensure t
+    :init
+    (add-hook 'jupyter-repl-mode-hook #'company-mode)
+    )
+  )
 
 ;;; packages.el ends here
