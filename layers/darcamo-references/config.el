@@ -24,5 +24,5 @@
 ;; open pdf with system pdf viewer (works on mac)
 (setq bibtex-completion-pdf-open-function
       (lambda (fpath)
-        (start-process "open" "*open*" "open" fpath)))
+        (call-process "evince" nil 0 nil fpath)))
 ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

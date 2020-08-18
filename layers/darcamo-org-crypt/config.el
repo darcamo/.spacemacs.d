@@ -7,7 +7,8 @@
   ;; Automatically encrypts everything that has the tag "crypt"
   ;; when you save the file
   (org-crypt-use-before-save-magic)
-  (setq org-tags-exclude-from-inheritance (quote ("crypt" "Projeto")))
+  ;; (setq org-tags-exclude-from-inheritance (quote ("crypt" "Projeto")))
+  (add-to-list 'org-tags-exclude-from-inheritance "crypt")
   ;; darcamo@gmail.com (see in the seahorse program)
   (setq org-crypt-key "15798E79")
 
