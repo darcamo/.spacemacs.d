@@ -47,4 +47,21 @@
      ("\\subsection{%s}" . "\\subsection*{%s}")
      ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
      ("\\paragraph{%s}" . "\\paragraph*{%s}")
-     ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+     ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+  (add-to-list
+   'org-latex-classes
+   '("IEEEtran"
+     "\\documentclass{IEEEtran}
+\\usepackage[backend=biber,doi=false,isbn=false, url=false, sorting=none, maxbibnames=3, giveninits=true, dateabbrev=true]{biblatex}
+\\addbibresource{~/Dropbox/org/references/articles.bib}
+[DEFAULT-PACKAGES]  % do not include any of the default packages
+[PACKAGES]             % \\usepackage statements for packages
+[EXTRA]                % the stuff from #+LATEX_HEADER(_EXTRA)
+     "
+     ("\\section{%s}" . "\\section*{%s}")
+     ("\\subsection{%s}" . "\\subsection*{%s}")
+     ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+     ("\\paragraph{%s}" . "\\paragraph*{%s}")
+     ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  )
