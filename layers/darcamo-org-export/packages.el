@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst darcamo-org-export-packages
-  '()
+  '(ox-extra)
   "The list of Lisp packages required by the darcamo-org-export layer.
 
 Each entry is either:
@@ -58,5 +58,14 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+
+(defun darcamo-org-export/init-ox-extra ()
+  ;; With ox-extra, you can add a "ignore" tag to a headline in org-mode to
+  ;; ignore the headline during export without ignoring its content
+  (use-package ox-extra
+    :config
+    (ox-extras-activate '(ignore-headlines))
+    )
+  )
 
 ;;; packages.el ends here
