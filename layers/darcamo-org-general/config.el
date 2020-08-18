@@ -96,8 +96,8 @@
           (lambda ()
             (setq fill-column 90)))
 
-;; Enable visual-line-mode in all org-mode buffers
-(add-hook 'org-mode-hook 'visual-line-mode)
+;; ;; Enable visual-line-mode in all org-mode buffers
+;; (add-hook 'org-mode-hook 'visual-line-mode)
 
 ;; Disallow editing invisible parts (folded headlines) to avoid accidental
 ;; modifications.
