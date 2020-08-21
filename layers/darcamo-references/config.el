@@ -12,7 +12,7 @@
 ;; Set-up Org-Ref
 (setq org-ref-notes-directory "~/Dropbox/org/references/notes"
       org-ref-bibliography-notes "~/Dropbox/org/references/articles.org"
-      org-ref-default-bibliography '("~/Dropbox/org/references/articles.bib")
+      org-ref-default-bibliography '("~/Dropbox/org/references/articles.bib" "~/Dropbox/org/references/articles_without_notes.bib")
       org-ref-pdf-directory "~/Dropbox/org/references/pdfs/")
 
 

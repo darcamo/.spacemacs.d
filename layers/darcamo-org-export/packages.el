@@ -62,10 +62,15 @@ Each entry is either:
 (defun darcamo-org-export/init-ox-extra ()
   ;; With ox-extra, you can add a "ignore" tag to a headline in org-mode to
   ;; ignore the headline during export without ignoring its content
-  (use-package ox-extra
-    :config
+  (with-eval-after-load 'org
+    (require 'ox-extra)
     (ox-extras-activate '(ignore-headlines))
     )
+  ;; (use-package ox-extra
+  ;;   :after org
+  ;;   :config
+  ;;   (ox-extras-activate '(ignore-headlines))
+  ;;   )
   )
 
 ;;; packages.el ends here

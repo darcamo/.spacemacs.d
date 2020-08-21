@@ -35,6 +35,7 @@
 \\usepackage[nolist]{acronym}
 \\usepackage[backend=biber,doi=false,isbn=false, url=false, sorting=none, maxbibnames=3, giveninits=true, dateabbrev=true]{biblatex}
 \\addbibresource{~/Dropbox/org/references/articles.bib}
+\\addbibresource{~/Dropbox/org/references/articles_without_notes.bib}
 \\usepackage{amssymb}
 \\usepackage{amsmath}
 \\usepackage{tikz}
@@ -55,6 +56,7 @@
      "\\documentclass{IEEEtran}
 \\usepackage[backend=biber,doi=false,isbn=false, url=false, sorting=none, maxbibnames=3, giveninits=true, dateabbrev=true]{biblatex}
 \\addbibresource{~/Dropbox/org/references/articles.bib}
+\\addbibresource{~/Dropbox/org/references/articles_without_notes.bib}
 [DEFAULT-PACKAGES]  % do not include any of the default packages
 [PACKAGES]             % \\usepackage statements for packages
 [EXTRA]                % the stuff from #+LATEX_HEADER(_EXTRA)
