@@ -201,11 +201,10 @@
 
 
 ;; Abbrev table
-(define-abbrev-table 'TeX-mode-abbrev-table nil)
-(add-hook 'LaTeX-mode-hook (lambda ()
-                             (setq abbrev-mode t)
-                             (flycheck-mode t)
-                             (setq local-abbrev-table TeX-mode-abbrev-table)))
+;; (add-hook 'LaTeX-mode-hook (lambda ()
+;;                              (setq abbrev-mode t)
+;;                              (flycheck-mode t)
+;;                              (setq local-abbrev-table TeX-mode-abbrev-table)))
 
 
 (add-hook 'LaTeX-mode-hook (lambda ()
