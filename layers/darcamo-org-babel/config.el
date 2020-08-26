@@ -35,7 +35,7 @@
      ;; (sqlite . nil)
      (octave . t)
      (matlab . t)
-     ;; (latex . t)
+     (latex . t)
      ;; (plantuml . t)
      (java . t)
      ))
