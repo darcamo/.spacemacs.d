@@ -1,78 +1,82 @@
 
 ;; For each entry, the first element will be the expansion trigger, while the
-;; second element is the expansion. Third element indicates is a plural
-;; expansion should also be created
+;; second element is the expansion. Third element indicates if a plural
+;; expansion should also be created (just adding s after the trigger). The
+;; fourth element indicates if a corresponding "acronym expansion" should be
+;; added to latex and org-mode. An acronym expansion corresponds to a trigger
+;; which is the one in the list preceeded by "a" and the expansion will have the
+;; corresponding acronyms functionality (acro package in latex and glossaries
+;; package in org-mode).
 (setq my-acronym-list '(
-                        ("arima" "ARIMA" nil)
-                        ("bd" "BD" nil)
-                        ("ber" "BER" nil)
-                        ("blast" "BLAST" nil)
-                        ("bler" "BLER" nil)
-                        ("bpsk" "BPSK" nil)
-                        ("bs" "BS" t)
-                        ("cam" "CAM" nil)
-                        ("cdf" "CDF" nil)
-                        ("comp" "CoMP" nil)
-                        ("cqi" "CQI" nil)
-                        ("crs" "CRS" nil)
-                        ("csi" "CSI" nil)
-                        ("csit" "CSIT" nil)
-                        ("dft" "DFT" nil)
-                        ("dmrs" "DMRS" nil)
-                        ("dof" "DOF" nil)
-                        ("dtdd" "DTDD" nil)
-                        ("fdd" "FDD" nil)
-                        ("harq" "HARQ" nil)
-                        ("ia" "IA" nil)
-                        ("ic" "IC" nil)
-                        ("jp" "JP" nil)
-                        ("los" "LOS" nil)
-                        ("ls" "LS" nil)
-                        ("lte" "LTE" nil)
-                        ("mimo" "MIMO" nil)
-                        ("miso" "MISO" nil)
-                        ("mlp" "MLP" nil)
-                        ("mmse" "MMSE" nil)
-                        ("mrt" "MRT" nil)
-                        ("mse" "MSE" nil)
-                        ("ofdm" "OFDM" nil)
-                        ("pdf" "PDF" t)
-                        ("prb" "PRB" t)
-                        ("prr" "PRR" nil)
-                        ("psk" "PSK" nil)
-                        ("qam" "QAM" nil)
-                        ("qos" "QoS" nil)
-                        ("rb" "RB" nil)
-                        ("rsrp" "RSRP" nil)
-                        ("rsrq" "RSRQ" nil)
-                        ("rssi" "RSSI" nil)
-                        ("sdma" "SDMA" nil)
-                        ("sic" "SIC" nil)
-                        ("simo" "SIMO" nil)
-                        ("sinr" "SINR" nil)
-                        ("sinrs" "SINRs" nil)
-                        ("siso" "SISO" nil)
-                        ("snr" "SNR" nil)
-                        ("srs" "SRS" nil)
-                        ("stbc" "STBC" nil)
-                        ("svd" "SVD" nil)
-                        ("tdd" "TDD" nil)
-                        ("teh" "the" nil)
-                        ("tti" "TTI" nil)
-                        ("ue" "UE" t)
-                        ("ula" "ULA" nil)
-                        ("ura" "URA" nil)
-                        ("v2i" "V2I" nil)
-                        ("v2v" "V2V" nil)
-                        ("v2x" "V2X" nil)
-                        ("zf" "ZF" nil)
+                        ("arima" "ARIMA" nil t)
+                        ("bd" "BD" nil t)
+                        ("ber" "BER" t t)
+                        ("blast" "BLAST" nil t)
+                        ("bler" "BLER" t t)
+                        ("bpsk" "BPSK" nil t)
+                        ("bs" "BS" t t)
+                        ("cam" "CAM" nil t)
+                        ("cdf" "CDF" t t)
+                        ("comp" "CoMP" nil t)
+                        ("cqi" "CQI" nil t)
+                        ("crs" "CRS" nil t)
+                        ("csi" "CSI" nil t)
+                        ("csit" "CSIT" nil t)
+                        ("dft" "DFT" t t)
+                        ("dmrs" "DMRS" nil t)
+                        ("dof" "DOF" t t)
+                        ("dtdd" "DTDD" nil t)
+                        ("fdd" "FDD" nil t)
+                        ("harq" "HARQ" nil t)
+                        ("ia" "IA" nil t)
+                        ("ic" "IC" nil t)
+                        ("jp" "JP" nil t)
+                        ("los" "LOS" nil t)
+                        ("ls" "LS" nil t)
+                        ("lte" "LTE" nil t)
+                        ("mimo" "MIMO" nil t)
+                        ("miso" "MISO" nil t)
+                        ("mlp" "MLP" nil t)
+                        ("mmse" "MMSE" nil t)
+                        ("mrt" "MRT" nil t)
+                        ("mse" "MSE" nil t)
+                        ("ofdm" "OFDM" nil t)
+                        ("pdf" "PDF" t t)
+                        ("prb" "PRB" t t)
+                        ("prr" "PRR" nil t)
+                        ("psk" "PSK" nil t)
+                        ("qam" "QAM" nil t)
+                        ("qos" "QoS" nil t)
+                        ("re" "RE" t nil)
+                        ("rb" "RB" t t)
+                        ("rsrp" "RSRP" nil t)
+                        ("rsrq" "RSRQ" nil t)
+                        ("rssi" "RSSI" nil t)
+                        ("sdma" "SDMA" nil t)
+                        ("sic" "SIC" nil t)
+                        ("simo" "SIMO" nil t)
+                        ("sinr" "SINR" t t)
+                        ("siso" "SISO" nil t)
+                        ("snr" "SNR" nil t)
+                        ("srs" "SRS" nil t)
+                        ("stbc" "STBC" nil t)
+                        ("svd" "SVD" t t)
+                        ("tdd" "TDD" nil t)
+                        ("tti" "TTI" t t)
+                        ("ue" "UE" t t)
+                        ("ula" "ULA" t t)
+                        ("ura" "URA" t t)
+                        ("v2i" "V2I" nil t)
+                        ("v2v" "V2V" nil t)
+                        ("v2x" "V2X" nil t)
+                        ("zf" "ZF" nil t)
                         ))
 
 ;; List with elements in my-acronym-list where the third value is 't'
 (setq plural-list (seq-filter (lambda (elem) (nth 2 elem)) my-acronym-list))
 
 ;; Construct an abbrev table for text mode from my-acronym-list
-(define-abbrev-table 'text-mode-abbrev-table
+(define-abbrev-table 'my-text-mode-abbrev-table
   (append
    (mapcar (lambda (elem) (list (nth 0 elem) (nth 1 elem))) my-acronym-list)
    (mapcar (lambda (elem) (list (concat (nth 0 elem) "s") (concat (nth 1 elem) "s"))) plural-list)
@@ -84,28 +88,30 @@
      ("trainning" "training")
      ("eachother" "each other")
      ("pathloss" "path-loss")
+     ("teh" "the")
      )
    )
   )
 
 
-;; Construct an abbrev table for tex mode where each element in my-acronym-list will have a xpansion stating with "a". For instance, typing "abs" will expand to \ac{BS}
-(define-abbrev-table 'latex-mode-abbrev-table
-  (append
-   (mapcar (lambda (elem) (list (concat "a" (nth 0 elem)) (concat "\\ac{" (nth 1 elem) "}"))) my-acronym-list)
+;; (-keep (lambda (elem) (nth 2 elem)) my-acronym-list)
 
-   (mapcar (lambda (elem) (list (concat "a" (nth 0 elem) "s") (concat "\\acp{" (nth 1 elem) "}"))) plural-list)
+;; Construct an abbrev table for tex mode where each element in my-acronym-list will have a xpansion stating with "a". For instance, typing "abs" will expand to \ac{BS}
+;; NOTE: The "-keep" function is like "mapcar", but it does not include nil elements in the returned list
+(define-abbrev-table 'my-latex-mode-abbrev-table
+  (append
+   (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem)) (concat "\\ac{" (nth 1 elem) "}")))) my-acronym-list)
+
+   (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem) "s") (concat "\\acp{" (nth 1 elem) "}")))) plural-list)
    )
-  :parents (list text-mode-abbrev-table)
   )
 
-(define-abbrev-table 'org-mode-abbrev-table
+(define-abbrev-table 'my-org-mode-abbrev-table
   (append
-   (mapcar (lambda (elem) (list (concat "a" (nth 0 elem)) (concat "gls:" (nth 1 elem)))) my-acronym-list)
+   (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem)) (concat "gls:" (nth 1 elem))))) my-acronym-list)
 
-   (mapcar (lambda (elem) (list (concat "a" (nth 0 elem) "s") (concat "glspl:" (nth 1 elem)))) plural-list)
+   (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem) "s") (concat "glspl:" (nth 1 elem))))) plural-list)
    )
-  :parents (list text-mode-abbrev-table)
   )
 
 
