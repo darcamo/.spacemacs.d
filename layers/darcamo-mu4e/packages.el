@@ -30,7 +30,8 @@
 ;;; Code:
 
 (defconst darcamo-mu4e-packages
-  '(mu4e-jump-to-list)
+  '(mu4e-jump-to-list
+    org-msg)
   "The list of Lisp packages required by the darcamo-mu4e layer.
 
 Each entry is either:
@@ -59,8 +60,42 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 (defun darcamo-mu4e/init-mu4e-jump-to-list ()
+  ;; allows to select and view mailing lists automatically using existing
+  ;; List-ID headers in your mu database.
+  ;;
+  ;; Just press "l" in the headers view and any mailing list you've subscribed
+  ;; to will be automatically discovered and presented in recency order. No
+  ;; setup or refiling necessary.
   (use-package mu4e-jump-to-list
     :ensure t)
   )
+
+(defun darcamo-mu4e/init-org-msg ()
+  ;; allows to select and view mailing lists automatically using existing
+  ;; List-ID headers in your mu database.
+  ;;
+  ;; Just press "l" in the headers view and any mailing list you've subscribed
+  ;; to will be automatically discovered and presented in recency order. No
+  ;; setup or refiling necessary.
+  (use-package org-msg
+    :ensure t
+    :config
+    (setq
+     org-msg-options "html-postamble:nil H:5 num:nil ^:{} toc:nil author:nil email:nil tex:dvipng \\n:t"
+	 org-msg-startup "hidestars indent inlineimages"
+	 org-msg-greeting-fmt "\nHi *%s*,\n\n"
+	 org-msg-greeting-name-limit 3
+	 org-msg-text-plain-alternative t
+	 org-msg-signature "
+
+ Regards,
+
+ #+begin_signature
+ -- *Darlan* \\\\
+ #+end_signature")
+    (org-msg-mode)
+    )
+  )
+
 
 ;;; packages.el ends here
