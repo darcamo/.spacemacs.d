@@ -119,6 +119,9 @@
   )
 
 
+;; I will always modify my abbrev file manually or programatically and I don't
+;; want emacs to mess the file
+(setq save-abbrevs nil)
 
 ;; Turn on abbrev-mode by default on all major modes
 (setq-default abbrev-mode t)
