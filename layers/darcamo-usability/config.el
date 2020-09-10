@@ -48,5 +48,8 @@
 
 ;; Enable visual-fill-column-mode everytime visual-line-mode is enabled
 (add-hook 'visual-line-mode-hook
-          (lambda () (visual-fill-column-mode))
+          (lambda ()
+            (visual-fill-column-mode)
+            (adaptive-wrap-prefix-mode)
+            )
           )

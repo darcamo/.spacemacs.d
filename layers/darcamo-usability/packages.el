@@ -43,6 +43,7 @@
     multiple-cursors
     ace-mc                              ; Ace-Multiple-Cursors
     highlight-symbol
+    adaptive-wrap ;; used when visual-line-mode is activated
     )
   "The list of Lisp packages required by the darcamo-usability layer.
 
@@ -145,6 +146,11 @@ Each entry is either:
   )
 
 (defun darcamo-usability/init-highlight-symbol ()
+  )
+
+(defun darcamo-usability/init-adaptive-wrap ()
+  (use-package adaptive-wrap
+    :ensure t)
   )
 
 ;;; packages.el ends here
