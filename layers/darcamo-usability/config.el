@@ -44,12 +44,12 @@
 
 
 ;; Indicate in the (right) fringe which lines were wrapped by visual-line-mode
-(setq visual-line-fringe-indicators '(nil right-curly-arrow))
+(setq visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow))
 
 ;; Enable visual-fill-column-mode everytime visual-line-mode is enabled
 (add-hook 'visual-line-mode-hook
           (lambda ()
-            (visual-fill-column-mode)
+            ;; (visual-fill-column-mode)  ;; Nice minor-mode, but it comflicts with git-gutter
             (adaptive-wrap-prefix-mode)
             )
           )
