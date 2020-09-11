@@ -105,6 +105,7 @@ Each entry is either:
 (defun darcamo-org-roam/init-org-roam-server ()
   (use-package org-roam-server
     :ensure t
+    :bind ([f6] . org-roam-find-file)
     :config
     (setq org-roam-server-host "127.0.0.1"
           org-roam-server-port 8080

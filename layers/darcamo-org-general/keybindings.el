@@ -9,8 +9,6 @@
 (add-hook
  'org-mode-hook
  (lambda ()
-   (define-key org-mode-map [f6] 'darlan/org-surround-inline-math)
-   (define-key org-mode-map [C-f6] 'org-insert-example-block)
    (define-key org-mode-map [C-M-return] 'org-meta-return)
    (define-key org-mode-map [f8] 'org-toggle-link-display)
    ;; (define-key org-mode-map "\C-xye" 'yas/expand)

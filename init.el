@@ -762,6 +762,8 @@ before packages are loaded."
     :config
     (keychain-refresh-environment)
     )
+
+  (global-set-key [C-f6] 'deft)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
