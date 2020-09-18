@@ -87,7 +87,13 @@ Each entry is either:
         "rg" 'org-roam-graph
         "rj" 'org-roam-jump-to-index)
 
-      (setq org-roam-capture-templates '(("d" "default" plain #'org-roam-capture--get-point "%?" :file-name "%<%Y%m%d%H%M%S>-${slug}" :head "#+title: ${title}\n#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/org-roam-setup.org\n\n" :unnarrowed t)))
+      (setq org-roam-capture-templates '(
+                                         ("d" "default" plain #'org-roam-capture--get-point "%?" :file-name "%<%Y%m%d%H%M%S>-${slug}" :head "#+title: ${title}\n#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/org-roam-setup.org\n\n" :unnarrowed t)
+                                         ("D" "Doutorado" plain #'org-roam-capture--get-point "%?" :file-name "%<%Y%m%d%H%M%S>-${slug}" :head "#+title: ${title}\n#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/org-roam-setup.org\n#+ROAM_TAGS: §Doutorado\n\n- Links :: [[file:20200623165210-doutorado.org][Doutorado]]\n\n" :unnarrowed t)
+                                         )
+            org-roam-graph-exclude-matcher "index.org"
+            org-roam-graph-extra-config '(("rankdir" . "LR"))  ; Default is top-down but left-right works better
+            )
 
       (use-package org-roam-protocol :after org-roam)
       ))
@@ -114,7 +120,8 @@ Each entry is either:
           org-roam-server-network-arrows nil
           org-roam-server-network-label-truncate t
           org-roam-server-network-label-truncate-length 60
-          org-roam-server-network-label-wrap-length 20))
+          org-roam-server-network-label-wrap-length 20
+          ))
   )
 
 
