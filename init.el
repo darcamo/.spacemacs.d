@@ -794,5 +794,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(font-latex-math-face ((t (:foreground "burlywood" :family "Deja-DejaVu Math TeX Gyre"))))
+ '(org-roam-link ((t (:inherit org-link :foreground "spring green"))))
+ '(org-roam-link-current ((t (:inherit org-link :foreground "gold"))))
  '(pdf-isearch-lazy ((((background light)) (:foreground "goldenrod")) (((background light)) (:inherit lazy-highlight)))))
 )
