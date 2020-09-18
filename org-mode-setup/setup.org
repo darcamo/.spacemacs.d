@@ -3,7 +3,6 @@
 #+OPTIONS: ^:nil
 #+OPTIONS: LaTeX:mathjax
 #+OPTIONS: tags:nil
-#+MATHJAX: align:"left" mathml:t path:"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" scale:100
 #+LINK: google http://www.google.com/search?q=%s
 #+LINK: nautilus elisp:(browse-dir "%s")
 #+LINK: sftp elisp:(browse-dir-sftp "%s")
@@ -24,3 +23,6 @@ configurações comuns a vários arquivos .org.
 
 Para usar basta colocar no arquivo .org desejado a linha
 : #+SETUPFILE: ~/.spacemacs.d/org-mode-setup/setup.org
+
+
+#   #+MATHJAX: align:"left" mathml:t path:"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" scale:100

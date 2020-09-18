@@ -8,6 +8,7 @@
 ;; corresponding acronyms functionality (acro package in latex and glossaries
 ;; package in org-mode).
 (setq my-acronym-list '(
+                        ;; token - expansion - use plural - add acronym expansion
                         ("arima" "ARIMA" nil t)
                         ("bd" "BD" nil t)
                         ("ber" "BER" t t)
@@ -125,3 +126,5 @@
 
 ;; Turn on abbrev-mode by default on all major modes
 (setq-default abbrev-mode t)
+
+(read-abbrev-file "~/.abbrev_defs")
