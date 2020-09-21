@@ -619,6 +619,7 @@ before packages are loaded."
   ;; Set .clang-format file to yaml mode
   (add-to-list 'auto-mode-alist '("\\.clang-format" . yaml-mode))
   (add-to-list 'auto-mode-alist '("\\.style.yapf" . conf-mode))
+  (add-to-list 'auto-mode-alist '(".conan/profiles/*" . conf-mode))
   ;; Integrate plantuml with org-mode
   (with-eval-after-load 'org
     (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
