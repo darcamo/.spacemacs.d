@@ -121,8 +121,12 @@ Each entry is either:
           org-roam-server-network-label-truncate t
           org-roam-server-network-label-truncate-length 60
           org-roam-server-network-label-wrap-length 20
-          ))
-  )
+          )
+    (spacemacs/set-leader-keys
+      "ars" 'org-roam-server-mode)
+    (spacemacs/set-leader-keys-for-major-mode 'org-mode
+      "rs" 'org-roam-server-mode)
+  ))
 
 
 ;;; packages.el ends here
