@@ -66,4 +66,23 @@
      ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
      ("\\paragraph{%s}" . "\\paragraph*{%s}")
      ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+  (add-to-list
+   'org-latex-classes
+   '("gtelabnt"
+     "\\documentclass[doutorado, brazil, english]{gtelabnt}
+\\usepackage{csquotes}
+\\usepackage{definitions}
+\\usepackage{MathDefinitions}
+\\addbibresource{references.bib}
+[NO-DEFAULT-PACKAGES]  % do not include any of the default packages
+[PACKAGES]             % \\usepackage statements for packages
+[EXTRA]                % the stuff from #+LATEX_HEADER(_EXTRA)
+     "
+     ("\\chapter{%s}" . "\\chapter*{%s}")
+     ("\\section{%s}" . "\\section*{%s}")
+     ("\\subsection{%s}" . "\\subsection*{%s}")
+     ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+     ("\\paragraph{%s}" . "\\paragraph*{%s}")
+     ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
   )
