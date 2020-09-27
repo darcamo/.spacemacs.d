@@ -86,3 +86,12 @@
      ("\\paragraph{%s}" . "\\paragraph*{%s}")
      ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
   )
+
+
+(setq org-publish-project-alist
+      '(("thesis"
+         :base-directory "/mnt/Dados/darlan/git_files/darlan-thesis"
+         :publishing-directory "export/"
+         :publishing-function org-latex-publish-to-pdf
+         :section-numbers t
+         :table-of-contents nil)))
