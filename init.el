@@ -154,7 +154,9 @@ This function should only modify configuration layer settings."
        )
 
      (darcamo-org-roam :variables
-                       org-roam-buffer-position 'right)
+                       org-roam-buffer-position 'right
+                       org-roam-db-location "~/.emacs.d/.cache/org-roam.db"
+                       )
      darcamo-c++
      darcamo-python-conda-env
      darcamo-jupyter-notebook  ;; Defines a (VERY) simple minor-mode for jupyter notebooks that makes file read-only
