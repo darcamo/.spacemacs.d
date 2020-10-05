@@ -54,7 +54,7 @@
 ;; Number of empty lines needed to keep an empty line between collapsed
 ;; trees. If the number is negative, and the number of empty lines is at least
 ;; -N, all empty lines are shown.
-(setq org-cycle-separator-lines -2)
+;; (setq org-cycle-separator-lines -2)
 
 ;; Indica se uma linha em branco deve ser inserida antes de um heading, mas não
 ;; antes de uma lista. O ideal é usar auto, mas parece não funcionar direito
