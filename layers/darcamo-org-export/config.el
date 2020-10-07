@@ -74,7 +74,7 @@
 \\usepackage{csquotes}
 \\usepackage{definitions}
 \\usepackage{MathDefinitions}
-\\addbibresource{references.bib}
+\\usepackage{booktabs}
 [NO-DEFAULT-PACKAGES]  % do not include any of the default packages
 [PACKAGES]             % \\usepackage statements for packages
 [EXTRA]                % the stuff from #+LATEX_HEADER(_EXTRA)
