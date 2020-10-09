@@ -84,6 +84,25 @@
      ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
      ("\\paragraph{%s}" . "\\paragraph*{%s}")
      ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+  (add-to-list
+   'org-latex-classes
+   '("thesischapter"
+     "\\documentclass{article}
+\\usepackage{csquotes}
+\\usepackage{MathDefinitions}
+\\usepackage{booktabs}
+\\usepackage{hyperref}
+[NO-DEFAULT-PACKAGES]  % do not include any of the default packages
+[PACKAGES]             % \\usepackage statements for packages
+[EXTRA]                % the stuff from #+LATEX_HEADER(_EXTRA)
+     "
+     ("\\section{%s}" . "\\section*{%s}")
+     ("\\subsection{%s}" . "\\subsection*{%s}")
+     ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+     ("\\paragraph{%s}" . "\\paragraph*{%s}")
+     ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
   )
 
 
