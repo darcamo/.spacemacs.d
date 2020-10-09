@@ -30,7 +30,8 @@
 ;;; Code:
 
 (defconst darcamo-org-export-packages
-  '(ox-extra)
+  '(ox-extra
+    ox-latex-subfigure)
   "The list of Lisp packages required by the darcamo-org-export layer.
 
 Each entry is either:
@@ -71,6 +72,15 @@ Each entry is either:
   ;;   :config
   ;;   (ox-extras-activate '(ignore-headlines))
   ;;   )
+  )
+
+(defun darcamo-org-export/init-ox-latex-subfigure ( )
+  (use-package ox-latex-subfigure
+    :init
+    (setq org-latex-prefer-user-labels t)
+    :ensure t
+    ;; :config (require 'ox-latex-subfigure)
+    )
   )
 
 ;;; packages.el ends here
