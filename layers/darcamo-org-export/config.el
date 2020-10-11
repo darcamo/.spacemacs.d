@@ -22,7 +22,7 @@
         ;; This requires latexmk, but it has many advantages such as running
         ;; latex the correct number of times, support calling biber when
         ;; biblatex is used, etc
-        '("latexmk -shell-escape -bibtex -output-directory=%o -pdf %f")
+        '("latexmk -silent -shell-escape -bibtex -output-directory=%o -lualatex %f")
         ))
 
 (with-eval-after-load 'ox-latex
