@@ -73,6 +73,7 @@ This function should only modify configuration layer settings."
                                 (gnus . org-gnus-no-new-news)
                                 (file . find-file)
                                 (wl . wl-other-frame))
+          org-preview-latex-default-process 'dvisvgm
           )
 
      spacemacs-org
