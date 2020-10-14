@@ -28,7 +28,7 @@
                         ("dof" "DOF" t t)
                         ("dtdd" "DTDD" nil t)
                         ("fdd" "FDD" nil t)
-                        ("gp" "GP" nil t)
+                        ("gp" "GP" t t)
                         ("harq" "HARQ" nil t)
                         ("ia" "IA" nil t)
                         ("ic" "IC" nil t)
@@ -38,10 +38,12 @@
                         ("lte" "LTE" nil t)
                         ("mimo" "MIMO" nil t)
                         ("miso" "MISO" nil t)
+                        ("ml" "ML" nil t)
                         ("mlp" "MLP" nil t)
                         ("mmse" "MMSE" nil t)
                         ("mrt" "MRT" nil t)
                         ("mse" "MSE" nil t)
+                        ("occ" "OCC" nil t)
                         ("ofdm" "OFDM" nil t)
                         ("pdf" "PDF" t t)
                         ("prb" "PRB" t t)
@@ -113,9 +115,9 @@
 
 (define-abbrev-table 'my-org-mode-abbrev-table
   (append
-   (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem)) (concat "gls:" (nth 1 elem))))) my-acronym-list)
+   (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem)) (concat "ac:" (nth 1 elem))))) my-acronym-list)
 
-   (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem) "s") (concat "glspl:" (nth 1 elem))))) plural-list)
+   (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem) "s") (concat "acp:" (nth 1 elem))))) plural-list)
    )
   )
 
