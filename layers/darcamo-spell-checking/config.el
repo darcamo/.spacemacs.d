@@ -28,5 +28,9 @@
 ;; Make spell checking ignore SRC blocks
 (add-to-list 'ispell-skip-region-alist '("#\\+BEGIN_SRC" . "#\\+END_SRC"))
 
+;; Skip some math environments
+(add-to-list 'ispell-skip-region-alist '("\\\\begin{multline}" . "\\\\end{multline}"))
+(add-to-list 'ispell-skip-region-alist '("\\\\begin{equation}" . "\\\\end{equation}"))
+(add-to-list 'ispell-skip-region-alist '("\\\\begin{align}" . "\\\\end{align}"))
 
 
