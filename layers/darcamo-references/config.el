@@ -26,3 +26,35 @@
       (lambda (fpath)
         (call-process "evince" nil 0 nil fpath)))
 ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;; Search inside PDF files (using pdfgrep) from org-ref
+;;
+;; Note that you can already do this with helm-find-files (use =M-a= to mark files and then 
+(with-eval-after-load 'org-ref
+  (defun org-ref-grep-pdf (&optional _candidate)
+    "Search pdf files of marked CANDIDATEs."
+    (interactive)
+    (let ((keys (helm-marked-candidates))
+          (get-pdf-function org-ref-get-pdf-filename-function))
+      (helm-do-pdfgrep-1
+       (-remove (lambda (pdf)
+		          (string= pdf ""))
+	            (mapcar (lambda (key)
+		                  (funcall get-pdf-function key))
+		                keys)))))
+
+  (helm-add-action-to-source "Grep PDF" 'org-ref-grep-pdf helm-source-bibtex 4)
+
+  (setq helm-bibtex-map
+        (let ((map (make-sparse-keymap)))
+          (set-keymap-parent map helm-map)
+          (define-key map (kbd "C-s") (lambda () (interactive)
+				                        (helm-run-after-exit 'org-ref-grep-pdf)))
+          map))
+
+  (push `(keymap . ,helm-bibtex-map) helm-source-bibtex)
+  )
+;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+

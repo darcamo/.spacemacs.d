@@ -33,9 +33,4 @@
   )
 
 ;; Faz com que o commando \vec seja conhecido para o preview latex
-;; (setq org-format-latex-header (concat org-format-latex-header "\n\\renewcommand{\\vec}[1]{\\mathbf{#1}}"))
-;; ;; Faz com que o commando \mat seja conhecido para o preview latex
-;; (setq org-format-latex-header (concat org-format-latex-header "\n\\newcommand{\\mat}[1]{\\mathbf{#1}}"))
-;; ;; Faz com que o commando \set seja conhecido para o preview latex
-;; (setq org-format-latex-header (concat org-format-latex-header "\n\\newcommand{\\Set}[1]{\\mathbb{#1}}"))
 (setq org-latex-preview-ltxpng-directory "~/tmp/ltxpng/")
