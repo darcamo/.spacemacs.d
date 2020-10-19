@@ -74,6 +74,8 @@ This function should only modify configuration layer settings."
                                 (file . find-file)
                                 (wl . wl-other-frame))
           org-preview-latex-default-process 'dvisvgm
+          org-hide-macro-markers t  ;; font-lock should hide macro calls brackets
+          org-hide-emphasis-markers t  ;; font-lock should hide the emphasis markers
 
           ;; Org-roam support
           org-enable-roam-support t
