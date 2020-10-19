@@ -4,6 +4,8 @@
           (lambda ()
             (darlan/set-up-outline-minor-mode "@")))
 
+(with-eval-after-load 'bibtex
+  (bibtex-set-dialect 'biblatex))
 
 (setq bibtex-comma-after-last-field t)
 

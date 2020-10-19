@@ -732,9 +732,6 @@ before packages are loaded."
   ;; | xref-pop-marker-stack | M-,      |
   ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-  (with-eval-after-load 'bibtex
-    (bibtex-set-dialect 'biblatex))
-
   ;; This might help with the slow handling of very long lines
   (setq-default bidi-display-reordering nil)
 
