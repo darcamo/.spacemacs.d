@@ -117,6 +117,31 @@
 
 
 
+;; Functions to surround some text with an org-mode macro for red color
+;; You need the org-macros.setup file or to manyally add the macro below to your org-mode file
+;; #+MACRO: color @@html:<span style="color: $1">$2</span>@@@@latex:\textcolor{$1}{$2}@@@@odt:<text:span text:style-name="$1">$2</text:span>@@
+
+(defun my-org-textcolor-red-macro ()
+  "Surround current region with {{{color(red, content)}}} if mark is active or prompts for a text and insert {{{color(red, the text)}}}."
+  (interactive)
+  (let (pos1 pos2 text)
+    (if (and transient-mark-mode
+             mark-active)
+        (my-org-surround-textcolor-red-macro (region-beginning) (region-end))
+      (insert "{{{color(red," (read-from-minibuffer "Text in red: ") ")}}}")
+      )))
+
+(defun my-org-surround-textcolor-red-macro (beg end)
+  "Surround the region with \textcolor{red}{ }"
+  (interactive "r")
+  (save-restriction
+    (narrow-to-region beg end)
+    (goto-char (point-min))
+    (insert "{{{color(red,")
+    (goto-char (point-max))
+    (insert ")}}}")))
+
+
 ;; Transpose a Table
 (defun org-transpose-table-at-point ()
   "Transpose orgmode table at point, eliminate hlines"
