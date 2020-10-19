@@ -172,7 +172,13 @@
         ;; latex the correct number of times, support calling biber when
         ;; biblatex is used, etc
         '("latexmk -shell-escape -bibtex -output-directory=%o -lualatex %f")
-        ))
+        )
+
+  (add-to-list 'org-latex-logfiles-extensions "glo")
+  (add-to-list 'org-latex-logfiles-extensions "bbl")
+  (add-to-list 'org-latex-logfiles-extensions "acn")
+  (add-to-list 'org-latex-logfiles-extensions "ist")
+  )
 
 (with-eval-after-load 'ox-latex
   (add-to-list

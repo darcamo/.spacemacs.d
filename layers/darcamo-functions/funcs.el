@@ -148,30 +148,31 @@
   (format-time-string "[%Y-%m-%d %a]" (current-time))
   )
 
-        (defun get-previous-month()
-          (interactive)
-          (capitalize (format-time-string "%B"
-        ;; decode-time retorna uma lista especificando a data/hora atual na forma
-        ;; (SEC MINUTE HOUR DAY MONTH YEAR DOW DST ZONE). Depois substituo o dia
-        ;; por 0. Com isso ao aplicar encode-time e em seguida format-time-string
-        ;; eu vou pegar o mês anterior ao invés do mez atual (funciona até mesmo
-        ;; para janeiro).
-                                          (apply 'encode-time ( replace-nth-element (decode-time) 3 0))
-                                          ))
-          )
 
-        (defun get-previous-month-year()
-          "Get the year of the previous month. This will be equal to the current yar except when we are in january"
-          (interactive)
-          (capitalize (format-time-string "%Y"
-        ;; decode-time retorna uma lista especificando a data/hora atual na forma
-        ;; (SEC MINUTE HOUR DAY MONTH YEAR DOW DST ZONE). Depois substituo o dia
-        ;; por 0. Com isso ao aplicar encode-time e em seguida format-time-string
-        ;; eu vou pegar o ano do mês anterior (igual ao ano atual, exceto se
-        ;; estivermos em janeiro, quando ele retorna o ano anterior)
-                                          (apply 'encode-time ( replace-nth-element (decode-time) 3 0))
-                                          ))
-          )
+(defun get-previous-month()
+  (interactive)
+  (capitalize (format-time-string "%B"
+                                  ;; decode-time retorna uma lista especificando a data/hora atual na forma
+                                  ;; (SEC MINUTE HOUR DAY MONTH YEAR DOW DST ZONE). Depois substituo o dia
+                                  ;; por 0. Com isso ao aplicar encode-time e em seguida format-time-string
+                                  ;; eu vou pegar o mês anterior ao invés do mez atual (funciona até mesmo
+                                  ;; para janeiro).
+                                  (apply 'encode-time ( replace-nth-element (decode-time) 3 0))
+                                  ))
+  )
+
+(defun get-previous-month-year()
+  "Get the year of the previous month. This will be equal to the current yar except when we are in january"
+  (interactive)
+  (capitalize (format-time-string "%Y"
+                                  ;; decode-time retorna uma lista especificando a data/hora atual na forma
+                                  ;; (SEC MINUTE HOUR DAY MONTH YEAR DOW DST ZONE). Depois substituo o dia
+                                  ;; por 0. Com isso ao aplicar encode-time e em seguida format-time-string
+                                  ;; eu vou pegar o ano do mês anterior (igual ao ano atual, exceto se
+                                  ;; estivermos em janeiro, quando ele retorna o ano anterior)
+                                  (apply 'encode-time ( replace-nth-element (decode-time) 3 0))
+                                  ))
+  )
 
 
 

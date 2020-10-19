@@ -74,7 +74,7 @@ TeX-command-master (from auctex) with a 'Latex' argument."
   )
 
 (defun my-latex-textcolor-red ()
-  "Surround current region with \textcolor{red}{ } if mark is active of prompts for a text and insert \textcolor{red}{acronym}."
+  "Surround current region with \textcolor{red}{ } if mark is active or prompts for a text and insert \textcolor{red}{acronym}."
   (interactive)
   (let (pos1 pos2 text)
     (if (and transient-mark-mode
