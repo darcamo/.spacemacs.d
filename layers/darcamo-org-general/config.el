@@ -15,6 +15,12 @@
 (setq org-tag-faces '(("ATTACH" :inherit org-done :box nil :underline t :height 1.2)))
                                         ;(setq org-tag-faces '(("ATTACH" :inherit org-done :box (:line-width 3 :background "red" :color "yellow" :style released-button) :underline t)))
 
+;; By default both org-code and org-vertavim faces just inherit from the shadow
+;; face. This makes them undistinguishable. Let's modify the color of the
+;; org-code face to something different
+(with-eval-after-load 'org-faces
+  (set-face-attribute 'org-code nil :foreground "indian red")
+  )
 
 
 ;; Some pretty symbols
