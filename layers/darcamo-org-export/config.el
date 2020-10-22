@@ -6,6 +6,36 @@
   )
 
 
+;; Use unicode character for non-breaking space in org-mode
+;;
+;; In org-mode one must use `\nbsp{}` to represent a non-breaking space. This is
+;; replaced by `~` in Latex and by `&nbsp;` in HTML. However, its annoying and
+;; ugly to have `\nbsp{}` in the org-mode buffer. The code below adds a filter
+;; in org-export that replaces the unicode character for non-breaking space with
+;; the appropriated value such that it can be used instead of `\nbsp{}`.
+;; NOTE: You can enter the unicode non-breaking space with `C-x 8 SPC`
+(defun darlan/replace-unicode-non-break-space-org-filter (text backend info)
+  "Replace the unicode character for nonbreaking space with '~' in latex,
+'&nbsp;' in HTML, and a regular space in other backends."
+  (if (org-export-derived-backend-p backend 'latex)
+      (replace-regexp-in-string " "
+                                "~"
+                                text)
+    (if (org-export-derived-backend-p backend 'html)
+        (replace-regexp-in-string " "
+                                  "&nbsp;"
+                                  text)
+      (replace-regexp-in-string " "
+                                " "
+                                text))
+    )
+  )
+
+(with-eval-after-load 'ox
+  (add-to-list 'org-export-filter-body-functions 'darlan/replace-unicode-non-break-space-org-filter)
+  )
+
+
 
 ;; String with code to configure MathJax with my custom commands
 ;; This must come BEFORE mathjax is included
