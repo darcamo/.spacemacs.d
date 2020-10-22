@@ -26,6 +26,9 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-M-=") 'er/contract-region)
 
+(with-eval-after-load 'pdf-view
+  (define-key pdf-view-mode-map "c" 'pdf-continuous-scroll-mode)
+  )
 
 ;;  ;; Highlight symbol
 ;; (with-eval-after-load 'highlight-symbol
