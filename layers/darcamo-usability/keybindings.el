@@ -28,6 +28,7 @@
 
 (with-eval-after-load 'pdf-view
   (define-key pdf-view-mode-map "c" 'pdf-continuous-scroll-mode)
+  (define-key pdf-view-mode-map "i" 'pdf-view-midnight-minor-mode)
   )
 
 ;;  ;; Highlight symbol
