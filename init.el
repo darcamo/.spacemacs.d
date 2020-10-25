@@ -778,6 +778,31 @@ before packages are loaded."
 
   (global-set-key [C-f11] 'darkroom-tentative-mode)
   (global-set-key [C-f6] 'deft)
+
+  ;; Emacs application framework
+  ;; https://github.com/manateelazycat/emacs-application-framework#dependency-list
+  ;; Dependencies: "pikaur -S python-pyqt5 python-pyqt5-sip python-pyqtwebengine python-qrcode python-feedparser python-dbus python-pyinotify python-markdown nodejs aria2 libreoffice python-pymupdf python-grip filebrowser-bin"
+  ;;
+  ;; It is available in Arch AUR as the 'emacs-eaf' package
+  (use-package eaf
+    :load-path "/usr/share/emacs/site-lisp/eaf" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
+    ;; :load-path "~/git_files/emacs-application-framework" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
+    :custom
+    (eaf-find-alternate-file-in-dired t)
+    :config
+    (eaf-bind-key scroll_up "C-n" eaf-pdf-viewer-keybinding)
+    (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
+    (eaf-bind-key take_photo "p" eaf-camera-keybinding)
+    ;; (define-key eaf-mode-map (kbd "C-<down>") 'eaf-proxy-scroll_up_page)
+    ;; (define-key eaf-mode-map (kbd "C-<up>") 'eaf-proxy-scroll_down_page)
+    ;; (define-key eaf-mode-map (kbd "M-<") 'eaf-proxy-scroll_to_begin)
+    ;; (define-key eaf-mode-map (kbd "M->") 'eaf-proxy-scroll_to_end)
+    ;; :bind
+    ;; (("C-<down>" . eaf-proxy-scroll_up_page)
+    ;; ("C-<up>" . eaf-proxy-scroll_down_page)
+    ;; ("M-<" . eaf-proxy-scroll_to_begin)
+    ;; ("M->" . eaf-proxy-scroll_to_end))
+    )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
