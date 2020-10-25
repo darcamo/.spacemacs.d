@@ -238,9 +238,6 @@
    'org-latex-classes
    '("IEEEtran"
      "\\documentclass{IEEEtran}
-\\usepackage[backend=biber,doi=false,isbn=false, url=false, sorting=none, maxbibnames=3, giveninits=true, dateabbrev=true]{biblatex}
-\\addbibresource{~/Dropbox/org/references/articles.bib}
-\\addbibresource{~/Dropbox/org/references/articles_without_notes.bib}
 [DEFAULT-PACKAGES]  % do not include any of the default packages
 [PACKAGES]             % \\usepackage statements for packages
 [EXTRA]                % the stuff from #+LATEX_HEADER(_EXTRA)
@@ -256,7 +253,6 @@
    '("gtelabnt"
      "\\documentclass[doutorado, brazil, english]{gtelabnt}
 \\usepackage{csquotes}
-\\usepackage{definitions}
 \\usepackage{MathDefinitions}
 \\usepackage{booktabs}
 [NO-DEFAULT-PACKAGES]  % do not include any of the default packages
@@ -298,3 +294,23 @@
          :publishing-function org-latex-publish-to-pdf
          :section-numbers t
          :table-of-contents nil)))
+
+;; (setq org-format-latex-header "\\documentclass{gtelabnt}
+;; \\usepackage[usenames]{color}
+;; \\usepackage{definitions}
+;; [PACKAGES]
+;; [DEFAULT-PACKAGES]
+;; \\pagestyle{empty}             % do not remove
+;; % The settings below are copied from fullpage.sty
+;; \\setlength{\\textwidth}{\\paperwidth}
+;; \\addtolength{\\textwidth}{-3cm}
+;; \\setlength{\\oddsidemargin}{1.5cm}
+;; \\addtolength{\\oddsidemargin}{-2.54cm}
+;; \\setlength{\\evensidemargin}{\\oddsidemargin}
+;; \\setlength{\\textheight}{\\paperheight}
+;; \\addtolength{\\textheight}{-\\headheight}
+;; \\addtolength{\\textheight}{-\\headsep}
+;; \\addtolength{\\textheight}{-\\footskip}
+;; \\addtolength{\\textheight}{-3cm}
+;; \\setlength{\\topmargin}{1.5cm}
+;; \\addtolength{\\topmargin}{-2.54cm}")

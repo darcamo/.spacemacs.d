@@ -36,6 +36,7 @@
                         ("los" "LOS" nil t)
                         ("ls" "LS" nil t)
                         ("lte" "LTE" nil t)
+                        ("mcs" "MCS" t t)
                         ("mimo" "MIMO" nil t)
                         ("miso" "MISO" nil t)
                         ("ml" "ML" nil t)

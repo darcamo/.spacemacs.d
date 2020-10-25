@@ -31,6 +31,15 @@
 
 
 ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;; Change org-ref-ref-face to a better color for dark background
+(with-eval-after-load 'org-ref
+  (set-face-attribute 'org-ref-ref-face nil :foreground "gold")
+  )
+
+
+;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;; Search inside PDF files (using pdfgrep) from org-ref
 ;;
 ;; Note that you can already do this with helm-find-files (use =M-a= to mark files and then 
