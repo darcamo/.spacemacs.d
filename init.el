@@ -803,6 +803,19 @@ before packages are loaded."
     ;; ("M-<" . eaf-proxy-scroll_to_begin)
     ;; ("M->" . eaf-proxy-scroll_to_end))
     )
+
+  (with-eval-after-load 'pdf-view
+    (define-key pdf-view-mode-map (kbd "<S-mouse-4>") '(lambda () (interactive) (image-forward-hscroll 4)))
+    (define-key pdf-view-mode-map (kbd "<S-mouse-5>") '(lambda () (interactive) (image-backward-hscroll 4)))
+    )
+  (with-eval-after-load 'pdf-continuous-scroll-mode
+    (define-key pdf-continuous-scroll-mode-map (kbd "<S-mouse-4>") '(lambda () (interactive) (pdf-cscroll-image-backward-hscroll 4)))
+    (define-key pdf-continuous-scroll-mode-map (kbd "<S-mouse-5>") '(lambda () (interactive) (pdf-cscroll-image-forward-hscroll 4)))
+
+    (define-key pdf-continuous-scroll-mode-map (kbd "<prior>") 'pdf-continuous-previous-page)
+    (define-key pdf-continuous-scroll-mode-map (kbd "<next>") 'pdf-continuous-next-page)
+    (define-key pdf-continuous-scroll-mode-map (kbd "q") '(lambda ()  (interactive) (pdf-continuous-scroll-mode -1) (quit-window) ))
+    )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
