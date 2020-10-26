@@ -1,6 +1,6 @@
 
 (with-eval-after-load 'latex
-  (define-key LaTeX-mode-map [f5] 'latex-skeleton-acronym)
+  ;; (define-key LaTeX-mode-map [f5] 'latex-skeleton-acronym)
   (define-key LaTeX-mode-map [C-f5] 'latex-skeleton-math-left-right-symbol)
   (define-key LaTeX-mode-map (kbd "<C-S-f5>") 'my-latex-textcolor-red)
   (define-key LaTeX-mode-map [f9] 'tex-all)

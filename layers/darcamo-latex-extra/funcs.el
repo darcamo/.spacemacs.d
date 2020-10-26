@@ -1,22 +1,23 @@
-(defun latex-skeleton-ac (acronym)
-  "Ask for an acronym and inserts \\ac{acronym}. You probably want to call latex-skeleton-acronym instead."
-  (interactive "MAcronym: ")
-  (insert "\\ac{" acronym "}"))
+;;;; Use the ac yasnippets acronym instead (keybinding is f5)
+;; (defun latex-skeleton-ac (acronym)
+;;   "Ask for an acronym and inserts \\ac{acronym}. You probably want to call latex-skeleton-acronym instead."
+;;   (interactive "MAcronym: ")
+;;   (insert "\\ac{" acronym "}"))
 
-(defun latex-skeleton-acronym ()
-  "Surround current word with \\ac{} if mark is active of prompts for an acronym and insert \ac{acronym}."
-  (interactive)
-  (let (pos1 pos2 acronym)
-    (if (and transient-mark-mode
-             mark-active)
-        (progn (setq pos1 (region-beginning) pos2 (region-end))
-               (setq acronym (buffer-substring pos1 pos2))
-               (delete-region pos1 pos2)
-               (goto-char pos1)
-               (insert "\\ac{" acronym "\}")
-               )
-      (latex-skeleton-ac (read-from-minibuffer "Acronym: "))
-      )))
+;; (defun latex-skeleton-acronym ()
+;;   "Surround current word with \\ac{} if mark is active of prompts for an acronym and insert \ac{acronym}."
+;;   (interactive)
+;;   (let (pos1 pos2 acronym)
+;;     (if (and transient-mark-mode
+;;              mark-active)
+;;         (progn (setq pos1 (region-beginning) pos2 (region-end))
+;;                (setq acronym (buffer-substring pos1 pos2))
+;;                (delete-region pos1 pos2)
+;;                (goto-char pos1)
+;;                (insert "\\ac{" acronym "\}")
+;;                )
+;;       (latex-skeleton-ac (read-from-minibuffer "Acronym: "))
+;;       )))
 
 
 (defun latex-skeleton-math-left-right ( left-symbol right-symbol)

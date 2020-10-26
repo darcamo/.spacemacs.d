@@ -1,5 +1,7 @@
 # -*- mode: snippet -*-
 #contributor : Darlan Cavalcante Moreira <darcamo@gmail.com>
-#name : \ac{ACRONYM} 
+#name : \ac{ACRONYM}
+# expand-env: ((yas-wrap-around-region t))
+# binding: <f5>
 # --
-\ac{${1:ACRONYM}} $0
+\ac{$0}

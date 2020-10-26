@@ -55,11 +55,6 @@
           (goto-char (point-max))
           (insert rightPart)))
 
-      (defun darlan/org-surround-inline-math (beg end)
-        "Surround a region with single dollar signs"
-        (interactive "r")
-        (darlan/surround-region beg end "$" "$"))
-
       (defun darlan/surround-region-dowim (leftPart rightPart)
         "Surround a region with the content of the leftPart and
       rightPart variables. If the region is not active, the region
