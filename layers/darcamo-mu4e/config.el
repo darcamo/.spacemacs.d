@@ -110,6 +110,8 @@
       (setq mail-user-agent 'mu4e-user-agent))
 
   ;; Keybindings
+  (define-key mu4e-view-attachments-header-keymap (kbd "C-c C-o") 'mu4e~view-open-attach-from-binding)
+  (define-key mu4e-view-attachments-header-keymap (kbd "C-c C-s") 'mu4e~view-save-attach-from-binding)
   ;; (bind-key [backspace] 'scroll-down-command mu4e-headers-mode-map)
   ;; (bind-key [backspace] 'scroll-down-command mu4e-view-mode-map)
   ;; (bind-key [end] 'move-end-of-line mu4e-view-mode-map)
