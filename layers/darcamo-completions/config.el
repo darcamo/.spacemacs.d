@@ -23,6 +23,7 @@
                         ("crs" "CRS" nil t)
                         ("csi" "CSI" nil t)
                         ("csit" "CSIT" nil t)
+                        ("csr" "CSR" nil t)
                         ("dft" "DFT" t t)
                         ("dmrs" "DMRS" nil t)
                         ("dof" "DOF" t t)
