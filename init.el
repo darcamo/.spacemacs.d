@@ -344,16 +344,25 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Fira Code"
+   ;; Here I list some options and if one font is not installed the next one is used
+   ;; Another great option you could try is Victor Mono (https://rubjo.github.io/victor-mono/)
+   ;; Victor Mono is a bit more condensed than JetBrainsMono.
+   dotspacemacs-default-font '(("JetBrainsMono"  ;; Great font and it also has italics
                                :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
-   ;; dotspacemacs-default-font '("Source Code Pro"
-   ;;                             :size 16
-   ;;                             :weight normal
-   ;;                             :width normal
-   ;;                             :powerline-scale 1.1)
+                               ("Fira Code"  ;; Great font, but does not have italics
+                                :size 16
+                                :weight normal
+                                :width normal
+                                :powerline-scale 1.1)
+                               ("Source Code Pro"
+                                :size 16
+                                :weight normal
+                                :width normal
+                                :powerline-scale 1.1)
+                               )
    ;; TIP: call the "set-frame-font" interactive function to try a few options
 
    ;; (set-face-attribute 'default nil :font "Fira Code Retina-12")
