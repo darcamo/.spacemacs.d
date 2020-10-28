@@ -14,6 +14,9 @@
    ;; This will open a PDF file with the same name of the org-mode file
    ;; Useful when you are exporting the org-mode buffer to PDF
    (define-key org-mode-map [f10] '(lambda () (interactive) (find-file (concat (file-name-sans-extension (file-name-nondirectory (buffer-file-name))) ".pdf"))))
+   (define-key org-mode-map [S-f10] '(lambda () (interactive) (find-file (concat (file-name-sans-extension (file-name-nondirectory (buffer-file-name))) ".html"))))
+   (define-key org-mode-map [S-f10] '(lambda () (interactive) (ver-pdf-no-evince (concat (file-name-sans-extension (file-name-nondirectory (buffer-file-name))) ".pdf"))))
+   (define-key org-mode-map [C-f10] '(lambda () (interactive) (ver-html-no-browser (concat (file-name-sans-extension (file-name-nondirectory (buffer-file-name))) ".html"))))
    ;; (define-key org-mode-map "\C-xye" 'yas/expand)
    ;; (define-key org-mode-map "\C-xyn" 'yas/next-field)
    ;; (define-key org-mode-map [tab] 'yas/expand)
