@@ -129,6 +129,33 @@
              stX: \"\\\\mathcal{X}\",
              stY: \"\\\\mathcal{Y}\",
              stZ: \"\\\\mathcal{Z}\",
+             // Calligraphic
+             calA: \"\\\\mathcal{A}\",
+             calB: \"\\\\mathcal{B}\",
+             calC: \"\\\\mathcal{C}\",
+             calD: \"\\\\mathcal{D}\",
+             calE: \"\\\\mathcal{E}\",
+             calF: \"\\\\mathcal{F}\",
+             calG: \"\\\\mathcal{G}\",
+             calH: \"\\\\mathcal{H}\",
+             calI: \"\\\\mathcal{I}\",
+             calJ: \"\\\\mathcal{J}\",
+             calK: \"\\\\mathcal{K}\",
+             calL: \"\\\\mathcal{L}\",
+             calM: \"\\\\mathcal{M}\",
+             calN: \"\\\\mathcal{N}\",
+             calO: \"\\\\mathcal{P}\",
+             calP: \"\\\\mathcal{P}\",
+             calQ: \"\\\\mathcal{Q}\",
+             calR: \"\\\\mathcal{R}\",
+             calS: \"\\\\mathcal{S}\",
+             calT: \"\\\\mathcal{T}\",
+             calU: \"\\\\mathcal{U}\",
+             calV: \"\\\\mathcal{V}\",
+             calW: \"\\\\mathcal{W}\",
+             calX: \"\\\\mathcal{X}\",
+             calY: \"\\\\mathcal{Y}\",
+             calZ: \"\\\\mathcal{Z}\",
              // Blackboard
              bbA: \"\\\\mathbb{A}\",
              bbB: \"\\\\mathbb{B}\",
@@ -159,6 +186,7 @@
              // Others Vectors
              vtAlpha: \"\\\\boldsymbol{\\\\alpha}\",
              vtBeta: \"\\\\boldsymbol{\\\\beta}\",
+             vtEpsilon: \"\\\\boldsymbol{\\\\epsilon}\",
              vtGamma: \"\\\\boldsymbol{\\\\gamma}\",
              vtRho: \"\\\\boldsymbol{\\\\rho}\",
              vtEta: \"\\\\boldsymbol{\\\\eta}\",
@@ -182,6 +210,7 @@
              mtTau: \"\\\\boldsymbol{\\\\Tau}\",
              mtTheta: \"\\\\boldsymbol{\\\\Theta}\",
              mtLambda: \"\\\\boldsymbol{\\\\Lambda}\",
+             mtPhi: \"\\\\boldsymbol{\\\\Phi}\",
              mtOne: \"\\\\mathbf{1}\",
              mtZero: \"\\\\boldsymbol{0}\"
          }
@@ -289,7 +318,7 @@
 
 (setq org-publish-project-alist
       '(("thesis"
-         :base-directory "/mnt/Dados/darlan/git_files/darlan-thesis"
+         :base-directory "~/git_files/darlan-thesis"
          :publishing-directory "export/"
          :publishing-function org-latex-publish-to-pdf
          :section-numbers t
