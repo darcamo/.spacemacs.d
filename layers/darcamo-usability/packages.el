@@ -85,6 +85,8 @@ Each entry is either:
 ;;   ;; (autoload 'bookmark-set "bookmark+.el" nil t)
 ;;   )
 
+;; Note that a better alternative is using helm-filtered-bookmarks with
+;; keybinding M-m f b
 (defun darcamo-usability/init-goto-last-change ()
   (global-set-key (kbd "C-x C-n") 'goto-last-change)
   )
