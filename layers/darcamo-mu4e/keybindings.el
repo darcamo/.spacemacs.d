@@ -6,4 +6,5 @@
 
 (with-eval-after-load 'xwidget
   (define-key xwidget-webkit-mode-map (kbd "q") '(lambda () (interactive) (quit-window) (mu4e~view-quit-buffer)))
+  (define-key xwidget-webkit-mode-map (kbd "d") '(lambda () (interactive) (quit-window) (mu4e-view-mark-for-trash)))
   )
