@@ -93,7 +93,6 @@
      ("manhattan" "Manhattan")
      ("trainning" "training")
      ("eachother" "each other")
-     ("pathloss" "path-loss")
      ("teh" "the")
      ("diferente" "different")
      ("diferent" "different")
