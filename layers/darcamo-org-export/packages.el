@@ -78,6 +78,7 @@ Each entry is either:
   (use-package ox-latex-subfigure
     :init
     (setq org-latex-prefer-user-labels t)
+    (setq org-html-prefer-user-labels t)
     :ensure t
     ;; :config (require 'ox-latex-subfigure)
     )
