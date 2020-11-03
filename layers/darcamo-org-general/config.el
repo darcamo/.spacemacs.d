@@ -174,6 +174,7 @@
   (add-to-list 'org-speed-commands-user
                '("S" ded/org-show-previous-heading-tidily))
   (add-to-list 'org-modules 'org-tempo t)  ;; org-tempo add completions for "<KEY" to create blocks. See
+  (add-to-list 'org-modules 'org-inlinetask t)  ;; org-tempo add completions for "<KEY" to create blocks. See
   )
 
 

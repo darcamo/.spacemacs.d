@@ -3,6 +3,9 @@
 (with-eval-after-load 'org
   (add-to-list 'org-export-backends 'md)
   (add-to-list 'org-export-backends 'odt)
+
+  (require 'ox-extra)
+  (ox-extras-activate '(ignore-headlines))
   )
 
 

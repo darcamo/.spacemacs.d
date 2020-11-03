@@ -30,8 +30,7 @@
 ;;; Code:
 
 (defconst darcamo-org-export-packages
-  '(ox-extra
-    ox-latex-subfigure)
+  '(ox-latex-subfigure)
   "The list of Lisp packages required by the darcamo-org-export layer.
 
 Each entry is either:
@@ -58,21 +57,6 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
-
-
-(defun darcamo-org-export/init-ox-extra ()
-  ;; With ox-extra, you can add a "ignore" tag to a headline in org-mode to
-  ;; ignore the headline during export without ignoring its content
-  (with-eval-after-load 'org
-    (require 'ox-extra)
-    (ox-extras-activate '(ignore-headlines))
-    )
-  ;; (use-package ox-extra
-  ;;   :after org
-  ;;   :config
-  ;;   (ox-extras-activate '(ignore-headlines))
-  ;;   )
-  )
 
 (defun darcamo-org-export/init-ox-latex-subfigure ( )
   (use-package ox-latex-subfigure
