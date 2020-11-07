@@ -733,7 +733,7 @@ before packages are loaded."
     (add-to-list 'web-mode-indentless-elements "code-terminal")
     (add-to-list 'web-mode-indentless-elements "output")
     (add-to-list 'web-mode-indentless-elements "in")
-    (define-key web-mode-map [f10] '(lambda () (interactive) (ver-html-no-browser (concat (file-name-sans-extension (file-name-nondirectory (buffer-file-name))) ".html"))))
+    (define-key web-mode-map [f10] '(lambda () (interactive) (browse-url (concat (file-name-sans-extension (file-name-nondirectory (buffer-file-name))) ".html"))))
     )
 
   ;; xxxxxxxxxx Configure gxref package xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

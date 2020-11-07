@@ -262,14 +262,6 @@ of the file associated with the current buffer."
    "*scratch*"
    (concat "pdfxchange " pdf)))
 
-
-;; Abrir html no browser
-(defun ver-html-no-browser (html-file)
-  (start-process-shell-command
-   "firefox"
-   "*scratch*"
-   (concat "google-chrome-stable " html-file)))
-
 
 
 ;; Abrir no OpenOffice
