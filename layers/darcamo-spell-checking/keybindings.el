@@ -1,4 +1,5 @@
 (global-set-key [f7] 'ispell)
+(global-set-key [S-f7] 'ispell-region)
 (global-set-key [f12] 'ispell-word)
 
 ;; Use Ctrl + f12 to lookup the definition of the word at point in the
