@@ -20,6 +20,7 @@
 ;; org-code face to something different
 (with-eval-after-load 'org-faces
   (set-face-attribute 'org-code nil :foreground "indian red")
+  (set-face-attribute 'org-drawer nil :foreground "aquamarine")
   )
 
 
