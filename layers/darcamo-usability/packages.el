@@ -44,6 +44,7 @@
     ace-mc                              ; Ace-Multiple-Cursors
     highlight-symbol
     adaptive-wrap ;; used when visual-line-mode is activated
+    focus  ;; Dim the font color of text in surrounding sections when active
     )
   "The list of Lisp packages required by the darcamo-usability layer.
 
@@ -154,5 +155,15 @@ Each entry is either:
   (use-package adaptive-wrap
     :ensure t)
   )
+
+(defun darcamo-usability/init-focus ()
+  (use-package focus
+    :ensure t
+    :config
+    (global-set-key [C-f8] 'focus-mode)
+    (global-set-key [C-S-f8] '(lambda () (interactive) (focus-mode) (focus-read-only-mode)))
+    )
+  )
+
 
 ;;; packages.el ends here
