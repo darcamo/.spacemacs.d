@@ -46,3 +46,14 @@
     (setq myurl (concat "http://thesaurus.reference.com/browse/" myword))
     (browse-url myurl)
     ))
+
+
+(defun darcamo/toggle-ispell-dictionary ()
+  "Toggle between 'english' and 'brasileiro' dictionaries."
+  (interactive)
+  (if (string= ispell-local-dictionary "english")
+      (setq ispell-local-dictionary "brasileiro")
+    (setq ispell-local-dictionary "english")
+    )
+  (message (concat "Set 'ispell-local-dictionary' to " ispell-local-dictionary))
+  )
