@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: src inline
+# name: thead
 # contributor: Darlan Cavalcante Moreira
 # --
-begin_${python}{$0}
+*{{{thead($1)}}}*$0

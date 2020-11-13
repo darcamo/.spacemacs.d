@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 #contributor : Darlan Cavalcante Moreira <darcamo@gmail.com>
 #name : equation
-#key: \beq
+#key: \eq
 #group: Latex-Math
 # --
 \begin{equation}
