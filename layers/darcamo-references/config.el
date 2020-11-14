@@ -35,9 +35,21 @@
 (with-eval-after-load 'org-ref
   (set-face-attribute 'org-ref-ref-face nil :foreground "gold")
   )
-
+;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;; Change keybindings for org-ref-next key and org-ref-previous key
+(with-eval-after-load 'org-ref
+  ;; First remove C-right and C-left from org-ref-cite-keymap so that they don't
+  ;; overwrite the keybinding from in the global keymap. They were originally
+  ;; assigned to the org-ref-next-key and org-ref-previous-key
+  (define-key org-ref-cite-keymap [C-right] nil)
+  (define-key org-ref-cite-keymap [C-left] nil)
+
+  ;; Add org-ref-next-key and org-ref-previous-key to other keybinding
+  (define-key org-ref-cite-keymap (kbd "M-p") 'org-ref-previous-key)
+  (define-key org-ref-cite-keymap (kbd "M-n") 'org-ref-next-key)
+  )
 
 ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ;; Search inside PDF files (using pdfgrep) from org-ref
