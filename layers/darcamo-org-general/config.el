@@ -21,6 +21,7 @@
 (with-eval-after-load 'org-faces
   (set-face-attribute 'org-code nil :foreground "indian red")
   (set-face-attribute 'org-drawer nil :foreground "aquamarine")
+  (set-face-attribute 'org-footnote nil :foreground "firebrick1")
   )
 
 
