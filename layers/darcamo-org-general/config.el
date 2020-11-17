@@ -41,6 +41,20 @@
  )
 
 
+;; Allow unicode non-breaking space before and after org-mode emphasis
+;;
+;; By default it is not allowed and something like "/text/ bla" the "text" would
+;; not be in italics. Here we change org-emphasis-regexp-components to allow " "
+;; before and after org-mode emphasis.
+;; See this question https://stackoverflow.com/questions/1218238/how-to-make-part-of-a-word-bold-in-org-mode
+(with-eval-after-load 'org
+  (setcar org-emphasis-regexp-components "-[:space:]('\"{ ")
+  (setcar (nthcdr 1 org-emphasis-regexp-components) "-[:space:].,:!?;'\")}\\[ ")
+  (org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
+  )
+
+
+
 ;; General
 (setq org-directory "~/org")
 
