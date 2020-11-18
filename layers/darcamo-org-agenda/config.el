@@ -32,7 +32,7 @@
 
   ;; Faz com que tarefas escalonadas ou com deadlines não apareçam na lista
   ;; de todos (C-c a t)
-  (setq org-agenda-todo-ignore-with-date t)
+  ;; (setq org-agenda-todo-ignore-with-date t)
 
   ;; Non-nil means, restore window configuration open exiting agenda.  Before
   ;; the window configuration is changed for displaying the agenda, the
