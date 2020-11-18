@@ -241,6 +241,106 @@
   ;;   ;; Enable Desktop notifications
   ;;   (mu4e-alert-set-default-style 'notifications))
 
+
+
+  ;; Remove unwanted contacts
+
+  ;; Used in my-mu4e-contact-processor to build a regexp that matches contacts I
+  ;; want to ignore
+  (setq my-ignored-contacts '("gessikasantos@great.ufc.br"
+                              "gessika@insightlab.ufc.br"
+
+                              "edu@ufc.b"
+                              "change.org"
+                              "news@"
+                              "enotice@"
+                              "its2014"
+                              "sbrt2015"
+                              "sbrt2016"
+                              "sbrt2017"
+
+                              ;; Outros e-mails
+                              "gilderlan.tavares@gmail.com"
+                              "alexandrefernandes@ufc.br.edas.info"
+                              "andre.almeida@ieee.org.edas.info"
+                              "paulojotinha@alu.ufc.br"
+
+                              ;; Emails do gtel para quem não vou mandar
+                              "gessika@gtel.ufc.br"
+                              "juno@gtel.ufc.br"
+                              "wilker@gtel.ufc.br"
+                              "lucascampos@gtel.ufc.br"
+                              "leonardo@gtel.ufc.br"
+                              "hitalo@gtel.ufc.br"
+                              "barbara@gtel.ufc.br"
+                              "gtelphone@gtel.ufc.br"
+                              "vanessakesley@gtel.ufc.br"
+                              "regislane@gtel.ufc.br"
+                              "regilane@gtel.ufc.br"
+                              "vanda@gtel.ufc.br"
+                              "afranio@gtel.ufc.br"
+                              "gabriela@gtel.ufc.br"
+                              "pedrolfalc@gtel.ufc.br"
+                              "laynara@gtel.ufc.br"
+                              "rodrigobatista@gtel.ufc.br"
+                              "vicente@gtel.ufc.br"
+                              "isabel@gtel.ufc.br"
+                              "sayonara@gtel.ufc.br"
+                              "henrique.engtele@gmail.com"
+                              ))
+
+(defun my-break-name-and-mail (addr)
+  "Separate the name and the e-mail address in a string such as
+'John Doe <johndoe@something.org>' and return a list with two
+elements"
+  (if (string-match-p "<" addr)
+      (split-string addr "<\\|>" t " *")
+    (list nil addr)
+    )
+  )
+
+  ;; See mu manual in https://www.djcbsoftware.nl/code/mu/mu4e/Contact-functions.html#Contact-functions
+  (defun my-mu4e-contact-processor (contact)
+    (cond
+     ;; remove unwanted
+     ((string-match-p (regexp-opt '("noreply" "no-reply" "do-not-reply" "donot-reply" "no_reply" "do_not_reply")) contact) nil)
+     ((string-match-p "DoNotReply" contact) nil)
+     ((string-match-p "plusgoogle" contact) nil)
+     ((string-match-p "nao-?respond" contact) nil)
+     ((string-match-p "yurisales" contact) nil)
+     ((string-match-p (regexp-opt my-ignored-contacts) contact) nil)
+     ;;
+     ;; Fix contacts
+     ((string-match "darcamo@gmail.com" contact)
+      "Darlan Cavalcante Moreira <darcamo@gmail.com>")
+
+     ((string-match "'Yuri Silva'" contact)
+      (replace-regexp-in-string "'Yuri Silva'" "Yuri C. B. Silva" contact))
+
+     ((string-match "\"'Tarcisio F. Maciel'\"" contact)
+      (replace-regexp-in-string "\"'Tarcisio F. Maciel'\"" "Tarcisio Maciel" contact))
+
+     ((string-match "ufc[0-9][0-9]" contact)
+      (let (email project-name)
+        (setq email (nth 1 (my-break-name-and-mail contact)))
+        (setq project-name (upcase (substring email 0 5)))
+        (concat "Projeto " project-name " <" email ">")))
+
+     ((string-match "['\"]" contact)
+      (replace-regexp-in-string "['\"]" "" contact))
+
+     ;; ((string-match "'" contact)
+     ;;  (replace-regexp-in-string "'" "" contact))
+
+     ;; Accept all contacts not matched in previous rules as is
+     (t contact)))
+
+  (setq mu4e-contact-process-function 'my-mu4e-contact-processor)
+
+
+  (my-mu4e-contact-processor "\"'darlan <darlan@gtel.ufc.br>'\"")
+
+
   ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   ;; xxxxxxxxxx End of mu4e Configuration xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
