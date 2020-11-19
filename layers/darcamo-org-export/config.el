@@ -266,11 +266,33 @@
      ("\\paragraph{%s}" . "\\paragraph*{%s}")
      ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
+  ;; NOTE: hyperref PACKAGE IS NOT INCLUDED! Add the file variable
+  ;; org-latex-hyperref-template and set it to nil
   (add-to-list
    'org-latex-classes
    '("IEEEtran"
      "\\documentclass{IEEEtran}
-[DEFAULT-PACKAGES]  % do not include any of the default packages
+\\usepackage[utf8]{inputenc}
+\\usepackage[T1]{fontenc}
+\\usepackage{graphicx}
+\\usepackage{longtable}
+\\usepackage{amsmath}
+\\usepackage{amssymb}
+\\usepackage{capt-of}
+\\usepackage{wrapfig}
+\\usepackage{rotating}
+\\usepackage[normalem]{ulem}
+\\usepackage{MathDefinitions}
+\\usepackage{siunitx}
+\\usepackage{tikz}
+\\usepackage{algorithm}
+\\usepackage{algorithmic}
+\\usepackage{booktabs}
+\\usepackage{makecell}  % Provide the \\thead command
+\\usepackage{subcaption}
+\\usepackage[backend=biber,doi=false,isbn=false, url=false, sorting=none, maxbibnames=3, giveninits=true, dateabbrev=true]{biblatex}
+\\usepackage[acronym, nomain, shortcuts, sanitizesort, nogroupskip, nopostdot, nonumberlist]{glossaries}
+[NO-DEFAULT-PACKAGES]  % do not include any of the default packages
 [PACKAGES]             % \\usepackage statements for packages
 [EXTRA]                % the stuff from #+LATEX_HEADER(_EXTRA)
      "
