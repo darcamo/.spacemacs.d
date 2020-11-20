@@ -3,7 +3,7 @@
                                       darcamo-org-attach
                                       darcamo-org-babel
                                       darcamo-org-capture
-                                      ;; darcamo-org-clock
+                                      darcamo-org-clock
                                       darcamo-org-crypt
                                       darcamo-org-export
                                       darcamo-org-general
