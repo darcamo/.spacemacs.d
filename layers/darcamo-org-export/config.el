@@ -224,6 +224,9 @@
 ;; MathJax configuration (for HTML export)
 (with-eval-after-load 'ox-html
   (setq org-html-mathjax-template (concat darlan-mathjax-config-string "\n" org-html-mathjax-template))
+  )
+
+(with-eval-after-load 'ox-twbs
   (setq org-twbs-mathjax-template (concat darlan-mathjax-config-string "\n" org-twbs-mathjax-template))
   )
 
