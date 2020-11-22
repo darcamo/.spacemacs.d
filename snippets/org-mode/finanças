@@ -76,7 +76,7 @@
           | # | *Total*         |      |         0.00 |         0.00 |
           #+TBLFM: @3\$4=vsum(@2..@-1);%.2f::@3\$5=vsum(@2..@-1);%.2f
 
-********* Total de gastos
+********* Total de gastos                                                     :Total:
           :PROPERTIES:
           :ID:       $1$2GastosTotal
           :END:
