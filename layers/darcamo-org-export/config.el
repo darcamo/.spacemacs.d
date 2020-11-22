@@ -38,6 +38,30 @@
   (add-to-list 'org-export-filter-body-functions 'darlan/replace-unicode-non-break-space-org-filter)
   )
 
+
+;; use speaker notes that work both with reveal.js and beamer
+(defun darlan/replace-notes-environment (text backend info)
+  "Replace '\begin{notes} content \end{notes}' in beamer export
+with a \note{content}. This is useful when you are creating
+presentations in org-mode with both reveal and beamer. You can
+add speaker notes inside '#+begin_notes' and '#+end_notes' as in
+reveal."
+  (if (org-export-derived-backend-p backend 'beamer)
+      (replace-regexp-in-string "\\\\end{notes}"
+                                "}"
+                                (replace-regexp-in-string "\\\\begin{notes}"
+                                                          "\\\\note{"
+                                                          text))
+    text
+    )
+  )
+
+
+(with-eval-after-load 'ox
+  (add-to-list 'org-export-filter-special-block-functions 'darlan/replace-notes-environment)
+  )
+
+
 
 
 ;; String with code to configure MathJax with my custom commands
