@@ -9,6 +9,8 @@
       :config
       (ox-extras-activate '(ignore-headlines))
       )
+
+    (use-package ox-beamer)
     )
   )
 
@@ -42,7 +44,7 @@
   (add-to-list 'org-export-filter-body-functions 'darlan/replace-unicode-non-break-space-org-filter)
   )
 
-
+
 ;; use speaker notes that work both with reveal.js and beamer
 (defun darlan/replace-notes-environment (text backend info)
   "Replace '\begin{notes} content \end{notes}' in beamer export
