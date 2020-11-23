@@ -4,8 +4,12 @@
   (add-to-list 'org-export-backends 'md)
   (add-to-list 'org-export-backends 'odt)
 
-  (require 'ox-extra)
-  (ox-extras-activate '(ignore-headlines))
+  (with-eval-after-load 'use-package-core
+    (use-package ox-extra
+      :config
+      (ox-extras-activate '(ignore-headlines))
+      )
+    )
   )
 
 
