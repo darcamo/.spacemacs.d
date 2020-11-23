@@ -90,6 +90,12 @@
   (interactive)
                                         ;(my-find-org-heading "Finanças")
   (find-file "~/org/Financas.org")
+  ;;(org-id-open "Novembro2020" nil)
+  )
+
+(defun my-find-gastos-org-heading nil
+  (interactive)
+  (org-id-open (concat (get-current-month) (get-current-year)) nil)
   )
 
 (defun my-find-senhas-org-heading nil

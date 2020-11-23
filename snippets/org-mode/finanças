@@ -3,6 +3,9 @@
 # contributor: Darlan Cavalcante Moreira
 # --
 ******* ${1:`(get-current-month)`} ${2:`(get-current-year)`}$0
+        :PROPERTIES:
+        :ID:       $1$2
+        :END:
 ********* Alimentação
           :PROPERTIES:
           :ID:       $1$2Alimentação
