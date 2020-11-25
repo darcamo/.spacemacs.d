@@ -42,6 +42,7 @@
 
 (with-eval-after-load 'ox
   (add-to-list 'org-export-filter-body-functions 'darlan/replace-unicode-non-break-space-org-filter)
+  (setq org-export-with-broken-links 'mark)
   )
 
 
