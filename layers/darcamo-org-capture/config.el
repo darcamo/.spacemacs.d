@@ -9,8 +9,8 @@
         ("tt" "Nova Tarefa rápida (refile depois)" entry
          (file+headline "refile.org" "Inbox")
          (file "~/.spacemacs.d/org-mode-setup/new_task.org"))
-        ("tp" "Tarefa do Projeto NAIVE" entry
-         (id "NAIVETarefas")
+        ("tp" "Tarefa do Projeto IAB" entry
+         (id "IABTarefas")
          (file "~/.spacemacs.d/org-mode-setup/new_task.org"))
         ("td" "Tarefa do Doutorado" entry
          (file+headline "doutorado.org" "Lista de Tarefas")
