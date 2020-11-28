@@ -10,3 +10,13 @@
   ;; When equal to "t", the current clocked task is included in clock reports
   (setq org-clock-report-include-clocking-task t)
   )
+
+
+;; Change the color of the mode-line box to "green" when clock-in a task and to
+;; "red" when clock-out
+(add-hook 'post-command-hook
+          (lambda ()
+            (let ((color (cond ((org-clocking-p) "green")
+                               (t "red"))))
+              (set-face-attribute 'mode-line nil :box `(:line-width 1 :color ,color))
+              )))
