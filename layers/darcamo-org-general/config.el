@@ -27,13 +27,14 @@
     ;; Background color of src blocks will be slightly darken than default
     ;; background
     (set-face-attribute 'org-block nil :background
-                        (color-darken-name
-                         (face-attribute 'default :background) 2))
+                        ;; (color-darken-name
+                        ;;  (face-attribute 'default :background) 2)
+                        "gray16"
+                        )
 
     ;; Change background of the begin line and underline it
-    (set-face-attribute 'org-block-begin-line nil :background
-                        (color-saturate-name
-                         (face-attribute 'default :background) 15)
+    (set-face-attribute 'org-block-begin-line nil
+                        ;; :background (color-saturate-name (face-attribute 'default :background) 15)
                         :underline t)
 
     ;; Change background of the begin line and overline it
@@ -42,9 +43,8 @@
     ;; but since we don't want the underline we set in org-block-begin-line we
     ;; change it to inherit from org-meta-line (which org-block-end-line inherits
     ;; from)
-    (set-face-attribute 'org-block-end-line nil :background
-                        (color-saturate-name
-                         (face-attribute 'default :background) 10)
+    (set-face-attribute 'org-block-end-line nil
+                        ;; :background (color-saturate-name (face-attribute 'default :background) 10)
                         :inherit 'org-meta-line
                         :overline t)
     )
