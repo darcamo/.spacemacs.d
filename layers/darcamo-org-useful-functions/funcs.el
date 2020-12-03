@@ -86,6 +86,11 @@
   (find-file "~/org/ufc46-NAIVE.org")
   )
 
+(defun my-find-iab-org-heading nil
+  (interactive)
+  (find-file "~/org/ufc49-IAB.org")
+  )
+
 (defun my-find-financas-org-heading nil
   (interactive)
                                         ;(my-find-org-heading "Finanças")
