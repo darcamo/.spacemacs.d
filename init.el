@@ -835,6 +835,12 @@ before packages are loaded."
 
   ;; Enable org-clock-in support in the modline
   (setq spaceline-org-clock-p t)
+
+  ;; With a dark theme, the default color of ediff-fine-diff-B background is to
+  ;; bright and I often can't see the text. Let's change it to a better color
+  (with-eval-after-load 'ediff-init
+    (set-face-attribute 'ediff-fine-diff-B nil :background
+                        "DarkSlateGray" ))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
