@@ -98,6 +98,32 @@
   (org-id-open (concat (get-current-month) (get-current-year)) nil)
   )
 
+(defun my-find-gastos-alimentacao-org-heading nil
+  (interactive)
+  (org-id-open (concat (get-current-month) (get-current-year) "Alimentação") nil)
+  )
+
+(defun my-find-gastos-contas-org-heading nil
+  (interactive)
+  (org-id-open (concat (get-current-month) (get-current-year) "Contas") nil)
+  )
+
+(defun my-find-gastos-entretenimento-org-heading nil
+  (interactive)
+  (org-id-open (concat (get-current-month) (get-current-year) "Entretenimento") nil)
+  )
+
+(defun my-find-gastos-carro-org-heading nil
+  (interactive)
+  (org-id-open (concat (get-current-month) (get-current-year) "Carro") nil)
+  )
+
+(defun my-find-gastos-diversos-org-heading nil
+  (interactive)
+  (org-id-open (concat (get-current-month) (get-current-year) "Diversos") nil)
+  )
+
+
 (defun my-find-senhas-org-heading nil
   (interactive)
                                         ;(my-find-org-heading "Senhas")
