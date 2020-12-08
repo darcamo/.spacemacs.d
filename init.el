@@ -65,10 +65,6 @@ This function should only modify configuration layer settings."
      markdown
      (neotree :variables neo-theme 'icons)
      (org :variables
-          ;; Like semantic stick function, but for org-mode headlines
-          org-enable-sticky-header t
-          org-sticky-header-full-path 'reversed
-
           org-enable-reveal-js-support t  ;; download reveal.js and set org-reveal-root to the download path
           org-re-reveal-root "file:///home/darlan/Programas_Locais/reveal.js"
 
@@ -108,6 +104,7 @@ This function should only modify configuration layer settings."
      ;; ipython-notebook
      (latex :variables
             latex-enable-folding t
+            latex-backend 'company-auctex
             )
      (bibtex :variables
              bibtex-entry-format '(opts-or-alts required-fields numerical-fields whitespace realign last-comma unify-case braces sort-fields)
