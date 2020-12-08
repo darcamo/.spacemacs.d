@@ -242,12 +242,14 @@ of the file associated with the current buffer."
 
 
 ;; Ver PDF
-(defun ver-pdf-no-evince (pdf)
+(defun ver-pdf-no-evince (pdf &optional page)
   (start-process-shell-command
    "evince"
    "*scratch*"
-   (concat "evince " pdf)))
-
+   (if page
+       (format "evince -i %s %s" page pdf)
+     (format "evince %s" pdf))
+   ))
 
 (defun ver-pdf-no-acroread (pdf)
   (start-process-shell-command
