@@ -53,7 +53,10 @@ This function should only modify configuration layer settings."
      better-defaults
      spotify
      emacs-lisp
-     (git :variables magit-repository-directories '(("/home/darlan/git_files" . 1)))
+     (git :variables
+          magit-repository-directories '(("/home/darlan/git_files" . 1))
+          magit-diff-refine-hunk (quote all)
+          )
      ;; github ;; See github layer documentation before enabling
 
      ;; Use "M-m a /" to search
