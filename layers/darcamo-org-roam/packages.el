@@ -31,6 +31,7 @@
 
 (defconst darcamo-org-roam-packages
   '(
+    org-roam-bibtex
     org-roam-server)
   "The list of Lisp packages required by the darcamo-org-roam layer.
 
@@ -74,6 +75,14 @@ Each entry is either:
           org-roam-server-network-label-truncate-length 60
           org-roam-server-network-label-wrap-length 20
           )
-  ))
+    ))
+
+(defun darcamo-org-roam/init-org-roam-bibtex ( )
+  (use-package org-roam-bibtex
+    :ensure t
+    :after org-roam
+    :hook (org-roam-mode . org-roam-bibtex-mode)
+    )
+  )
 
 ;;; packages.el ends here
