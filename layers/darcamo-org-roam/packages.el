@@ -31,8 +31,6 @@
 
 (defconst darcamo-org-roam-packages
   '(
-    ;; org-roam
-    company-org-roam
     org-roam-server)
   "The list of Lisp packages required by the darcamo-org-roam layer.
 
@@ -61,54 +59,6 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-
-;; (defun darcamo-org-roam/init-org-roam ()
-;;   (use-package org-roam
-;;     ;; :hook
-;;     ;; (after-init . org-roam-mode)
-;;     :custom
-;;     ;; (org-roam-directory "/home/darlan/org/org-roam-notes/")
-;;     :init
-;;     (progn
-;;       ;; (spacemacs/declare-prefix "ar" "org-roam")
-;;       ;; (spacemacs/set-leader-keys
-;;       ;;   "arl" 'org-roam
-;;       ;;   "art" 'org-roam-dailies-today
-;;       ;;   "arf" 'org-roam-find-file
-;;       ;;   "arg" 'org-roam-graph
-;;       ;;   "arj" 'org-roam-jump-to-index)
-
-;;       ;; (spacemacs/declare-prefix-for-mode 'org-mode "mr" "org-roam")
-;;       ;; (spacemacs/set-leader-keys-for-major-mode 'org-mode
-;;       ;;   "rl" 'org-roam
-;;       ;;   "rt" 'org-roam-dailies-today
-;;       ;;   "rb" 'org-roam-switch-to-buffer
-;;       ;;   "rf" 'org-roam-find-file
-;;       ;;   "ri" 'org-roam-insert
-;;       ;;   "rg" 'org-roam-graph
-;;       ;;   "rj" 'org-roam-jump-to-index)
-
-;;       (setq org-roam-capture-templates '(
-;;                                          ("d" "default" plain #'org-roam-capture--get-point "%?" :file-name "%<%Y%m%d%H%M%S>-${slug}" :head "#+title: ${title}\n#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/org-roam-setup.org\n\n" :unnarrowed t)
-;;                                          ("D" "Doutorado" plain #'org-roam-capture--get-point "%?" :file-name "%<%Y%m%d%H%M%S>-${slug}" :head "#+title: ${title}\n#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/org-roam-setup.org\n#+ROAM_TAGS: §Doutorado\n\n- Links :: [[file:20200623165210-doutorado.org][Doutorado]]\n\n" :unnarrowed t)
-;;                                          )
-;;             org-roam-graph-exclude-matcher "index.org"
-;;             org-roam-graph-extra-config '(("rankdir" . "LR"))  ; Default is top-down but left-right works better
-;;             )
-
-;;       (use-package org-roam-protocol :after org-roam)
-;;       ))
-;;   )
-
-(defun darcamo-org-roam/init-company-org-roam ()
-  (use-package company-org-roam
-    ;; :straight (:host github :repo "org-roam/company-org-roam")
-    :ensure t
-    :config
-    (push 'company-org-roam company-backends))
-  )
-
-
 (defun darcamo-org-roam/init-org-roam-server ()
   (use-package org-roam-server
     :ensure t
@@ -125,6 +75,5 @@ Each entry is either:
           org-roam-server-network-label-wrap-length 20
           )
   ))
-
 
 ;;; packages.el ends here

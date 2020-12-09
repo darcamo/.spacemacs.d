@@ -157,7 +157,7 @@ This function should only modify configuration layer settings."
      ;; (ipython-notebook :variables
      ;;                   ein:jupyter-default-server-command "/home/darlan/miniconda3/envs/pyphysim/bin/jupyter")
      ;; My Private Layers
-     emoji
+     ;;emoji
      (deft :variables
        deft-directory "~/org/org-roam-notes"
        deft-use-filename-as-title nil
