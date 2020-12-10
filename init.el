@@ -802,8 +802,8 @@ before packages are loaded."
   ;;
   ;; It is available in Arch AUR as the 'emacs-eaf' package
   (use-package eaf
-    :load-path "/usr/share/emacs/site-lisp/eaf" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
-    ;; :load-path "~/git_files/emacs-application-framework" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
+    ;; :load-path "/usr/share/emacs/site-lisp/eaf" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
+    :load-path "~/Programas_Locais/emacs-application-framework" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
     :custom
     (eaf-find-alternate-file-in-dired t)
     :config
