@@ -21,7 +21,7 @@
   (setq orb-templates
         '(("r" "ref" plain (function org-roam-capture--get-point) ""
            :file-name "paper_${citekey}"
-           :head "#+TITLE: ${title}\n#+ROAM_KEY: ${ref}\n#+ROAM_TAGS: §Literature §${year} \n#+PROPERTY: :author ${author}\n#+PROPERTY: :doi ${doi}\n\nPDF: [[file:${file}][${title}]]\nBib entry: [[file:~/org/references/articles.bib::${citekey}][${title}]]\n\n" ; <--
+           :head "#+TITLE: ${title}\n#+ROAM_KEY: ${ref}\n#+ROAM_TAGS: §Literature §${year}\n#+STARTUP: indent\n\n\nPDF: [[file:${file}][${title}]]\nBib entry: [[file:~/org/references/articles.bib::${citekey}][${title}]]\n\n* ${title}\n:PROPERTIES:\n:Custom_ID: ${citekey}\n:DOI:       ${doi}\n:AUTHOR:   ${author}\n:NOTER_DOCUMENT: ${file}\n:NOTER_PAGE:\n:END:\n" ; <--
            :unnarrowed t)))
 
   )
