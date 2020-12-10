@@ -10,7 +10,7 @@
          (file+headline "refile.org" "Inbox")
          (file "~/.spacemacs.d/org-mode-setup/new_task.org"))
         ("tp" "Tarefa do Projeto IAB" entry
-         (id "IABTarefas")
+         (file+headline "ufc49-IAB.org" "Lista de Tarefas do Projeto")
          (file "~/.spacemacs.d/org-mode-setup/new_task.org"))
         ("td" "Tarefa do Doutorado" entry
          (file+headline "doutorado.org" "Lista de Tarefas")
@@ -27,13 +27,6 @@
         ("e" "Nota de um E-Mail" entry
          (file+headline "notas.org" "Notas diversas")
          "* %^{Título da Nota} %^G\n  %i%?\n  \n  Assunto do E-mail: %:subject\n  De: %:from\n  %a")
-        ;; ("o" "TOC do IEEE" entry
-        ;;  (file+headline "gtd.org" "Lista de Tarefas")
-        ;;  "* TODO Ver o TOC recebido em %u :TOC:\n  Links no E-Mail:\n  %?\n  \n  Assunto do E-mail: %:subject\n  %a")
-        ;; ("b" "Blog" entry
-        ;;  (file+datetree "blog.org")
-        ;;  "* %^{Título do Post} %^G\n  %t\n  %a\n\n  %i%?\n"
-        ;;  :empty-lines 1)
         ;; xxxxx End Capture new notes xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
         ;;
         ;; xxxxx Start Capture expenses data created with tasker xxxxxxxxxx
