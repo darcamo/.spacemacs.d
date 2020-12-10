@@ -25,3 +25,25 @@
            :unnarrowed t)))
 
   )
+
+
+;; Add some useful extra "notes actions"
+;; Use the `C-c ) a` keybinding to call one of the actions
+(with-eval-after-load 'org-roam-bibtex
+  (add-to-list 'orb-note-actions-user (cons "Copy PDF location to kill-ring" #'my-orb-action-copy-pdf-location-to-killring))
+  (add-to-list 'orb-note-actions-user (cons "Open PDF file in Emacs" #'my-orb-action-open-pdf-file-in-emacs))
+  )
+
+(defun my-orb-action-copy-pdf-location-to-killring (citekey)
+  (let ((key (car citekey)))
+    (kill-new (org-ref-get-pdf-filename key))
+    ))
+
+(defun my-orb-action-open-pdf-file-in-emacs (citekey)
+  (let ((key (car citekey)))
+    (find-file (org-ref-get-pdf-filename key))
+    ))
+
+
+
+
