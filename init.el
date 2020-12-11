@@ -80,6 +80,8 @@ This function should only modify configuration layer settings."
           org-preview-latex-default-process 'dvisvgm
           org-hide-emphasis-markers t  ;; font-lock should hide the emphasis markers
 
+          org-image-actual-width '(600)
+
           ;; Org-roam support
           org-enable-roam-support t
           org-roam-directory "/home/darlan/org/org-roam-notes/"
