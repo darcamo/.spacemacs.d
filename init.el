@@ -641,7 +641,7 @@ before packages are loaded."
   (put 'TeX-master 'safe-local-variable 'stringp)
   (put 'ispell-skip-html 'safe-local-variable 'booleanp)
   (put 'ispell-local-dictionary 'safe-local-variable 'stringp)
-  (put 'ispell-local-dictionary 'org-attach-id-dir 'stringp)
+  (put 'org-download-image-dir 'safe-local-variable 'stringp)
 
   ;; Set extension .puml to plantuml mode -> Requires the plantuml layer
   (add-to-list 'auto-mode-alist '("\\.puml" . plantuml-mode))
