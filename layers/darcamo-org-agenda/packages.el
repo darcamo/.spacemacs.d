@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst darcamo-org-agenda-packages
-  '()
+  '(
+    org-super-agenda
+    )
   "The list of Lisp packages required by the darcamo-org-agenda layer.
 
 Each entry is either:
@@ -58,5 +60,60 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+
+(defun darcamo-org-agenda/init-org-super-agenda ()
+  (use-package org-super-agenda
+    :ensure t
+    :config
+    (setq org-super-agenda-groups '(
+                                    (:name "Feitas"
+                                           :todo "DONE"
+                                           ;; :and (:regexp "State \"DONE\""
+                                           ;;               )
+                                           :face (:foreground "gray40")
+                                           :order 1) ;; Any item without order has a value of zero
+                                    (
+                                     :name "Started"
+                                     ;; :time-grid t
+                                     :todo "STARTED")
+                                    (
+                                     :name "Importantes"
+                                           :priority "A")
+                                    (:name "WAIT"
+                                           ;; :time-grid t
+                                           :todo "WAIT"
+                                           )
+                                    (:name "Atrasadas"
+                                           :deadline past)
+                                    ;; (:name "Hoje"
+                                    ;;        :scheduled today)
+                                    ;; (:name "Doutorado"
+                                    ;;        :category "Doutorado")
+                                    ;; (:name "Leituras"
+                                    ;;        :category "Estudos")
+                                    (:name "GTEL"
+                                           :category "GTEL"
+                                           )
+                                    (:name "Estudos"
+                                           :category "Estudos"
+                                           :order 50)
+                                    (:name "Someday"
+                                           :tag "Someday"
+                                           :order 100
+                                           ; :face (:foreground "gray40")
+                                           )
+                                    (:name "Finanças"
+                                           :tag "Finanças"
+                                           :order 150
+                                           )
+                                    (:name "References"
+                                           :category "References"
+                                           :order 200)
+                                    (:auto-category t)
+                                    ;; (:auto-category t)
+                                    ))
+    (org-super-agenda-mode)
+    )
+  )
 
 ;;; packages.el ends here

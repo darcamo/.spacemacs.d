@@ -109,4 +109,20 @@
         )
 
 
+  ;; Enable origami-mode in org-agenda
+  (with-eval-after-load 'org-super-agenda
+  ;; Note that origami package is installed by the spacemacs-editing layer
+  (define-key org-super-agenda-header-map (kbd "<tab>") 'origami-toggle-node)
+  ;; (define-key org-super-agenda-header-map (kbd "C-M-p") 'origami-previous-fold)
+  ;; (define-key org-super-agenda-header-map (kbd "C-M-n") 'origami-next-fold)
+  (add-hook 'org-agenda-mode-hook 'origami-mode)
+  )
+
+
+
+  ;; Customise some of the org-agenda faces
+  (set-face-attribute 'org-agenda-date nil :height 1.5 :foreground "Orange")
+  (set-face-attribute 'org-agenda-date-today nil :foreground "Gold")
+
+
   ) ;; End of eval after load
