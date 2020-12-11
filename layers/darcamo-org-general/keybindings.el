@@ -11,6 +11,7 @@
  (lambda ()
    (define-key org-mode-map [C-M-return] 'org-meta-return)
    (define-key org-mode-map [f8] 'org-toggle-link-display)
+   (define-key org-mode-map [S-f8] 'org-toggle-inline-images)
 
    ;; This will open a PDF file with the same name of the org-mode file
    ;; Useful when you are exporting the org-mode buffer to PDF
