@@ -58,3 +58,14 @@
 ;; https://github.com/dalanicolai/pdf-continuous-scroll-mode.el
 (with-eval-after-load 'pdf-view
   (require 'pdf-continuous-scroll-mode))
+
+
+;; Add some visual indicator (pulse) where the cursor is with some movement commands
+;; taken from https://karthinks.com/software/batteries-included-with-emacs/
+(defun pulse-line (&rest _)
+  "Pulse the current line."
+  (pulse-momentary-highlight-one-line (point)))
+
+(dolist (command '(scroll-up-command scroll-down-command
+                                     recenter-top-bottom other-window))
+  (advice-add command :after #'pulse-line))
