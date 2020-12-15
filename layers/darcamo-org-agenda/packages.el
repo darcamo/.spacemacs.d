@@ -66,6 +66,9 @@ Each entry is either:
     :ensure t
     :config
     (setq org-super-agenda-groups '(
+                                    (:name "Canceladas"
+                                           :todo "CANC"
+                                           :order 500)
                                     (:name "Feitas"
                                            :todo "DONE"
                                            ;; :and (:regexp "State \"DONE\""
@@ -104,8 +107,8 @@ Each entry is either:
                                            :category "References"
                                            :order 200)
                                     (:auto-category t)
-                                    ;; (:auto-category t)
                                     ))
+    (setq org-super-agenda-header-separator "")
     (org-super-agenda-mode)
     )
   )

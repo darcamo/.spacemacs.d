@@ -47,30 +47,50 @@
                         (:endgrouptag)))
 
 
+  ;; My agenda super-agenda groups -> Used in my custom command to show the agenda
+    (setq my-agenda-org-super-agenda-groups '(
+                                    (:name "Feitas"
+                                           :todo "DONE"
+                                           ;; :and (:regexp "State \"DONE\""
+                                           ;;               )
+                                           :face (:foreground "gray40")
+                                           :order 200) ;; Any item without order has a value of zero
+                                    (
+                                     :name "Started"
+                                           :todo "STARTED")
+                                    (
+                                     :name "Importantes"
+                                           :priority "A"
+                                           :face "bold")
+                                    (:name "Atrasadas"
+                                           :deadline past)
+                                    (:name "Demais Tarefas"
+                                           :anything t)
+                                    ))
+
   ;; Custom agenda views
   (setq org-agenda-custom-commands
-        (quote (
-                ("n" "Agenda and NextActions"
-                 ((agenda "")
-                  (tags-todo "NextActions")
-                  ))
+        '(
+          ("a" "Agenda" (
+                         (agenda "" ((org-super-agenda-groups my-agenda-org-super-agenda-groups)))
+                         (tags-todo "NextActions" ((org-agenda-overriding-header "Task with tag NextActions")))
+                         )
+           )
+
                 ;; ("c" "Clock" tags-todo "CLOCK")
-                ("E" "NextActions" tags-todo "NextActions")
-                ("N" . "Procura em notas.org")
-                ("Nw" search ""
-                 ((org-agenda-files '("~/org/notas.org"))
-                  (org-agenda-text-search-extra-files nil)))
-                ("Nt" tags ""
-                 ((org-agenda-files '("~/org/notas.org"))
-                  (org-agenda-text-search-extra-files nil)))
-                ("w" . "Procura na Wiki no org")
-                ("ww" search ""
-                 ((org-agenda-files '("~/org/OrgWiki/"))
-                  (org-agenda-text-search-extra-files '("~/org/notas.org"))))
-                ("wt" tags ""
-                 ((org-agenda-files '("~/org/OrgWiki/"))
-                  (org-agenda-text-search-extra-files '("~/org/notas.org"))))
-                ;; ("w" "Wiki search" search ""
+                ;; ("E" "NextActions" tags-todo "NextActions")
+                ;; ("N" . "Procura em notas.org")
+                ;; ("Nw" search ""
+                ;;  ((org-agenda-files '("~/org/notas.org"))
+                ;;   (org-agenda-text-search-extra-files nil)))
+                ;; ("Nt" tags ""
+                ;;  ((org-agenda-files '("~/org/notas.org"))
+                ;;   (org-agenda-text-search-extra-files nil)))
+                ;; ("w" . "Procura na Wiki no org")
+                ;; ("ww" search ""
+                ;;  ((org-agenda-files '("~/org/OrgWiki/"))
+                ;;   (org-agenda-text-search-extra-files '("~/org/notas.org"))))
+                ;; ("wt" tags ""
                 ;;  ((org-agenda-files '("~/org/OrgWiki/"))
                 ;;   (org-agenda-text-search-extra-files '("~/org/notas.org"))))
                 ("d" "Upcoming deadlines" agenda ""
@@ -83,9 +103,9 @@
                 ("S" "Started Tasks" todo "STARTED" ((org-agenda-todo-ignore-with-date nil) (org-agenda-todo-ignore-scheduled nil)))
                 ("W" "Tasks waiting on something" todo "WAIT" ((org-agenda-todo-ignore-with-date nil) (org-agenda-todo-ignore-scheduled nil)))
                 ("R" "Refile New Notes and Tasks" tags "REFILE" ((org-agenda-todo-ignore-with-date nil) (org-agenda-todo-ignore-scheduled nil)))
-                ("g" "Agenda GTEL (exclui Francês e Home e Supélec)" agenda "" ((org-agenda-filter-preset (quote ("-Home" "-Francês" "-Supelec" "-Finanças")))))
+                ;; ("g" "Agenda GTEL (exclui Francês e Home e Supélec)" agenda "" ((org-agenda-filter-preset (quote ("-Home" "-Francês" "-Supelec" "-Finanças")))))
                 ;; ("f" "Agenda do Francês" agenda "" ((org-agenda-filter-preset (quote ("+Francês")))))
-                ("A" "Relatório de Atividades" agenda "" ((org-agenda-filter-preset (quote ("-Francês" "-Finanças" "-Revistas" "-Congressos" "-Feriado" "-Aniversários" "-CLOCK"))) (org-agenda-start-with-log-mode t) (org-agenda-archives-mode 'tree) (org-agenda-ndays 31)) "teste_relatorio.html")
+                ;; ("A" "Relatório de Atividades" agenda "" ((org-agenda-filter-preset (quote ("-Francês" "-Finanças" "-Revistas" "-Congressos" "-Feriado" "-Aniversários" "-CLOCK"))) (org-agenda-start-with-log-mode t) (org-agenda-archives-mode 'tree) (org-agenda-ndays 31)) "teste_relatorio.html")
                 ("F" "Agenda das Finanças" agenda "" ((org-agenda-filter-preset (quote ("+Finanças")))))
                 ;; Abaixo um exemplo de prefix key. Note que a primeira linha
                 ;; (uma con-cell) serve para setar uma descrição para a
@@ -94,7 +114,7 @@
                 ;; ("hl" tags "+home+Lisa")
                 ;; ("hp" tags "+home+Peter")
                 ;; ("hk" tags "+home+Kim")
-                )))
+                ))
 
 
 
