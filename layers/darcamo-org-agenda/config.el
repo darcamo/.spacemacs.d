@@ -20,7 +20,7 @@
         )
 
   ;; Set refile targets to the agenda files
-  (setq org-refile-targets (quote ((org-agenda-files :maxlevel . 3)
+  (setq org-refile-targets (quote ((org-agenda-files :maxlevel . 1)
                                    ("~/org/notas.org" :tag . "REFILE"))))
 
   ;; Use outline-path when refiling
@@ -54,7 +54,7 @@
                  ((agenda "")
                   (tags-todo "NextActions")
                   ))
-                ("c" "Clock" tags-todo "CLOCK")
+                ;; ("c" "Clock" tags-todo "CLOCK")
                 ("E" "NextActions" tags-todo "NextActions")
                 ("N" . "Procura em notas.org")
                 ("Nw" search ""

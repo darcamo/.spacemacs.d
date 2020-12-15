@@ -85,12 +85,6 @@ Each entry is either:
                                            )
                                     (:name "Atrasadas"
                                            :deadline past)
-                                    ;; (:name "Hoje"
-                                    ;;        :scheduled today)
-                                    ;; (:name "Doutorado"
-                                    ;;        :category "Doutorado")
-                                    ;; (:name "Leituras"
-                                    ;;        :category "Estudos")
                                     (:name "GTEL"
                                            :category "GTEL"
                                            )

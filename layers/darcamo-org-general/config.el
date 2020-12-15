@@ -284,6 +284,7 @@
         ("Stanford" "~/.spacemacs.d/Icons_For_Org-Mode_Category/graduate.svg" nil nil :ascent center)
         ("Notas" "~/.spacemacs.d/Icons_For_Org-Mode_Category/notes.svg" nil nil :ascent center)
         ("References" "~/.spacemacs.d/Icons_For_Org-Mode_Category/estudos.svg" nil nil :ascent  center)
+        ("Eventos" "~/.spacemacs.d/Icons_For_Org-Mode_Category/event.svg" nil nil :ascent  center)
        ))
 
 
