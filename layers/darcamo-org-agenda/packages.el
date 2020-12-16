@@ -69,7 +69,7 @@ Each entry is either:
                                     (:name "Canceladas"
                                            :todo "CANC"
                                            :order 500)
-                                    (:name "Feitas"
+                                    (:name "Tarefas Concluídas"
                                            :todo "DONE"
                                            ;; :and (:regexp "State \"DONE\""
                                            ;;               )

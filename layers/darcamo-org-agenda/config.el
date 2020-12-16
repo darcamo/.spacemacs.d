@@ -49,7 +49,7 @@
 
   ;; My agenda super-agenda groups -> Used in my custom command to show the agenda
     (setq my-agenda-org-super-agenda-groups '(
-                                    (:name "Feitas"
+                                    (:name "Tarefas Concluídas"
                                            :todo "DONE"
                                            ;; :and (:regexp "State \"DONE\""
                                            ;;               )
@@ -76,6 +76,11 @@
                          (tags-todo "NextActions" ((org-agenda-overriding-header "Task with tag NextActions")))
                          )
            )
+
+          ("n" "Escolher tarefas para adicionar tag NextActions" todo "" (
+                                                                          (org-agenda-todo-ignore-scheduled 'all)
+                                                                          (org-agenda-filter-preset '("-NextActions" "-Finanças"))
+                                                                          ))
 
                 ;; ("c" "Clock" tags-todo "CLOCK")
                 ;; ("E" "NextActions" tags-todo "NextActions")
