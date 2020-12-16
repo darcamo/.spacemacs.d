@@ -131,7 +131,6 @@ This function should only modify configuration layer settings."
             )
      ;; debug ; TODO: Investigate this layer -> It uses realgud
      ibuffer
-     pdf
      ;; themes-megapack
      graphviz
      javascript
@@ -783,11 +782,6 @@ before packages are loaded."
   ;; Read the abbrev file in my home directory
   (read-abbrev-file "~/.abbrev_defs")
 
-  ;; Set "g" as keybinding to "pdf-view-goto-page" when viewing pdfs
-  (with-eval-after-load 'pdf-view
-    (define-key pdf-view-mode-map "g" 'pdf-view-goto-page)
-    )
-
   ;; New buffers are in org-mode by default (instead of fundamental mode)
   (setq-default major-mode 'org-mode)
 
@@ -824,10 +818,6 @@ before packages are loaded."
     ;; ("M->" . eaf-proxy-scroll_to_end))
     )
 
-  (with-eval-after-load 'pdf-view
-    (define-key pdf-view-mode-map (kbd "<S-mouse-4>") '(lambda () (interactive) (image-forward-hscroll 4)))
-    (define-key pdf-view-mode-map (kbd "<S-mouse-5>") '(lambda () (interactive) (image-backward-hscroll 4)))
-    )
   (with-eval-after-load 'pdf-continuous-scroll-mode
     (define-key pdf-continuous-scroll-mode-map (kbd "<S-mouse-4>") '(lambda () (interactive) (pdf-cscroll-image-backward-hscroll 4)))
     (define-key pdf-continuous-scroll-mode-map (kbd "<S-mouse-5>") '(lambda () (interactive) (pdf-cscroll-image-forward-hscroll 4)))
