@@ -32,7 +32,7 @@
 (defconst darcamo-pdf-packages
   '(
     org-pdftools
-    org-noter-pdftools
+    ;; org-noter-pdftools
     )
   "The list of Lisp packages required by the darcamo-pdf layer.
 
@@ -68,13 +68,13 @@ Each entry is either:
     :hook (org-mode . org-pdftools-setup-link))
   )
 
-(defun darcamo-pdf/init-org-noter-pdftools ()
-  (use-package org-noter-pdftools
-    :ensure t
-    :after org-noter
-    :config
-    (with-eval-after-load 'pdf-annot
-      (add-hook 'pdf-annot-activate-handler-functions #'org-noter-pdftools-jump-to-note)))
-  )
+;; (defun darcamo-pdf/init-org-noter-pdftools ()
+;;   (use-package org-noter-pdftools
+;;     :ensure t
+;;     :after org-noter
+;;     :config
+;;     (with-eval-after-load 'pdf-annot
+;;       (add-hook 'pdf-annot-activate-handler-functions #'org-noter-pdftools-jump-to-note)))
+;;   )
 
 ;;; packages.el ends here
