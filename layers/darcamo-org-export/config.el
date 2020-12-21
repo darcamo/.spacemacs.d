@@ -190,7 +190,23 @@ reveal."
          :publishing-directory "export/"
          :publishing-function org-latex-publish-to-pdf
          :section-numbers t
-         :table-of-contents nil)))
+         :table-of-contents nil)
+        ("org-roam-iab-notes"
+         :base-directory "~/org/org-roam-iab-export"
+         :publishing-directory "~/org/org-roam-iab-export/"
+         :publishing-function org-html-publish-to-html
+         :table-of-contents nil
+         ;;:include '("20201120143347-iab.org" "20201217134131-adaptacao_da_topologia_no_iab.org")
+         )
+        ;; ("org-roam-iab-attachments"
+        ;;  ;; https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html
+        ;;  :base-directory "~/org/"
+        ;;  :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+        ;;  :publishing-directory "~/public_html/"
+        ;;  :recursive t
+        ;;  :publishing-function org-publish-attachment
+        ;;  )
+        ))
 
 ;; (setq org-format-latex-header "\\documentclass{gtelabnt}
 ;; \\usepackage[usenames]{color}
