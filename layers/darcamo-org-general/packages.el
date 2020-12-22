@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst darcamo-org-general-packages
-  '()
+  '(
+    org-special-block-extras
+    )
   "The list of Lisp packages required by the darcamo-org-general layer.
 
 Each entry is either:
@@ -58,5 +60,21 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+
+(defun darcamo-org-general/init-org-special-block-extras ( )
+  (use-package org-special-block-extras
+    :ensure t
+    :hook (org-mode . org-special-block-extras-mode)
+    ;; :custom
+    ;; (org-special-block-extras--docs-libraries
+    ;;  '("~/org-special-block-extras/documentation.org")
+    ;;  "The places where I keep my ‘#+documentation’")
+    ;; ;; (org-special-block-extras-fancy-links
+    ;; ;; nil "Disable this feature.")
+    :config
+    ;; Use short names like ‘defblock’ instead of the fully qualified name
+    ;; ‘org-special-block-extras--defblock’
+    (org-special-block-extras-short-names))
+  )
 
 ;;; packages.el ends here
