@@ -17,7 +17,3 @@
   ;; (highlight-symbol-nav-mode)
   )
 
-(with-eval-after-load 'pdf-view
-    (define-key pdf-view-mode-map [f9] 'tex-all)  ; We also want to compile when
-                                        ; we are view the pdf
-  )

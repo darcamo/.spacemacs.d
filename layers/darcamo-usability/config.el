@@ -54,11 +54,6 @@
             )
           )
 
-;; Continuous scrolling with pdf-tools
-;; https://github.com/dalanicolai/pdf-continuous-scroll-mode.el
-(with-eval-after-load 'pdf-view
-  (require 'pdf-continuous-scroll-mode))
-
 
 ;; Add some visual indicator (pulse) where the cursor is with some movement commands
 ;; taken from https://karthinks.com/software/batteries-included-with-emacs/

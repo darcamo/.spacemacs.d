@@ -26,13 +26,6 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-M-=") 'er/contract-region)
 
-(with-eval-after-load 'pdf-view
-  (define-key pdf-view-mode-map "c" 'pdf-continuous-scroll-mode)
-  (define-key pdf-view-mode-map "i" 'pdf-view-midnight-minor-mode)
-  (define-key pdf-view-mode-map [f10] '(lambda () (interactive) (ver-pdf-no-evince (concat (file-name-sans-extension (file-name-nondirectory (buffer-file-name))) ".pdf"))))
-  (define-key pdf-view-mode-map [S-f10] '(lambda () (interactive) (eaf-open (concat (file-name-sans-extension (file-name-nondirectory (buffer-file-name))) ".pdf"))))
-  )
-
 ;;  ;; Highlight symbol
 ;; (with-eval-after-load 'highlight-symbol
 ;;   (define-key highlight-symbol-nav-mode-map "\M-n" 'highlight-symbol-next)
