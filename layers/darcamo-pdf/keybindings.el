@@ -11,4 +11,17 @@
   (define-key pdf-view-mode-map (kbd "<C-mouse-5>") 'pdf-view-shrink)
   (define-key pdf-view-mode-map (kbd "<S-mouse-4>") '(lambda () (interactive) (image-backward-hscroll 4)))
   (define-key pdf-view-mode-map (kbd "<S-mouse-5>") '(lambda () (interactive) (image-forward-hscroll 4)))
+
+  (define-key pdf-view-mode-map (kbd "<M-left>") '(lambda () (interactive) (image-backward-hscroll 6)))
+  (define-key pdf-view-mode-map (kbd "<M-right>") '(lambda () (interactive) (image-forward-hscroll 6)))
+  (define-key pdf-view-mode-map (kbd "<C-left>") '(lambda () (interactive) (image-backward-hscroll 6)))
+  (define-key pdf-view-mode-map (kbd "<C-right>") '(lambda () (interactive) (image-forward-hscroll 6)))
+
+  (define-key pdf-view-mode-map (kbd "<C-M-left>") '(lambda () (interactive) (image-backward-hscroll 15)))
+  (define-key pdf-view-mode-map (kbd "<C-M-right>") '(lambda () (interactive) (image-forward-hscroll 15)))
+
+  (define-key pdf-view-mode-map (kbd "<C-up>") '(lambda () (interactive) (pdf-view-previous-line-or-previous-page 4)))
+  (define-key pdf-view-mode-map (kbd "<C-down>") '(lambda () (interactive) (pdf-view-next-line-or-next-page 4)))
+  (define-key pdf-view-mode-map (kbd "<M-up>") '(lambda () (interactive) (pdf-view-previous-line-or-previous-page 4)))
+  (define-key pdf-view-mode-map (kbd "<M-down>") '(lambda () (interactive) (pdf-view-next-line-or-next-page 4)))
   )
