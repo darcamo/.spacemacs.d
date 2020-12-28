@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst darcamo-org-export-packages
-  '(ox-latex-subfigure)
+  '(
+    ;; ox-latex-subfigure
+    )
   "The list of Lisp packages required by the darcamo-org-export layer.
 
 Each entry is either:
@@ -58,14 +60,14 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun darcamo-org-export/init-ox-latex-subfigure ( )
-  (use-package ox-latex-subfigure
-    :init
-    (setq org-latex-prefer-user-labels t)
-    (setq org-html-prefer-user-labels t)
-    :ensure t
-    ;; :config (require 'ox-latex-subfigure)
-    )
-  )
+;; (defun darcamo-org-export/init-ox-latex-subfigure ( )
+;;   (use-package ox-latex-subfigure
+;;     :init
+;;     (setq org-latex-prefer-user-labels t)
+;;     (setq org-html-prefer-user-labels t)
+;;     :ensure t
+;;     ;; :config (require 'ox-latex-subfigure)
+;;     )
+;;   )
 
 ;;; packages.el ends here
