@@ -90,8 +90,7 @@ This function should only modify configuration layer settings."
           org-roam-graph-extra-config '(("rankdir" . "LR"))
           )
 
-     (spacemacs-org :variables
-                    org-enable-valign nil)
+     spacemacs-org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
