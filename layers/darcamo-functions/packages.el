@@ -31,9 +31,7 @@
 
 (defconst darcamo-functions-packages
   '(
-    s                                   ; String related functions
     ;; thesaurus
-    synosaurus
     )
   "The list of Lisp packages required by the darcamo-functions layer.
 
@@ -61,22 +59,6 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
-
-
-(defun darcamo-functions/init-s ()
-  ;; (use-package s
-  ;;   :ensure t
-  ;;   :config
-  ;;   ;; The s-replace-all function is define in the "s" library (yes, the
-  ;;   ;; library name is just 's').
-  ;;   )
-  )
-
-(defun darcamo-functions/init-synosaurus()
-  (use-package synosaurus
-    :ensure t
-    )
-  )
 
 ;; (defun darcamo-functions/init-thesaurus ()
 ;;   ;; Synonyms (replace word at point)

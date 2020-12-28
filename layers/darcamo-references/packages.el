@@ -88,6 +88,7 @@ Each entry is either:
 (defun darcamo-references/init-org-noter ()
   (use-package org-noter
     :ensure t
+    :defer t
     :config
     (setq org-noter-default-notes-file-names '("articles.org"))
     )

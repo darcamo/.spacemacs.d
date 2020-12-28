@@ -63,6 +63,7 @@ Each entry is either:
 (defun darcamo-org-roam/init-org-roam-server ()
   (use-package org-roam-server
     :ensure t
+    :defer t
     :bind ([f6] . org-roam-find-file)
     :config
     (message "darcamo-org-roam carregado")
@@ -81,6 +82,7 @@ Each entry is either:
   (use-package org-roam-bibtex
     :ensure t
     :after org-roam
+    :defer t
     :hook (org-roam-mode . org-roam-bibtex-mode)
     )
   )

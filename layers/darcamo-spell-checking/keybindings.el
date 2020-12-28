@@ -9,7 +9,6 @@
 (global-set-key [C-f12]   'lookup-word-definition)
 (global-set-key [C-S-f12] 'lookup-synonym)
 ;; (global-set-key [M-f12] 'thesaurus-choose-synonym-and-replace)
-(global-set-key [M-f12] 'synosaurus-choose-and-replace)
 
 
 ;; In any programming mode, change the F7 keybinding to be a programming

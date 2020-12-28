@@ -63,6 +63,7 @@ Each entry is either:
 (defun darcamo-calibre/init-calibredb ( )
   (use-package calibredb
     :ensure t
+    :defer t
     :config
     (setq calibredb-root-dir "~/Dropbox/Calibre Library")
     (setq calibredb-db-dir (expand-file-name "metadata.db" calibredb-root-dir))
