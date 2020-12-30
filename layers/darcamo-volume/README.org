@@ -31,9 +31,13 @@ file.
 
 * Key bindings
 
-| Key Binding | Description    |
-|-------------+----------------|
-| ~SPC x x x~ | Does thing01   |
+| Key Binding | Description              |
+|-------------+--------------------------|
+| ~C-x /~       | Prefix for all commands  |
+| C-x / i     | Select sink by index     |
+| C-x / +     | increase volume          |
+| C-x / -     | decrease volume          |
+| C-x / v 50% | Set volume by percentage |
 
 # Use GitHub URLs if you wish to link a Spacemacs documentation file or its heading.
 # Examples:
