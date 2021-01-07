@@ -853,6 +853,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(browse-url-browser-function 'browse-url-firefox)
  '(evil-want-Y-yank-to-eol nil)
  '(org-highlight-latex-and-related '(native))
  '(org-roam-directory "/home/darlan/org/org-roam-notes/")
