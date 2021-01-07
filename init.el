@@ -146,6 +146,7 @@ This function should only modify configuration layer settings."
           lsp-ui-doc-enable nil ;; Too much pollution if enabled
           ;; lsp-ui-sideline-show-symbol t
           lsp-ui-sideline-show-hover nil  ;; Too much pollution if enabled
+          lsp-headerline-breadcrumb-segments nil
           )
      (mu4e :variables
            mu4e-enable-mode-line nil
