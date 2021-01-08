@@ -98,34 +98,40 @@
   ;;(org-id-open "Novembro2020" nil)
   )
 
+(defun my-find-financas-heading-by-id (value)
+  (require 'org-id)
+  (org-id-open (concat (get-current-month) (get-current-year) value) nil)
+  )
+
 (defun my-find-gastos-org-heading nil
   (interactive)
-  (org-id-open (concat (get-current-month) (get-current-year)) nil)
+  (require 'org-id)
+  (my-find-financas-heading-by-id "")
   )
 
 (defun my-find-gastos-alimentacao-org-heading nil
   (interactive)
-  (org-id-open (concat (get-current-month) (get-current-year) "Alimentação") nil)
+  (my-find-financas-heading-by-id "Alimentação")
   )
 
 (defun my-find-gastos-contas-org-heading nil
   (interactive)
-  (org-id-open (concat (get-current-month) (get-current-year) "Contas") nil)
+  (my-find-financas-heading-by-id "Contas")
   )
 
 (defun my-find-gastos-entretenimento-org-heading nil
   (interactive)
-  (org-id-open (concat (get-current-month) (get-current-year) "Entretenimento") nil)
+  (my-find-financas-heading-by-id "Entretenimento")
   )
 
 (defun my-find-gastos-carro-org-heading nil
   (interactive)
-  (org-id-open (concat (get-current-month) (get-current-year) "Carro") nil)
+  (my-find-financas-heading-by-id "Carro")
   )
 
 (defun my-find-gastos-diversos-org-heading nil
   (interactive)
-  (org-id-open (concat (get-current-month) (get-current-year) "Diversos") nil)
+  (my-find-financas-heading-by-id "Diversos")
   )
 
 
