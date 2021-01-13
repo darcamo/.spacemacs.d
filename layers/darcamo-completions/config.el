@@ -76,6 +76,7 @@
                         ("v2v" "V2V" nil t)
                         ("v2x" "V2X" nil t)
                         ("zf" "ZF" nil t)
+                        ("vc" "você" t nil)
                         ))
 
 ;; List with elements in my-acronym-list where the third value is 't'
@@ -94,7 +95,7 @@
      ("trainning" "training")
      ("eachother" "each other")
      ("teh" "the")
-     ("diferente" "different")
+     ("diferent" "different")
      ("diferent" "different")
      ("pp" "point process")
      )
