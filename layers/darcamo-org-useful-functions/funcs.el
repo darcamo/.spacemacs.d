@@ -101,6 +101,7 @@
 (defun my-find-financas-heading-by-id (value)
   (require 'org-id)
   (org-id-open (concat (get-current-month) (get-current-year) value) nil)
+  (recenter-top-bottom 0)
   )
 
 (defun my-find-gastos-org-heading nil
