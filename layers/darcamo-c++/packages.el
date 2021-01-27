@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst darcamo-c++-packages
-  '()
+  '(
+    highlight-doxygen
+    )
   "The list of Lisp packages required by the darcamo-c++ layer.
 
 Each entry is either:
@@ -58,5 +60,15 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+
+(defun darcamo-c++/init-highlight-doxygen ( )
+  (use-package highlight-doxygen
+	:ensure t
+	:hook (c++-mode . highlight-doxygen-mode)
+	:config
+	;; Remove the background from the face, which I dislike
+	(set-face-attribute 'highlight-doxygen-comment nil :background nil)
+	)
+  )
 
 ;;; packages.el ends here
