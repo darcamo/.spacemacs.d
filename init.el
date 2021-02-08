@@ -169,6 +169,8 @@ This function should only modify configuration layer settings."
        deft-default-extension "org"
        )
 
+     helpful
+
      darcamo-org-roam  ;; Extra org-roam configuration
      darcamo-pdf
      darcamo-c++
