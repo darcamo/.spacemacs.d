@@ -107,20 +107,24 @@
 
 ;; Construct an abbrev table for tex mode where each element in my-acronym-list will have a xpansion stating with "a". For instance, typing "abs" will expand to \ac{BS}
 ;; NOTE: The "-keep" function is like "mapcar", but it does not include nil elements in the returned list
-(define-abbrev-table 'my-latex-mode-abbrev-table
-  (append
-   (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem)) (concat "\\ac{" (nth 1 elem) "}")))) my-acronym-list)
+(with-eval-after-load 'dash
+  ;; The dash library provides the "-keep" function and is installed by the
+  ;; spacemacs-bootstrap layer
+  (define-abbrev-table 'my-latex-mode-abbrev-table
+    (append
+     (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem)) (concat "\\ac{" (nth 1 elem) "}")))) my-acronym-list)
 
-   (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem) "s") (concat "\\acp{" (nth 1 elem) "}")))) plural-list)
-   )
-  )
+     (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem) "s") (concat "\\acp{" (nth 1 elem) "}")))) plural-list)
+     )
+    )
 
-(define-abbrev-table 'my-org-mode-abbrev-table
-  (append
-   (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem)) (concat "ac:" (nth 1 elem))))) my-acronym-list)
+  (define-abbrev-table 'my-org-mode-abbrev-table
+    (append
+     (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem)) (concat "ac:" (nth 1 elem))))) my-acronym-list)
 
-   (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem) "s") (concat "acp:" (nth 1 elem))))) plural-list)
-   )
+     (-keep (lambda (elem) (if (nth 3 elem) (list (concat "a" (nth 0 elem) "s") (concat "acp:" (nth 1 elem))))) plural-list)
+     )
+    )
   )
 
 
