@@ -69,6 +69,7 @@ This function should only modify configuration layer settings."
      markdown
      ;; (neotree :variables neo-theme 'icons)
      (org :variables
+          org-indent-mode t
           org-enable-reveal-js-support t  ;; download reveal.js and set org-reveal-root to the download path
           org-re-reveal-root "file:///home/darlan/Programas_Locais/reveal.js"
 
@@ -89,6 +90,8 @@ This function should only modify configuration layer settings."
           org-roam-db-location "~/.emacs.d/.cache/org-roam.db"
           org-roam-graph-exclude-matcher "index.org"
           org-roam-graph-extra-config '(("rankdir" . "LR"))
+
+          org-enable-roam-server t
           )
 
      spacemacs-org
@@ -126,8 +129,7 @@ This function should only modify configuration layer settings."
             compilation-window-height 16
             c-doc-comment-style 'doxygen
             c-c++-backend 'lsp-ccls
-            lsp-file-watch-threshold 1500
-            lsp-file-watch-ignored '("[/\\\\]\\.git$" "[/\\\\]\\.hg$" "[/\\\\]\\.bzr$" "[/\\\\]_darcs$" "[/\\\\]\\.svn$" "[/\\\\]_FOSSIL_$" "[/\\\\]\\.idea$" "[/\\\\]\\.ensime_cache$" "[/\\\\]\\.eunit$" "[/\\\\]node_modules$" "[/\\\\]\\.fslckout$" "[/\\\\]\\.tox$" "[/\\\\]\\.stack-work$" "[/\\\\]\\.bloop$" "[/\\\\]\\.metals$" "[/\\\\]target$" "[/\\\\]\\.deps$" "[/\\\\]build-aux$" "[/\\\\]autom4te.cache$" "[/\\\\]\\.reference$" "[/\\\\]\\.ccls-cache$" "[/\\\\]\\.clangd$" "[/\\\\]\\.vscode$" "[/\\\\]cmake-build-debug$" "[/\\\\]cmake-build-release$" "[/\\\\]build$" "[/\\\\]docs$")
+            lsp-file-watch-threshold 5000
             ;; c-c++-lsp-executable "/home/darlan/Programas_Locais/ccls/Release/ccls"
             )
      debug ; TODO: Investigate this layer -> It uses realgud
