@@ -42,7 +42,7 @@
     (setq beginning (point))
     (goto-char current)
 
-    (setq number (- fill-column (- current beginning)))
+    (setq number (- (min fill-column 80) (- current beginning)))
 
     (if (not (= current beginning))
         (progn
