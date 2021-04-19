@@ -39,7 +39,8 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     helm
+     ;; helm
+     ;; lua
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup nil
                       auto-completion-enable-help-tooltip t)
@@ -49,9 +50,9 @@ This function should only modify configuration layer settings."
                 auto-insert-query nil)
      ;; trocar define-skeleton por templates
 
-     rust  ;; Added in when a toml file was opened
+     ;; rust  ;; Added in when a toml file was opened
      better-defaults
-     spotify
+     ;; spotify
      emacs-lisp
      (git :variables
           magit-repository-directories '(("/home/darlan/git_files" . 1))
@@ -60,13 +61,13 @@ This function should only modify configuration layer settings."
      ;; github ;; See github layer documentation before enabling
 
      ;; Use "M-m a /" to search
-     (search-engine :variables
-                    search-engine-config-list '((ieeexplore
-                                                 :name "IEEE Xplore"
-                                                 :url "https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=%s"
-                                                 :keywords (:docstring "Search in IEEE Xplore"))))
+     ;; (search-engine :variables
+     ;;                search-engine-config-list '((ieeexplore
+     ;;                                             :name "IEEE Xplore"
+     ;;                                             :url "https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=%s"
+     ;;                                             :keywords (:docstring "Search in IEEE Xplore"))))
      markdown
-     (neotree :variables neo-theme 'icons)
+     ;; (neotree :variables neo-theme 'icons)
      (org :variables
           org-enable-reveal-js-support t  ;; download reveal.js and set org-reveal-root to the download path
           org-re-reveal-root "file:///home/darlan/Programas_Locais/reveal.js"
@@ -129,17 +130,17 @@ This function should only modify configuration layer settings."
             lsp-file-watch-ignored '("[/\\\\]\\.git$" "[/\\\\]\\.hg$" "[/\\\\]\\.bzr$" "[/\\\\]_darcs$" "[/\\\\]\\.svn$" "[/\\\\]_FOSSIL_$" "[/\\\\]\\.idea$" "[/\\\\]\\.ensime_cache$" "[/\\\\]\\.eunit$" "[/\\\\]node_modules$" "[/\\\\]\\.fslckout$" "[/\\\\]\\.tox$" "[/\\\\]\\.stack-work$" "[/\\\\]\\.bloop$" "[/\\\\]\\.metals$" "[/\\\\]target$" "[/\\\\]\\.deps$" "[/\\\\]build-aux$" "[/\\\\]autom4te.cache$" "[/\\\\]\\.reference$" "[/\\\\]\\.ccls-cache$" "[/\\\\]\\.clangd$" "[/\\\\]\\.vscode$" "[/\\\\]cmake-build-debug$" "[/\\\\]cmake-build-release$" "[/\\\\]build$" "[/\\\\]docs$")
             ;; c-c++-lsp-executable "/home/darlan/Programas_Locais/ccls/Release/ccls"
             )
-     ;; debug ; TODO: Investigate this layer -> It uses realgud
+     debug ; TODO: Investigate this layer -> It uses realgud
      ibuffer
      ;; themes-megapack
-     graphviz
+     ;; graphviz
      javascript
      ;; gtags  ;; I'm using the gxref package now
      (csv :variables
           csv-separators '("," "	" ";"))
      yaml
-     plantuml
-     octave
+     ;; plantuml
+     ;; octave
      cmake ;; TODO: Investigate this layer (does it add sintax highlight to cmake files?)
      (lsp :variables
           lsp-ui-doc-include-signature t
@@ -151,10 +152,10 @@ This function should only modify configuration layer settings."
      (mu4e :variables
            mu4e-enable-mode-line nil
            mu4e-enable-notifications nil)
-     docker
-     systemd
+     ;; docker
+     ;; systemd
      dap
-     treemacs
+     ;; treemacs
      unicode-fonts
      ;; (ipython-notebook :variables
      ;;                   ein:jupyter-default-server-command "/home/darlan/miniconda3/envs/pyphysim/bin/jupyter")
@@ -764,7 +765,7 @@ before packages are loaded."
   ;; This might help with the slow handling of very long lines
   (setq-default bidi-display-reordering nil)
 
-  (require 'helm)
+  ;; (require 'helm)
 
   ;; Diminish minor-mode indicators I don't care
   (spacemacs|diminish holy-mode)
