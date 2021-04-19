@@ -806,25 +806,25 @@ before packages are loaded."
   ;; Dependencies: "pikaur -S python-pyqt5 python-pyqt5-sip python-pyqtwebengine python-qrcode python-feedparser python-dbus python-pyinotify python-markdown nodejs aria2 libreoffice python-pymupdf python-grip filebrowser-bin"
   ;;
   ;; It is available in Arch AUR as the 'emacs-eaf' package
-  (use-package eaf
-    ;; :load-path "/usr/share/emacs/site-lisp/eaf" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
-    :load-path "~/Programas_Locais/emacs-application-framework" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
-    :custom
-    (eaf-find-alternate-file-in-dired t)
-    :config
-    (eaf-bind-key scroll_up "C-n" eaf-pdf-viewer-keybinding)
-    (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
-    (eaf-bind-key take_photo "p" eaf-camera-keybinding)
-    ;; (define-key eaf-mode-map (kbd "C-<down>") 'eaf-proxy-scroll_up_page)
-    ;; (define-key eaf-mode-map (kbd "C-<up>") 'eaf-proxy-scroll_down_page)
-    ;; (define-key eaf-mode-map (kbd "M-<") 'eaf-proxy-scroll_to_begin)
-    ;; (define-key eaf-mode-map (kbd "M->") 'eaf-proxy-scroll_to_end)
-    ;; :bind
-    ;; (("C-<down>" . eaf-proxy-scroll_up_page)
-    ;; ("C-<up>" . eaf-proxy-scroll_down_page)
-    ;; ("M-<" . eaf-proxy-scroll_to_begin)
-    ;; ("M->" . eaf-proxy-scroll_to_end))
-    )
+  ;; (use-package eaf
+  ;;   ;; :load-path "/usr/share/emacs/site-lisp/eaf" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
+  ;;   :load-path "~/Programas_Locais/emacs-application-framework" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
+  ;;   :custom
+  ;;   (eaf-find-alternate-file-in-dired t)
+  ;;   :config
+  ;;   (eaf-bind-key scroll_up "C-n" eaf-pdf-viewer-keybinding)
+  ;;   (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
+  ;;   (eaf-bind-key take_photo "p" eaf-camera-keybinding)
+  ;;   ;; (define-key eaf-mode-map (kbd "C-<down>") 'eaf-proxy-scroll_up_page)
+  ;;   ;; (define-key eaf-mode-map (kbd "C-<up>") 'eaf-proxy-scroll_down_page)
+  ;;   ;; (define-key eaf-mode-map (kbd "M-<") 'eaf-proxy-scroll_to_begin)
+  ;;   ;; (define-key eaf-mode-map (kbd "M->") 'eaf-proxy-scroll_to_end)
+  ;;   ;; :bind
+  ;;   ;; (("C-<down>" . eaf-proxy-scroll_up_page)
+  ;;   ;; ("C-<up>" . eaf-proxy-scroll_down_page)
+  ;;   ;; ("M-<" . eaf-proxy-scroll_to_begin)
+  ;;   ;; ("M->" . eaf-proxy-scroll_to_end))
+  ;;   )
 
   (with-eval-after-load 'pdf-continuous-scroll-mode
     (define-key pdf-continuous-scroll-mode-map (kbd "<S-mouse-4>") '(lambda () (interactive) (pdf-cscroll-image-backward-hscroll 4)))
@@ -863,7 +863,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-highlight-latex-and-related '(native))
  '(org-roam-directory "/home/darlan/org/org-roam-notes/")
  '(package-selected-packages
-   '(highlight-doxygen ob-napkin org-special-block-extras org-super-agenda org-noter-pdftools org-pdftools pulseaudio-control org-sticky-header org-re-reveal focus olivetti grip-mode poetry calibredb pdf-continuous-scroll-mode darkroom sublimity centered-window zen-mode ox-latex-subfigure adaptive-wrap org-msg jupyter exec-path-from-shell org-noter org-roam-server company-org-roam emacsql-sqlite3 emacsql org-roam yatemplate emojify emoji-cheat-sheet-plus company-emoji unicode-fonts ucs-utils font-utils tern persistent-soft pcache toml-mode racer helm-gtags ggtags flycheck-rust counsel-gtags cargo rust-mode ob-ipython ein treemacs-projectile dap-mode bui tree-mode systemd noccur synosaurus orgit lsp-ui evil-nerd-commenter dumb-jump doom-modeline aggressive-indent ace-window counsel lsp-mode company magit transient pdf-tools helm haml-mode js2-mode all-the-icons dash yasnippet-snippets yapfify yaml-mode ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org tagedit symon swiper string-utils string-inflection spotify spaceline-all-the-icons smeargle slim-mode shrink-path scss-mode sass-mode restart-emacs rainbow-mode rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin plantuml-mode pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox ox-twbs overseer org-ref org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ninja-mode neotree nameless mwim mu4e-maildirs-extension mu4e-jump-to-list mu4e-alert move-text mmm-mode markdown-toc magit-svn magit-gitflow macrostep lv lorem-ipsum livid-mode live-py-mode link-hint json-navigator js2-refactor js-doc interleave indent-guide importmagic impatient-mode ibuffer-projectile hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-unicode helm-themes helm-swoop helm-spotify-plus helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mu helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-ctest helm-css-scss helm-company helm-c-yasnippet helm-ag graphviz-dot-mode goto-last-change google-translate google-c-style golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter git-commit gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-rtags flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu emmet-mode elisp-slime-nav eldoc-eval editorconfig dotenv-mode dockerfile-mode docker discover-my-major disaster diminish define-word darkmine-theme cython-mode csv-mode cquery counsel-projectile conda company-web company-tern company-statistics company-rtags company-quickhelp company-lsp company-c-headers company-auctex company-anaconda comment-dwim-2 column-enforce-mode cmake-mode cmake-ide clean-aindent-mode clang-format centered-cursor-mode ccls buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk ace-mc ace-link ace-jump-helm-line ac-ispell))
+   '(realgud company-lua lua-mode highlight-doxygen ob-napkin org-special-block-extras org-super-agenda org-noter-pdftools org-pdftools pulseaudio-control org-sticky-header org-re-reveal focus olivetti grip-mode poetry calibredb pdf-continuous-scroll-mode darkroom sublimity centered-window zen-mode ox-latex-subfigure adaptive-wrap org-msg jupyter exec-path-from-shell org-noter org-roam-server company-org-roam emacsql-sqlite3 emacsql org-roam yatemplate emojify emoji-cheat-sheet-plus company-emoji unicode-fonts ucs-utils font-utils tern persistent-soft pcache toml-mode racer helm-gtags ggtags flycheck-rust counsel-gtags cargo rust-mode ob-ipython ein treemacs-projectile dap-mode bui tree-mode systemd noccur synosaurus orgit lsp-ui evil-nerd-commenter dumb-jump doom-modeline aggressive-indent ace-window counsel lsp-mode company magit transient pdf-tools helm haml-mode js2-mode all-the-icons dash yasnippet-snippets yapfify yaml-mode ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org tagedit symon swiper string-utils string-inflection spotify spaceline-all-the-icons smeargle slim-mode shrink-path scss-mode sass-mode restart-emacs rainbow-mode rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin plantuml-mode pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox ox-twbs overseer org-ref org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ninja-mode neotree nameless mwim mu4e-maildirs-extension mu4e-jump-to-list mu4e-alert move-text mmm-mode markdown-toc magit-svn magit-gitflow macrostep lv lorem-ipsum livid-mode live-py-mode link-hint json-navigator js2-refactor js-doc interleave indent-guide importmagic impatient-mode ibuffer-projectile hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-unicode helm-themes helm-swoop helm-spotify-plus helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mu helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-ctest helm-css-scss helm-company helm-c-yasnippet helm-ag graphviz-dot-mode goto-last-change google-translate google-c-style golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter git-commit gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-rtags flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu emmet-mode elisp-slime-nav eldoc-eval editorconfig dotenv-mode dockerfile-mode docker discover-my-major disaster diminish define-word darkmine-theme cython-mode csv-mode cquery counsel-projectile conda company-web company-tern company-statistics company-rtags company-quickhelp company-lsp company-c-headers company-auctex company-anaconda comment-dwim-2 column-enforce-mode cmake-mode cmake-ide clean-aindent-mode clang-format centered-cursor-mode ccls buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk ace-mc ace-link ace-jump-helm-line ac-ispell))
  '(safe-local-variable-values
    '((org-latex-hyperref-template)
      (org-highlight-latex-and-related)
