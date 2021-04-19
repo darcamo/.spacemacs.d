@@ -155,9 +155,6 @@
   (add-to-list 'mu4e-view-actions
                '("wxidget" . mu4e-action-view-with-xwidget) t)
 
-  ;; ;; Set to 't' to use Gnus’ article view, instead of mu4e internal viewer
-  ;; (setq mu4e-view-use-gnus t)
-
   ;; Whether to base the body display on the html-version.
   (setq mu4e-view-prefer-html t)
 
