@@ -60,13 +60,12 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun darcamo-org-roam/init-org-roam-server ()
+(defun darcamo-org-roam/post-init-org-roam-server ()
   (use-package org-roam-server
     :ensure t
     :defer t
     :bind ([f6] . org-roam-find-file)
     :config
-    (message "darcamo-org-roam carregado")
     (setq org-roam-server-host "127.0.0.1"
           org-roam-server-port 8080
           org-roam-server-export-inline-images t
