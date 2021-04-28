@@ -130,6 +130,7 @@ This function should only modify configuration layer settings."
             c-doc-comment-style 'doxygen
             c-c++-backend 'lsp-ccls
             lsp-file-watch-threshold 5000
+            c-c++-lsp-enable-semantic-highlight nil ;;'rainbow
             ;; c-c++-lsp-executable "/home/darlan/Programas_Locais/ccls/Release/ccls"
             )
      debug ; TODO: Investigate this layer -> It uses realgud
@@ -149,7 +150,10 @@ This function should only modify configuration layer settings."
           lsp-ui-doc-enable nil ;; Too much pollution if enabled
           ;; lsp-ui-sideline-show-symbol t
           lsp-ui-sideline-show-hover nil  ;; Too much pollution if enabled
-          lsp-headerline-breadcrumb-segments nil
+          lsp-headerline-breadcrumb-enable nil
+          lsp-keymap-prefix "C-x l"  ;; Change keymap prefix from "s-l" to "C-x l"
+          lsp-enable-on-type-formatting nil
+          ;; lsp-enable-file-watchers nil
           )
      (mu4e :variables
            mu4e-enable-mode-line nil
