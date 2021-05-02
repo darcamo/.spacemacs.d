@@ -345,7 +345,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(tsdh-dark
+   dotspacemacs-themes '(wombat
+                         tsdh-dark
                          darkmine
                          spacemacs-dark
                          spacemacs-light)
@@ -847,6 +848,15 @@ before packages are loaded."
   (with-eval-after-load 'ediff-init
     (set-face-attribute 'ediff-fine-diff-B nil :background
                         "DarkSlateGray" ))
+
+  ;; By default the "hl-line" face (used to highlight the current line) just
+  ;; inherits from the "highlight" face. Some themes such as tsdh-dark change
+  ;; "hl-line" to a nice face, but other themes (such as wombat) don't bother to
+  ;; do that, which results in confusing creating a mark with the highlight of
+  ;; the current line. Let's just set the face for hl-line to something. The
+  ;; value below is the background color of the default face in the wombat theme
+  ;; with 1 added to every digit.
+  (set-face-attribute 'hl-line nil :inherit nil :background "#353535")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
