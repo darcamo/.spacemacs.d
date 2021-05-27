@@ -22,7 +22,7 @@
 
 (defvar darlan-cmake-use-ninja nil)
 
-(defvar darlan-build-dir "cmake-build-debug")
+(defvar darlan-build-dir "build")
 
 
 (defun darlan-get-make-or-ninja-compile-command ()
