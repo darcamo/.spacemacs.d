@@ -8,7 +8,7 @@
   (define-key c++-mode-map [C-S-f9] 'darlan-open-doxygen-generated-index)
 
   ;; Enable key bindings (M-p and M-p) for navigation
-  (highlight-symbol-nav-mode)
+  (add-hook 'c-mode-hook 'highlight-symbol-nav-mode)
   )
 
 (with-eval-after-load 'cmake-mode
@@ -19,4 +19,7 @@
   (define-key cmake-mode-map [C-f9] 'darlan-save-and-compile-single-file)  ;; Compile only the current source file
   (define-key cmake-mode-map [S-f9] 'darlan-generate-documentation)  ;; Generate the doxygen documentation
   (define-key cmake-mode-map [C-S-f9] 'darlan-open-doxygen-generated-index)
+
+  ;; Enable key bindings (M-p and M-p) for navigation
+  (add-hook 'c++-mode-hook 'highlight-symbol-nav-mode)
   )
