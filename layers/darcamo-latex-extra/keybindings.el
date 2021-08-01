@@ -8,7 +8,7 @@
   ;; work with latex and Makefiles
   (define-key LaTeX-mode-map [C-f9] 'compile)
   (define-key LaTeX-mode-map [f10] 'TeX-view)
-  (define-key LaTeX-mode-map [S-f10] '(lambda () (interactive) (ver-pdf-no-evince (TeX-master-file "pdf") (TeX-synctex-output-page))))
+  (define-key LaTeX-mode-map [S-f10] #'(lambda () (interactive) (ver-pdf-no-evince (TeX-master-file "pdf") (TeX-synctex-output-page))))
   ;; (define-key LaTeX-mode-map "\C-\M-n" 'outline-next-visible-heading)
   ;; (define-key LaTeX-mode-map "\C-\M-p" 'outline-previous-visible-heading)
   (define-key LaTeX-mode-map (kbd "<S-M-return>") 'dar/LaTeX-insert-item-inverse-behavior)

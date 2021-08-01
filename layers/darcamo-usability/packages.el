@@ -161,7 +161,7 @@ Each entry is either:
     :ensure t
     :config
     (global-set-key [C-f8] 'focus-mode)
-    (global-set-key [C-S-f8] '(lambda () (interactive) (focus-mode) (focus-read-only-mode)))
+    (global-set-key [C-S-f8] #'(lambda () (interactive) (focus-mode) (focus-read-only-mode)))
     )
   )
 
