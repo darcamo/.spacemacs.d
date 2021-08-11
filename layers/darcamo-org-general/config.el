@@ -20,7 +20,9 @@
 ;; org-code face to something different
 (with-eval-after-load 'org-faces
   (set-face-attribute 'org-code nil :foreground "indian red")
-  (set-face-attribute 'org-drawer nil :foreground "aquamarine")
+  ;; Background color of my theme is gray14 and I'm choosing a value just a bit
+  ;; brighter than it, such that the drawer is very discrete
+  (set-face-attribute 'org-drawer nil :foreground "gray28")
   (set-face-attribute 'org-footnote nil :foreground "firebrick1")
 
   (with-eval-after-load 'color
