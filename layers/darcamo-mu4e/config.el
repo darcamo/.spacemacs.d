@@ -152,8 +152,8 @@
   (add-to-list 'mu4e-view-actions
                '("View in Browser" . mu4e-action-view-in-browser) t)
 
-  (add-to-list 'mu4e-view-actions
-               '("wxidget" . mu4e-action-view-with-xwidget) t)
+  ;; (add-to-list 'mu4e-view-actions
+  ;;              '("wxidget" . mu4e-action-view-with-xwidget) t)
 
   ;; Whether to base the body display on the html-version.
   (setq mu4e-view-prefer-html t)

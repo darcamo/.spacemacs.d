@@ -112,8 +112,8 @@ Each entry is either:
 	            )
     :config
     (setq mu4e-views-completion-method 'ivy) ;; use ivy for completion
-    (setq mu4e-views-default-view-method "html") ;; make xwidgets default
-    (mu4e-views-mu4e-use-view-msg-method "html") ;; select the default
+    ;; (setq mu4e-views-default-view-method "html") ;; make xwidgets default
+    ;; (mu4e-views-mu4e-use-view-msg-method "html") ;; select the default
     (setq mu4e-views-next-previous-message-behaviour 'stick-to-current-window) ;; when pressing n and p stay in the current window
     (setq mu4e-views-auto-view-selected-message t)
     )
