@@ -31,8 +31,10 @@
 
 (defconst darcamo-org-roam-packages
   '(
+    org-roam
     org-roam-bibtex
-    org-roam-server)
+    ;; org-roam-server
+    )
   "The list of Lisp packages required by the darcamo-org-roam layer.
 
 Each entry is either:
@@ -60,22 +62,41 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun darcamo-org-roam/post-init-org-roam-server ()
-  (use-package org-roam-server
+(defun darcamo-org-roam/post-init-org-roam ()
+  (use-package org-roam
     :ensure t
-    :defer t
-    :bind ([f6] . org-roam-find-file)
+    :defer nil
     :config
-    (setq org-roam-server-host "127.0.0.1"
-          org-roam-server-port 8080
-          org-roam-server-export-inline-images t
-          org-roam-server-authenticate nil
-          org-roam-server-network-arrows nil
-          org-roam-server-network-label-truncate t
-          org-roam-server-network-label-truncate-length 60
-          org-roam-server-network-label-wrap-length 20
-          )
-    ))
+    ;; (setq org-roam-v2-ack t)
+    ;; (setq org-roam-directory "/home/darlan/org/org-roam-notes/")
+    ;; (setq org-roam-db-location "~/.emacs.d/.cache/org-roam.db")
+    ;; (setq org-roam-graph-exclude-matcher "index.org")
+    ;; (setq org-roam-graph-extra-config '(("rankdir" . "LR")))
+    (org-roam-setup)
+    :bind (([f6] . org-roam-node-find)
+           ("C-c n f" . org-roam-node-find)
+           ("C-c n l" . org-roam-buffer-toggle)
+           ("C-c n i" . org-roam-node-insert))
+
+    )
+  )
+
+;; (defun darcamo-org-roam/post-init-org-roam-server ()
+;;   (use-package org-roam-server
+;;     :ensure t
+;;     :defer t
+;;     :bind ([f6] . org-roam-find-file)
+;;     :config
+;;     (setq org-roam-server-host "127.0.0.1"
+;;           org-roam-server-port 8080
+;;           org-roam-server-export-inline-images t
+;;           org-roam-server-authenticate nil
+;;           org-roam-server-network-arrows nil
+;;           org-roam-server-network-label-truncate t
+;;           org-roam-server-network-label-truncate-length 60
+;;           org-roam-server-network-label-wrap-length 20
+;;           )
+;;     ))
 
 (defun darcamo-org-roam/init-org-roam-bibtex ( )
   (use-package org-roam-bibtex
