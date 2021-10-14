@@ -9,6 +9,9 @@
   ;; If set to t, TAB works natively in code blocks (Deixa o TAB muito lento)
   (setq org-src-tab-acts-natively nil)
 
+  ;; Don't add any leading space to code inside src blocks (default is 2 spaces)
+  (setq org-edit-src-content-indentation 0)
+
   ;; Native font lock for src blocks
   ;;(setq org-src-fontify-natively t)
 
@@ -22,19 +25,19 @@
      ;; (dot . nil)
      (emacs-lisp . t)
      ;; (gnuplot . t)
-     (haskell . t)
+     ;; (haskell . t)
      ;; (ocaml . nil)
      (python . t)
      ;; ipython can be a better option then standard python
      ;;(ipython . t)
-     ;; (C . t)
+     (C . t)  ;; Adds 'C' and 'cpp' languages to org-babel
      ;; (ruby . nil)
      ;; (screen . nil)
      (shell . t)
      ;; (sql . nil)
      ;; (sqlite . nil)
-     (octave . t)
-     (matlab . t)
+     ;; (octave . t)
+     ;; (matlab . t)
      (latex . t)
      ;; (plantuml . t)
      (java . t)
