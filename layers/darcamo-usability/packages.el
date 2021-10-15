@@ -74,7 +74,17 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 (defun darcamo-usability/init-windmove ()
-  (windmove-default-keybindings 'shift)
+  (use-package windmove
+    :bind
+    ;; Note that windmove has the "(windmove-default-keybindings 'shift)"
+    ;; function to bind the keymaps, but it binds to a keymap specific to
+    ;; windmove. I prefer to add them to the global keymap such that other modes
+    ;; can overwrite it. This is mainly useful in org-mode.
+    ("<S-right>" . windmove-right)
+    ("<S-left>" . windmove-left)
+    ("<S-up>" . windmove-up)
+    ("<S-down>" . windmove-down)
+    )
   )
 
 ;; (defun darcamo-usability/init-bookmark+ ()
