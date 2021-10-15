@@ -25,5 +25,51 @@
    ;; In org  "|" is used for tables. Let's change boxquote-side
    ;; then to "!"
    ;;(setq boxquote-side "! ")
+
+   ;; xxxxx Enable Drag-stuff when not in an org-mode heading xxxxxxxxxxxxxxxxxx
+   ;; If cursor is in a headline or in a list item, use default org-mode
+   ;; function, otherwise use drag-stuff function
+   (define-key org-mode-map (kbd "<M-up>")
+     (lambda ()
+       (interactive)
+       (call-interactively
+        (if (or (org-at-heading-p) (org-at-item-p) )
+            'org-metaup
+          'drag-stuff-up))))
+
+   ;; If cursor is in a headline or in a list item, use default org-mode
+   ;; function, otherwise use drag-stuff function
+   (define-key org-mode-map (kbd "<M-down>")
+     (lambda ()
+       (interactive)
+       (call-interactively
+        (if (or (org-at-heading-p) (org-at-item-p) )
+            'org-metadown
+          'drag-stuff-down))))
+
+   ;; If cursor is in a headline or in a list item, use default org-mode
+   ;; function, otherwise use drag-stuff function
+   (define-key org-mode-map (kbd "<M-right>")
+     (lambda ()
+       (interactive)
+       (call-interactively
+        (if (or (org-at-heading-p) (org-at-item-p) )
+            'org-metaright
+          'drag-stuff-right))))
+
+   ;; If cursor is in a headline or in a list item, use default org-mode
+   ;; function, otherwise use drag-stuff function
+   (define-key org-mode-map (kbd "<M-left>")
+     (lambda ()
+       (interactive)
+       (call-interactively
+        (if (or (org-at-heading-p) (org-at-item-p) )
+            'org-metaleft
+          'drag-stuff-left))))
    )
+ ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
  )
+
+
+
+
