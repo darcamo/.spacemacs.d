@@ -68,7 +68,7 @@ This function should only modify configuration layer settings."
      markdown
      ;; (neotree :variables neo-theme 'icons)
      (org :variables
-          org-indent-mode t
+          ;; org-indent-mode t
           org-enable-reveal-js-support t  ;; download reveal.js and set org-reveal-root to the download path
           org-re-reveal-root "file:///home/darlan/Programas_Locais/reveal.js"
 
