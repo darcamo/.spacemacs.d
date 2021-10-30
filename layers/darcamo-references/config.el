@@ -64,7 +64,7 @@
 		                  (funcall get-pdf-function key))
 		                keys)))))
 
-  (helm-add-action-to-source "Grep PDF" 'org-ref-grep-pdf helm-source-bibtex 4)
+  ;; (helm-add-action-to-source "Grep PDF" 'org-ref-grep-pdf helm-source-bibtex 4)
 
   (setq helm-bibtex-map
         (let ((map (make-sparse-keymap)))
@@ -73,7 +73,7 @@
 				                        (helm-run-after-exit 'org-ref-grep-pdf)))
           map))
 
-  (push `(keymap . ,helm-bibtex-map) helm-source-bibtex)
+  ;; (push `(keymap . ,helm-bibtex-map) helm-source-bibtex)
   )
 ;; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
