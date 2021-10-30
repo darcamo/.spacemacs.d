@@ -8,6 +8,8 @@
 ;;   (add-to-list 'org-link-abbrev-alist '("attach" . org-attach-expand-link))
 ;;   )
 
+(setq org-attach-dir-relative t)
+
 (with-eval-after-load 'org-attach
   ;; Only defined after org-attach is loaded
   (setq org-attach-store-link-p 'attached)
