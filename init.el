@@ -918,12 +918,12 @@ before packages are loaded."
   ;;   )
 
   (with-eval-after-load 'pdf-continuous-scroll-mode
-    (define-key pdf-continuous-scroll-mode-map (kbd "<S-mouse-4>") '(lambda () (interactive) (pdf-cscroll-image-backward-hscroll 4)))
-    (define-key pdf-continuous-scroll-mode-map (kbd "<S-mouse-5>") '(lambda () (interactive) (pdf-cscroll-image-forward-hscroll 4)))
+    (define-key pdf-continuous-scroll-mode-map (kbd "<S-mouse-4>") #'(lambda () (interactive) (pdf-cscroll-image-backward-hscroll 4)))
+    (define-key pdf-continuous-scroll-mode-map (kbd "<S-mouse-5>") #'(lambda () (interactive) (pdf-cscroll-image-forward-hscroll 4)))
 
     (define-key pdf-continuous-scroll-mode-map (kbd "<prior>") 'pdf-continuous-previous-page)
     (define-key pdf-continuous-scroll-mode-map (kbd "<next>") 'pdf-continuous-next-page)
-    (define-key pdf-continuous-scroll-mode-map (kbd "q") '(lambda ()  (interactive) (pdf-continuous-scroll-mode -1) (quit-window) ))
+    (define-key pdf-continuous-scroll-mode-map (kbd "q") #'(lambda ()  (interactive) (pdf-continuous-scroll-mode -1) (quit-window) ))
     )
 
   ;; Enable org-clock-in support in the modline
