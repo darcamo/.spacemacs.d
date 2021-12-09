@@ -38,13 +38,13 @@
                                     (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/org-roam-setup.org\n")
                                     :unnarrowed t)
                                    ("i" "IAB" plain "Criado em %u\n\n- Links :: [[id:0878fa71-2454-4d2d-a63f-8327a8a70681][IAB]]\n\n%?" :if-new
-                                    (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/org-roam-setup.org\n#+filetags: GTEL IAB 5G")
+                                    (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/org-roam-setup.org\n#+filetags: :GTEL:IAB:5G:")
                                     :unnarrowed t :immediate-finish t)
                                    ("D" "Doutorado" plain "Criado em %u\n\n- Links :: [[id:685ce449-937c-4977-9bbc-6177273c8c49][Doutorado]]\n\n%?" :if-new
-                                    (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/org-roam-setup.org\n#+filetags: Doutorado")
+                                    (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/org-roam-setup.org\n#+filetags: :Doutorado:")
                                     :unnarrowed t :immediate-finish t)
                                    ;; ("i" "IAB" plain "Criado em %u\n\n%?" :if-new
-                                   ;;  (file+name "%<%Y%m%d%H%M%S>-${slug}" "#+TITLE: ${title}\n#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/org-roam-setup.org\n#+filetags: GTEL IAB 5G\n\n- Links :: hahaha\n\n")
+                                   ;;  (file+name "%<%Y%m%d%H%M%S>-${slug}" "#+TITLE: ${title}\n#+SETUPFILE: ~/.spacemacs.d/org-mode-setup/org-roam-setup.org\n#+filetags: :GTEL:IAB:5G:\n\n- Links :: hahaha\n\n")
                                    ;;  :unnarrowed t)
                                    ))
 
