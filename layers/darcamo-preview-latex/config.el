@@ -33,4 +33,4 @@
   )
 
 ;; Faz com que o commando \vec seja conhecido para o preview latex
-(setq org-latex-preview-ltxpng-directory "~/tmp/ltxpng/")
+(setq org-preview-latex-image-directory "~/tmp/ltxpng/")
