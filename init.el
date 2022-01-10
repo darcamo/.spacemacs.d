@@ -87,7 +87,7 @@ This function should only modify configuration layer settings."
           org-enable-roam-support t
           org-roam-v2-ack t
           org-roam-directory "/home/darlan/org/org-roam-notes/"
-          org-roam-db-location "~/.emacs.d/.cache/org-roam.db"
+          org-roam-db-location (concat user-emacs-directory ".cache/org-roam.db")
           org-roam-graph-exclude-matcher "index.org"
           org-roam-graph-extra-config '(("rankdir" . "LR"))
 
